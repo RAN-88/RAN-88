@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "capture-it";
+  src: url("../fonts/capture-it/capture-it.eot");
+  src: url("../fonts/capture-it/capture-it.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/capture-it/capture-it.woff") format("woff");
+	src: url("../fonts/capture-it/capture-it.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+  font-family: "rockwell";
+  src: url("../fonts/rockwell/rockwell.eot");
+  src: url("../fonts/rockwell/rockwell.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/rockwell/rockwell.woff") format("woff");
+	src: url("../fonts/rockwell/rockwell.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
