@@ -42,8 +42,10 @@ function drawFrame(cardsArray) {
 		// card.cardDiscount = fullFrameArray[cardsCounter][9];10
 		// card.cardImg = fullFrameArray[cardsCounter][10];11
 
-		frameString += `<div class="marketFrame grid">`;
+		frameString += `<div class="outerFrame">`;
 		frameString += `<div class="marketFrameBG"></div>`;
+		frameString += `<div class="marketFrame grid">`;
+		// frameString += `<div class="marketFrameBG"></div>`;
 		frameString += `<div class="imgMarketFrame " style="background-image: url(${cardsArray[cardsCounter][11]});"></div>`;
 		frameString += `<div class="textMarketFrame grid">`;
 		frameString += `<div class="infoMarketFrame">`;
@@ -63,6 +65,7 @@ function drawFrame(cardsArray) {
 		frameString += `<div class="markerIconCart"><i class="icon-cart-right "></i></div>`;
 		frameString += `<div class="cartMarketContent">`;
 		frameString += `<h4 class="cartMarketFrameValue">0</h4>`;
+		frameString += `</div>`;
 		frameString += `</div>`;
 		frameString += `</div>`;
 		frameString += `</div>`;

@@ -52,10 +52,6 @@ function sortUp() {
 			sortedArray[i].pop();
 		}
 	}
-
-
-
-
 	// console.log(sortedArray);
 	drawMarket(sortedArray);
 };
@@ -109,8 +105,6 @@ function sortDown() {
 			sortedArray[i].pop();
 		}
 	}
-
-
 	drawMarket(sortedArray);
 };
 

@@ -24,15 +24,18 @@
 		<h3>ТУТ НИКИТА НАПИШЕТ МНОГО ТЕКСТА ПРО СЕБЯ И СВОЁ ПАЙЛИШКО</h3>
 	</div>
 
-	<div class="BGbody">
-		<img src="img/background2.jpg" alt="backGround">
+	<div class="bodyBG" style="background-image: url(img/background2.jpg);">
+		<!-- <img src="img/background2.jpg" alt="backGround"> -->
 	</div>
 	<!-- Header -->
+
 	<div class=" grid headerWrapper" id="headerWrap">
-		<div class="borded headerLogo">
-			<h4>LOGO</h4>
+		<div class="headerBG" style="background-image: url(img/headerIMG.jpg);"></div>
+		<div class="headerLogoArea">
+			<div class="headerLogo" style="background-image: url(img/logotest3.png);">
+			</div>
 		</div>
-		<div class="grid searchArea borded">
+		<div class="grid searchArea">
 			<div class="mainSearch">
 				<input type="text" size="40" class="textSearch">
 				<i class="icon-search nikitaSearchIcon"></i>
@@ -42,19 +45,19 @@
 			</div>
 		</div>
 
-		<div class="information">
+		<div class="information ">
 			<i class="icon-info-question" id="headerInfoBtn"></i>
 		</div>
 
-		<div class="mail">
+		<div class="mail ">
 			<i class="icon-mail "></i>
 		</div>
 
-		<div class="cart">
+		<div class="cart ">
 			<div class="iconCartFrame">
 				<i class="icon-cart-right" id="headerCartBtn"></i>
 				<div class="headerCartMarketContent">
-					<h4>0</h4>
+					<h4>69</h4>
 				</div>
 			</div>
 
@@ -63,12 +66,16 @@
 
 	</div>
 
+
+	<div class="headerLogoPhone" style="background-image: url(img/logotest3.png);">
+	</div>
+
 	<!-- Conception -->
-	<div class="conceptWrapper  grid">
+	<div class="conceptWrapper grid">
 		<div class="conceptBG"></div>
 
 		<div class="concept conceptPlace1 grid">
-			<div class="conceptImg ">
+			<div class="conceptImg">
 				<div class="conceptRound">
 					<i class="icon-order iconConception"></i>
 				</div>
@@ -78,7 +85,7 @@
 			</div>
 		</div>
 		<div class="conceptPlace2 conceptArrow">
-			<i class="icon-arrow-right"></i>
+			<i class="icon-arrow-right conceptIconArrow"></i>
 		</div>
 
 		<div class="concept conceptPlace3 grid ">
@@ -92,7 +99,7 @@
 			</div>
 		</div>
 		<div class="conceptPlace4 conceptArrow">
-			<i class="icon-arrow-right"></i>
+			<i class="icon-arrow-right conceptIconArrow"></i>
 		</div>
 
 		<div class="concept conceptPlace5 grid ">
@@ -105,8 +112,8 @@
 				<h4>pay</h4>
 			</div>
 		</div>
-		<div class="conceptPlace6  conceptArrow">
-			<i class="icon-arrow-right"></i>
+		<div class="conceptPlace6 conceptArrow">
+			<i class="icon-arrow-right conceptIconArrow"></i>
 		</div>
 
 		<div class="concept conceptPlace7 grid ">
@@ -119,8 +126,8 @@
 				<h4>wait</h4>
 			</div>
 		</div>
-		<div class="conceptPlace8  conceptArrow">
-			<i class="icon-arrow-right"></i>
+		<div class="conceptPlace8 conceptArrow">
+			<i class="icon-arrow-right conceptIconArrow"></i>
 		</div>
 
 		<div class="concept conceptPlace9 grid ">
@@ -146,16 +153,18 @@
 	</div>
 	<!-- Slider -->
 	<div class="sliderArrowWrapper grid">
+		<div class="sliderBG"></div>
 		<div class="arrowLeft ">
-			<i class="icon-arrow-left iconArrowLeft" id="carouselBtnLeft"></i>
+			<i class="icon-arrow-left iconArrowLeft " id="carouselBtnLeft"></i>
 		</div>
-		<div class="sliderWrapper grid">
 
-			<div class="sliderBG"></div>
+		<div class="sliderWrapper grid ">
+
+
 			<div class="sliderImg sliderImgPlace1">
-				<div class="tagIconWrapper " style="background-image: url(img/test.jpg);">
+				<div class="tagIconWrapper" style="background-image: url(img/test.jpg);">
 					<img src="icons/tagICON.png" alt="" class="tagIcon">
-					<div class="saleText ">
+					<div class="saleText">
 						<h4 class="prevPrice">1000p</h4>
 						<h4 class="presentPrice">900р</h4>
 					</div>
@@ -191,10 +200,10 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
-		<div class="arrowRight">
-			<i class="icon-arrow-left iconArrowRight" id="carouselBtnRight"></i>
+
+		<div class="arrowRight ">
+			<i class="icon-arrow-left iconArrowRight " id="carouselBtnRight"></i>
 		</div>
 	</div>
 	<!-- Collection -->
@@ -203,11 +212,11 @@
 	</div>
 
 	<!--Sorting -->
-	<div class="sortWrapper grid">
+	<div class="sortWrapper grid ">
 		<div class="sortBG"></div>
 
-		<div class="totalCardsWrapper">
-			<h4 class="totalText">Total Items in Collection:</h4>
+		<div class="totalCardsWrapper ">
+			<h4 class="totalText">Total Items Found:</h4>
 			<h4 class="cardsAmount" id="cardsAmount"></h4>
 		</div>
 
@@ -217,7 +226,7 @@
 				<h4>Sort by:</h4>
 			</div>
 
-			<div class="sortingTypeWrapper sortTextPlace2">
+			<div class="sortingTypeWrapper sortTextPlace2 ">
 				<h4 class="sortingType"><span id="sortingType">Name</span><i class="fas fa-caret-down sortingTypeArrow"
 						id="sortingTypeArrow"></i>
 				</h4>
@@ -239,7 +248,7 @@
 
 		</div>
 
-		<div class="sortDirection">
+		<div class="sortDirection ">
 			<i class="icon-sort-up" id="btnSortingUp"></i>
 			<i class="icon-sort-down" id="btnSortingDown"></i>
 		</div>
@@ -287,22 +296,7 @@
 
 	<!-- footer -->
 	<div class="footerWrapper grid">
-		<div class="footerLicenseFrame ">
-			<div class="footerLogoFrame ">LOGO</div>
-			<h4 class="footerTextFrame">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis quas
-				veniam! Commodi nulla officia minus et, aliquam ipsum eligendi nostrum a, magnam provident, culpa nihil aut
-				incidunt? Unde, reiciendis.</h4>
-			<h4 class="footerLicenseText">Wizards of the Coast, Magic: The Gathering, and their logos are trademarks of
-				Wizards of the Coast LLC in the United States and other countries. This website is not affiliated with,
-				endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.</h4>
-		</div>
-
-		<div class="footerContactsFrame">
-			<i class="icon-mail footerIconMail"></i>
-			<h4 class="footerContactsMail">nikitaProdaetPailo@gmail.com</h4>
-		</div>
-
-
+		<div class="footerBG" style="background-image: url(img/footerIMG.jpg);"></div>
 	</div>
 
 
