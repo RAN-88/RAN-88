@@ -15,8 +15,82 @@
 
 <body>
 	<div class="menuCart" id="menuCart">
-		<i class="icon-cross menuCartIconClose" id="menuCartIconClose"></i>
-		<h3>Меня не нарисовали</h3>
+
+		<div class="cartWrapper grid">
+			<div class="cartWrapperContent grid" id="cartWrapperContent">
+				<!-- <div class="emptyCart" id="emptyCart">
+					<h3>Cart is Empty</h3>
+				</div> -->
+
+
+
+				<!--<div class="cartFrame grid">
+					<i class="icon-cross cartRemoveFrame" id="cartRemoveFrame"></i>
+					<div class="cartFrameBG"></div>
+					<div class="cartImgFrame">
+						<div class="cartImg" style="background-image: url(img/test.jpg);"></div>
+					</div>
+					<div class="cartFrameInfo grid ">
+						<div class="cartFrameInfoText grid ">
+							<div class="cartFrameInfoTextName">
+								<h4>Jace, Adepteee of Memory</h4>
+							</div>
+							<div class="cartFrameInfoTextConditions ">
+								<h4>Ravnica</h4>
+								<h4>Rarity</h4>
+								<h4>ENG</h4>
+								<h4>FOIL</h4>
+								<h4>Promo</h4>
+								<h4>N/M</h4>
+							</div>
+						</div>
+						<div class="cartFrameInfoMain grid">
+							<div class="cartMainPrice ">
+								<h4>Price: <span id="cartPrice">10000</span>р</h4>
+							</div>
+							<div class="cartMainQuantity ">
+								<div class="cartMainManagWrapper">
+									<i class="fas fa-plus cartMainPlus"></i>
+									<h4 class="cartMainFrameQuantity">900</h4>
+									<i class="fas fa-minus cartMainMinus"></i>
+								</div>
+							</div>
+							<div class="cartMainTotal ">
+								<h4>Total: <span id="cartTotalPrice" class="cartTotalPrice">10000р</span></h4>
+							</div>
+						</div>
+					</div>
+				</div> -->
+
+
+
+
+			</div>
+
+			<div class="cartFooter grid">
+				<div class="cartTotal ">
+					<h4 class="total">Total:</h4>
+					<h4><span id="cartItemsQuantity">0</span> Items</h4>
+					<h4 class="cartPriceTotal"><span id="cartPriceTotal">0</span>р</h4>
+				</div>
+
+				<div class="cartMailWrapper grid ">
+					<div class="cartEmailLink" id="cartEmailLink">
+						<h4 style="text-decoration: underline;">Enter your E-mail here*</h4>
+					</div>
+					<div class="cartMail">
+						<div class="cartMailTextWrapper">
+							<input type="text" size="30" class="textCartMail" id="textCartMail">
+						</div>
+					</div>
+				</div>
+
+				<div class="cartOrder ">
+					<h3 class="orderText" id="orderText"> >> ORDER << </h3>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	<div class="infoFrame" id="infoFrame">
@@ -57,7 +131,7 @@
 			<div class="iconCartFrame">
 				<i class="icon-cart-right" id="headerCartBtn"></i>
 				<div class="headerCartMarketContent">
-					<h4>69</h4>
+					<h4 id="headerCartMarketContent">0</h4>
 				</div>
 			</div>
 

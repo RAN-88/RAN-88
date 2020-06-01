@@ -293,6 +293,14 @@
 		margin-top: 120px;
 	}
 }
+
+
+@media only screen and (max-width: 416px) {
+	.menuCart{
+		width: 100%;
+	}
+}
+
 @media only screen and (max-width: 400px) {
 	.advancedSearch{
 		font-size: 14px;

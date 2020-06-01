@@ -31,6 +31,9 @@ let getCardArray = getJSON.then(
 			cardObject.push(massiveData[i].gsx$cardquantity.$t);
 			cardObject.push(massiveData[i].gsx$carddiscount.$t);
 			cardObject.push(massiveData[i].gsx$cardimg.$t);
+			cardObject.push(i); //задали ID для каждой карты. ID=строка+mainArr
+			cardObject.push(1); //счётчки для корзины. Начальное состояние 1
+			cardObject.push(massiveData[i].gsx$cardprice.$t * 1); //сумма попозиции для корзины. Исходно = price
 			// формируем массив промо
 			if (massiveData[i].gsx$carddiscount.$t != 0) {
 				promoCardCollection.push(cardObject);

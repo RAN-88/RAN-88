@@ -62,9 +62,9 @@ function drawFrame(cardsArray) {
 		frameString += `<h4 class="infoMarketPriceText">Price: <span class="infoMarketPrice">${cardsArray[cardsCounter][1]}р</span></h4>`;
 		frameString += `</div>`;
 		frameString += `<div class="cartMarketFrame ">`;
-		frameString += `<div class="markerIconCart"><i class="icon-cart-right "></i></div>`;
+		frameString += `<div class="markerIconCart"><i class="icon-cart-right" id="${cardsArray[cardsCounter][12]}" onclick="addToCart(event.target.id)"></i></div>`;
 		frameString += `<div class="cartMarketContent">`;
-		frameString += `<h4 class="cartMarketFrameValue">0</h4>`;
+		frameString += `<h4 class="cartMarketFrameValue" id="${cardsArray[cardsCounter][12]}cart">0</h4>`;
 		frameString += `</div>`;
 		frameString += `</div>`;
 		frameString += `</div>`;
