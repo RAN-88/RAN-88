@@ -22,6 +22,16 @@ function drawMarket(cardsArray) { //перезапись глобального 
 	drawFrame(globalCurrentArray);//рисуем стартовую область
 };
 
+function getCartMarketFrameValue(idToCheck) {
+	for (let i = 0; i < cartArray.length; i++) {
+		if (cartArray[i][12] == idToCheck) {
+			return cartArray[i][13];
+		}
+	}
+	return 0;
+}
+
+
 function drawFrame(cardsArray) {
 
 	for (cardsCounter; cardsCounter < drawstep; cardsCounter++) {
@@ -29,23 +39,10 @@ function drawFrame(cardsArray) {
 			loadedCardsText.innerHTML = ` ${cardsCounter} / ${cardsArray.length}`;
 			return
 		}
-		// card.cardName = fullFrameArray[cardsCounter][0];
-		// card.cardPrice = fullFrameArray[cardsCounter][1];
-		// card.rarity = fullFrameArray[cardsCounter][2];
-		// card.cardCondition = fullFrameArray[cardsCounter][2];3
-		// card.cardLanguage = fullFrameArray[cardsCounter][3];4
-		// card.cardFoil = fullFrameArray[cardsCounter][4];5
-		// card.cardPromo = fullFrameArray[cardsCounter][5];6
-		// card.cardSet = fullFrameArray[cardsCounter][6];7
-		// card.cardNumber = fullFrameArray[cardsCounter][7];8
-		// card.cardQuantity = fullFrameArray[cardsCounter][8];9
-		// card.cardDiscount = fullFrameArray[cardsCounter][9];10
-		// card.cardImg = fullFrameArray[cardsCounter][10];11
 
 		frameString += `<div class="outerFrame">`;
 		frameString += `<div class="marketFrameBG"></div>`;
 		frameString += `<div class="marketFrame grid">`;
-		// frameString += `<div class="marketFrameBG"></div>`;
 		frameString += `<div class="imgMarketFrame " style="background-image: url(${cardsArray[cardsCounter][11]});"></div>`;
 		frameString += `<div class="textMarketFrame grid">`;
 		frameString += `<div class="infoMarketFrame">`;
@@ -64,7 +61,7 @@ function drawFrame(cardsArray) {
 		frameString += `<div class="cartMarketFrame ">`;
 		frameString += `<div class="markerIconCart"><i class="icon-cart-right" id="${cardsArray[cardsCounter][12]}" onclick="addToCart(event.target.id)"></i></div>`;
 		frameString += `<div class="cartMarketContent">`;
-		frameString += `<h4 class="cartMarketFrameValue" id="${cardsArray[cardsCounter][12]}cart">0</h4>`;
+		frameString += `<h4 class="cartMarketFrameValue" id="${cardsArray[cardsCounter][12]}cart">${getCartMarketFrameValue(cardsArray[cardsCounter][12])}</h4>`;
 		frameString += `</div>`;
 		frameString += `</div>`;
 		frameString += `</div>`;

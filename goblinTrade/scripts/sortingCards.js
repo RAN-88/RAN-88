@@ -43,7 +43,7 @@ function sortUp() {
 				sortedArray[i].push(5);
 			}
 		}
-		console.log(sortedArray);
+		// console.log(sortedArray);
 		sortedArray.sort(function (a, b) {
 			// sortedArray.length - 1
 			return (a[12] - b[12])
@@ -53,7 +53,9 @@ function sortUp() {
 		}
 	}
 	// console.log(sortedArray);
+	globalCurrentArray = sortedArray;
 	drawMarket(sortedArray);
+	// console.log(globalCurrentArray);
 };
 
 function sortDown() {
@@ -81,7 +83,7 @@ function sortDown() {
 	}
 
 	else if (sortingTypeHTML == "Rarity") {
-		console.log("rarityDown");
+		// console.log("rarityDown");
 		for (i = 0; i < sortedArray.length; i++) {
 			if (sortedArray[i][2] == "Common") {
 				sortedArray[i].push(1);
@@ -95,7 +97,7 @@ function sortDown() {
 				sortedArray[i].push(5);
 			}
 		}
-		console.log(sortedArray);
+		// console.log(sortedArray);
 		sortedArray.sort(function (a, b) {
 			// sortedArray.length - 1
 			return (b[12] - a[12])
@@ -105,7 +107,10 @@ function sortDown() {
 			sortedArray[i].pop();
 		}
 	}
+	globalCurrentArray = sortedArray;
 	drawMarket(sortedArray);
+	// console.log(globalCurrentArray);
+
 };
 
 
