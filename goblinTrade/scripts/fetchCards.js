@@ -19,21 +19,21 @@ let getCardArray = getJSON.then(
 
 		for (let i = 0; i < massiveData.length; i++) {
 			//создаём массив i-ая карта
-			cardObject.push(massiveData[i].gsx$cardname.$t);
-			cardObject.push(massiveData[i].gsx$cardprice.$t);
-			cardObject.push(massiveData[i].gsx$rarity.$t);
-			cardObject.push(massiveData[i].gsx$cardcondition.$t);
-			cardObject.push(massiveData[i].gsx$cardlanguage.$t);
-			cardObject.push(massiveData[i].gsx$cardfoil.$t);
-			cardObject.push(massiveData[i].gsx$cardpromo.$t);
-			cardObject.push(massiveData[i].gsx$cardset.$t);
-			cardObject.push(massiveData[i].gsx$cardnumber.$t);
-			cardObject.push(massiveData[i].gsx$cardquantity.$t);
-			cardObject.push(massiveData[i].gsx$carddiscount.$t);
-			cardObject.push(massiveData[i].gsx$cardimg.$t);
-			cardObject.push(i); //задали ID для каждой карты. ID=строка+mainArr
-			cardObject.push(1); //счётчки для корзины. Начальное состояние 1
-			cardObject.push(massiveData[i].gsx$cardprice.$t * 1); //сумма попозиции для корзины. Исходно = price
+			cardObject.push(massiveData[i].gsx$cardname.$t); //0
+			cardObject.push(massiveData[i].gsx$cardprice.$t);//1
+			cardObject.push(massiveData[i].gsx$rarity.$t);//2
+			cardObject.push(massiveData[i].gsx$cardcondition.$t);//3
+			cardObject.push(massiveData[i].gsx$cardlanguage.$t);//4
+			cardObject.push(massiveData[i].gsx$cardfoil.$t);//5
+			cardObject.push(massiveData[i].gsx$cardpromo.$t);//6
+			cardObject.push(massiveData[i].gsx$cardset.$t);//7
+			cardObject.push(massiveData[i].gsx$cardnumber.$t);//8
+			cardObject.push(massiveData[i].gsx$cardquantity.$t);//9
+			cardObject.push(massiveData[i].gsx$carddiscount.$t);//10
+			cardObject.push(massiveData[i].gsx$cardimg.$t);//11
+			cardObject.push(i);//12 //задали ID для каждой карты. ID=строка+mainArr
+			cardObject.push(1);//13 //счётчки для корзины. Начальное состояние 1
+			cardObject.push(massiveData[i].gsx$cardprice.$t * 1);//14 //сумма попозиции для корзины. Исходно = price
 			// формируем массив промо
 			if (massiveData[i].gsx$carddiscount.$t != 0) {
 				promoCardCollection.push(cardObject);

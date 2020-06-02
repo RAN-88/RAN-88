@@ -54,10 +54,38 @@ function closeCart(e) {
 		returnBar()
 	}
 }
+
+// LocalStorage
 // ----------------------------------------------------------
+function loadToStorage() {
+	localStorage.clear();
+	for (let i = 0; i < cartArray.length; i++) {
+		localStorage.setItem(`${i}`, `${cartArray[i].join('...')}`);
+	}
+}
+
+function readFromStorage() {
+	for (let i = 0; i < localStorage.length; i++) {
+		strToArr = localStorage.getItem(`${i}`).split('...');
+		strToArr[1] = +strToArr[1];
+		strToArr[9] = +strToArr[9];
+		strToArr[10] = +strToArr[10];
+		strToArr[12] = +strToArr[12];
+		strToArr[13] = +strToArr[13];
+		strToArr[14] = +strToArr[14];
+		cartArray[i] = strToArr;
+	}
+	drawCart();
+	totalMoney();
+	countHeaderCart();
+}
+
+window.onload = function () {
+	readFromStorage();
+}
+// -----------------------------------------------------------
 
 let summPositions = 0;
-
 function countHeaderCart() {
 	for (let i = 0; i < cartArray.length; i++) {
 		summPositions += cartArray[i][13]
@@ -80,6 +108,7 @@ function totalMoney() {
 function totalFrameMoney(cartRow, ID) {
 	cartArray[cartRow][14] = cartArray[cartRow][13] * cartArray[cartRow][1]//изменили сумму по позиции
 	document.getElementById(`${ID}summ`).innerHTML = cartArray[cartRow][14];//переписали сумму по позиции из массива
+	loadToStorage();
 }
 
 let cartArray = [];//массив корзины глобально
@@ -117,9 +146,6 @@ function getGlobalCurrentArrayRow(idToCheck) {
 	}
 }
 
-
-
-
 // на входе ID из большого массива. На выходе строка в малом. Если нет, то "free"
 function checkArrayCoinside(idToCheck) {
 	for (let i = 0; i < cartArray.length; i++) {
@@ -130,12 +156,10 @@ function checkArrayCoinside(idToCheck) {
 	return "free";
 }
 
-
 function drawCart() {
 	cartCounter = 0;//обнуляем счётчик корзины
 	drawCartArray(cartArray);
 }
-
 
 let cartString = '';//строка вывода в HTML глобально
 let cartWrapper = document.getElementById("cartWrapperContent");//обёртка перечня карт
@@ -189,6 +213,7 @@ function drawCartArray(cartArrayToDraw) {
 		cartString = '';//чистим строку
 	}
 	cartCounter = 0;
+	loadToStorage();
 };
 
 //на входе ID из большого массива
@@ -237,6 +262,7 @@ function minusToCart(minusID) {
 	}
 	totalMoney();
 	countHeaderCart();
+	loadToStorage();
 }
 
 //на входе реальный ID в чистом виде
@@ -258,4 +284,5 @@ function removeFromCartArray(rowToRemove) {
 	if (cardsCounter >= currentArrRowToRemove) {
 		document.getElementById(`${rowToRemove}cart`).innerHTML = `0`;
 	}
+	loadToStorage();
 }
