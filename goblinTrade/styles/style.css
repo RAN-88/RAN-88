@@ -437,10 +437,6 @@ font-size: 20px;
 	font-size: 14px;
 	/* padding-left: 20px; */
 }
-.cartMainTotal>h4{
-	/* padding-left: 5px; */
-	/* padding-top: 5px; */
-}
 .cartTotalPrice{
 	font-size: 16px;
 	color: #ff5b38;
@@ -452,7 +448,7 @@ font-size: 20px;
 /* Header */
 .headerWrapper{
 	grid-template-columns: 0.3fr 1fr 0.1fr 0.1fr 0.1fr;
-	grid-template-rows: 1fr;
+	grid-template-rows: 100%;
 	width: 100%;
 	height: 70px;
 	grid-gap: 0.1fr;
@@ -507,15 +503,19 @@ font-size: 20px;
 
 .searchArea{
 	width: 90%;
-	height: 90%;
-	align-self: center;
+	/* height: 90%; */
+	height: 70px;
+	align-self: start;
 	justify-self: center;
 	grid-template-columns: 100%;
-	grid-template-rows: 1fr 0.5fr;
-	grid-gap: 0.2fr;
+	/* grid-template-rows: 1fr 0.5fr; */
+	grid-template-rows: 46px 24px;
+	/* grid-gap: 0.2fr; */
 	grid-row: 1;
 	grid-column: 2;
 }
+
+
 .mainSearch{
 	grid-row: 1;
 	grid-column: 1;
@@ -528,6 +528,46 @@ font-size: 20px;
 	background-color:#e9e4d0;
 	border-radius: 20px;
 }
+
+.searchListing{
+	grid-row: 1;
+	grid-column: 1;
+	grid-template-rows: auto;
+	grid-template-columns: 100%;
+	width: 84%;
+	height: auto;
+	align-content: center;
+	justify-items: center;
+	transform: translateY(47px);
+	align-self: start;
+	justify-self: center;
+	z-index: 50;
+	background-color: #e9e4d0;
+	
+	visibility: visible;
+}
+.searchListingVisibility{
+	visibility: visible;
+}
+.searchFrame{
+	width: 100%;
+	min-height: 32px;
+	max-height: 38px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.searchFrame:hover{
+	cursor: pointer;
+	background-color: #ff5b38;
+}
+.searchFrameText{
+	margin-left: 10px;
+	color: #140f0b;
+}
+
+
 
 .nikitaSearchIcon{
 	transform: translateX(-2px);
@@ -563,6 +603,8 @@ font-size: 20px;
 	justify-content: center;
 	width: auto;
 	font-size: 18px;
+	height: 24px;
+	width: 100%;
 }
 .searchHover:hover{
 	color:  #ff5b38;
@@ -629,7 +671,7 @@ font-size: 20px;
 .icon-cart-right:hover{
 	cursor: pointer;
 	color:  #ff5b38;
-	filter: drop-shadow(3px -3px 0px rgba(0,0,0,0.5));
+	filter: drop-shadow(1px -1px 0px rgba(0,0,0,0.5));
 }
 .headerCartMarketContent{
 	background-color: #ff5b38;
@@ -1121,15 +1163,6 @@ font-size: 21px;
 .sortListingVisibility{
 	visibility: visible;
 }
-.sortingListBG{
-	width: 100%;
-	height: 100%;
-	grid-row: 1/5;
-	/* grid-column: 1; */
-	background-color: #e9e4d0;
-	border-radius: 20px;
-}
-
 
 .sortDirection{
 	grid-row: 1;

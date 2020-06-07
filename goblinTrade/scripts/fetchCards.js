@@ -58,4 +58,3 @@ getCardArray.then(
 	}
 )
 
-

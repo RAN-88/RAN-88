@@ -1,3 +1,6 @@
+let cartArray = [];//массив корзины глобально
+let cartCounter;//счётчик корзины глобальноs
+
 function moveBar() {
 	document.getElementById("menuCart").classList.toggle("menuCartActive");
 }
@@ -111,27 +114,22 @@ function totalFrameMoney(cartRow, ID) {
 	loadToStorage();
 }
 
-let cartArray = [];//массив корзины глобально
-let cartCounter;//счётчик корзины глобально
+
 
 // addID - основной ID из массива типа 0 (mainArr) (и это номер строки в exel)
 // на выходе исходный массив корзины
 function addToCart(addID) {
 	addClearID = parseInt(`${addID}`.replace(/\D+/g, ""));
-	foundRow = checkArrayCoinside(addID);//получили номер строки в массиве Cart
+	foundRow = checkArrayCoinside(addID);//получили номер строки в массиве Cart (проверили есть ли такой в cart)
 	if (foundRow == "free") {
 		currentArrRow = getGlobalCurrentArrayRow(addClearID);//получили номер строки в большом массиве
-		cartArray.push(globalCurrentArray[currentArrRow]);//надо найти строку, так ломается на сортировке
+		cartArray.push(globalCurrentArray[currentArrRow]);//добавили в cart новый элемент
 		document.getElementById(`${addID}cart`).innerHTML = `1`; //это корзина в большом массиве
 	}
 	else {
-		if (cartArray[foundRow][13] >= globalCurrentArray[currentArrRow][9]) {
-		}
-		else {
-			cartArray[foundRow][13]++;//увеличиваем кол-во, если такой элемент был в малом массиве. Новый не рисуем.
-			document.getElementById(`${addID}cart`).innerHTML = `${cartArray[foundRow][13]}`;
-			totalFrameMoney(foundRow, addClearID);
-		}
+		cartArray[foundRow][13]++;//увеличиваем кол-во, если такой элемент был в малом массиве. Новый не рисуем.
+		document.getElementById(`${addID}cart`).innerHTML = `${cartArray[foundRow][13]}`;
+		totalFrameMoney(foundRow, addClearID);
 	}
 	countHeaderCart();
 	totalMoney();

@@ -164,11 +164,17 @@
 }
 
 .textSearch{
-	height: 15px;
-	font-size: 10px;
+	height: 35px;
+	font-size: 30px;
 }
+
+.searchListing{
+	transform: translateY(46px);
+	width: 90%;
+}
+
 .searchArea{
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 46px 46px;
 }
 .icon-search{
 	font-size: 25px;
@@ -261,6 +267,10 @@
 	}
 
 @media only screen and (max-width: 533px) {
+	.searchListing{
+		width: 90%;
+	}
+
 	.saleWrapper{
 		font-size: 45px;
 		margin-top: 40px;
