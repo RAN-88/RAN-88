@@ -17,5 +17,5 @@ function makeGlobalArrays(arrays) {
 		searchObject = [];
 		globalSearchArray[i][0] = globalSearchArray[i][0].toLowerCase().replace(/[\,\/\+\-\:\;\\\|\_\*\$\!\&\(\)\?\=\>\<\"\`\%\']/g, "");
 	}
-	console.log(globalSearchArray);
+	// console.log(globalSearchArray);
 }

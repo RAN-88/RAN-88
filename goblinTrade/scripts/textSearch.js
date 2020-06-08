@@ -6,6 +6,18 @@ document.getElementById("textSearch").addEventListener('click', showHelp);
 
 document.body.addEventListener("click", hideHelp);
 
+
+
+function scrollToMarket() {
+	let marketY = document.getElementById("collectionCoords").getBoundingClientRect().top + pageYOffset - 70;
+	window.scrollTo({
+		"top": marketY,
+		"behavior": "smooth"
+	});
+}
+
+
+
 function hideHelp(e) {
 	if (e.target.classList[0] != "searchFrame" &&
 		e.target.classList[0] != "searchFrameText" &&
@@ -20,6 +32,9 @@ function enterCheck(event) {
 	if (event.key == 'Enter') {
 		drawMarket(search());
 		document.getElementById("searchListing").innerHTML = '';
+		if (document.getElementById("textSearch").value != '') {
+			scrollToMarket();
+		}
 	}
 }
 
@@ -28,12 +43,18 @@ function choosePosition(ID) {
 	document.getElementById("textSearch").value = globalCardCollection[trueID][0];
 	drawMarket(search());
 	document.getElementById("searchListing").innerHTML = '';
+	if (document.getElementById("textSearch").value != '') {
+		scrollToMarket();
+	}
 }
 
 function drawOnIconClick() {
 	returnBar();
 	drawMarket(search());
 	document.getElementById("searchListing").innerHTML = '';
+	if (document.getElementById("textSearch").value != '') {
+		scrollToMarket();
+	}
 }
 
 

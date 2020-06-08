@@ -3,11 +3,14 @@
 /* #e9e4d0 - кремовый */
 /* #ff5b38 - яркий оранжево-красный */
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
 	overflow-x: hidden;
 	background-color: #140f0b;
+	scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
 	width: 8px;
