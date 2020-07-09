@@ -1,3 +1,4 @@
+
 // let sortingTypeHTML = document.getElementById("sortingType").innerHTML;//тип сортировки
 document.getElementById("btnSortingUp").addEventListener("click", sortUp);
 document.getElementById("btnSortingDown").addEventListener("click", sortDown);
@@ -5,7 +6,11 @@ let sortedArray = [];
 
 function sortUp() {
 	// console.log("от меньшего к большему");
-	sortedArray = globalCurrentArray;
+	sortedArray = globalCurrentArray.slice();
+	// for (let i = 0; i < globalCurrentArray.length; i++) {
+	// 	sortedArray.push(globalCurrentArray[i])
+	// }
+	// console.log(sortedArray);
 	sortingTypeHTML = document.getElementById("sortingType").innerHTML;
 
 	if (sortingTypeHTML == "Price") {
@@ -24,7 +29,8 @@ function sortUp() {
 				return -1
 			if (nameA > nameB)
 				return 1
-			return 0 // Никакой сортировки
+			if (nameA == nameB)
+				return 0 // Никакой сортировки!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		});
 	}
 
@@ -53,14 +59,14 @@ function sortUp() {
 		}
 	}
 	// console.log(sortedArray);
-	globalCurrentArray = sortedArray;
+	globalCurrentArray = sortedArray.slice();
 	drawMarket(sortedArray);
 	// console.log(globalCurrentArray);
 };
 
 function sortDown() {
 	// console.log("от большего к меньшему");
-	sortedArray = globalCurrentArray;
+	sortedArray = globalCurrentArray.slice();
 	sortingTypeHTML = document.getElementById("sortingType").innerHTML;
 
 	if (sortingTypeHTML == "Price") {
@@ -107,7 +113,7 @@ function sortDown() {
 			sortedArray[i].pop();
 		}
 	}
-	globalCurrentArray = sortedArray;
+	globalCurrentArray = sortedArray.slice();
 	drawMarket(sortedArray);
 	// console.log(globalCurrentArray);
 

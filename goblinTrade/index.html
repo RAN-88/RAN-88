@@ -6,65 +6,115 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="styles/normalize.css" />
 	<link rel="stylesheet" href="styles/style.css" />
+	<link rel="stylesheet" href="styles/slider.css" />
+	<link rel="stylesheet" href="styles/market.css" />
+	<link rel="stylesheet" href="styles/collection.css" />
 	<link rel="stylesheet" href="styles/fonts.css" />
 	<link rel="stylesheet" href="fonts/FontAwesome/css/all.css" />
 	<link rel="stylesheet" href="fonts/nikita/css/nikita.css" />
+	<!-- <link rel="stylesheet" href="fonts/mtgColours/css/mtgcolours.css" /> -->
+	<link rel="stylesheet" href="styles/advancedSearch.css" />
+	<link rel="stylesheet" href="styles/cart.css" />
 	<link rel="stylesheet" href="styles/media.css" />
-	<title>GoblinTrade</title>
+	<title>TradeBinder</title>
 </head>
 
 <body>
-	<div class="menuCart" id="menuCart">
+	<!-- advancedSearch -->
+	<div class="advancedSearchWrapper grid" id="advancedSearchWrapper">
+		<div class="advancedSearchBG" style="background-image: url(img/footerIMG.jpg);"></div>
+		<div class="advancedSearchMenuWrapper grid">
+			<div class="symbolAdvancedRow grid">
 
+				<!-- <i class="icon-colour-w"></i> -->
+				<div class="manaSymbolsWrapper grid">
+					<div class="manaSymbolsBG"></div>
+					<div class="white manaSymbol"></div>
+					<div class="blue manaSymbol"></div>
+					<div class="black manaSymbol"></div>
+					<div class="red manaSymbol"></div>
+					<div class="green manaSymbol"></div>
+					<div class="colorLess manaSymbol"></div>
+					<div class="multiColor manaSymbol"></div>
+				</div>
+
+
+				<div class="manaCostWrapper grid">
+					<div class="manaCostBG"></div>
+					<div class="zero manaCost">
+						<h4>0</h4>
+					</div>
+					<div class="one manaCost">
+						<h4>1</h4>
+					</div>
+					<div class="two manaCost">
+						<h4>2</h4>
+					</div>
+					<div class="three manaCost">
+						<h4>3</h4>
+					</div>
+					<div class="four manaCost">
+						<h4>4</h4>
+					</div>
+					<div class="five manaCost">
+						<h4>5</h4>
+					</div>
+					<div class="six manaCost">
+						<h4>6</h4>
+					</div>
+					<div class="seven manaCost">
+						<h4>7</h4>
+						<h4 class="h4Plus">+</h4>
+					</div>
+				</div>
+
+				<div class="playedWrapper grid">
+					<div class="playedBG"></div>
+					<div class="nm played">
+						<h4>NM</h4>
+					</div>
+					<div class="pl played">
+						<h4>PL</h4>
+					</div>
+					<div class="hp played">
+						<h4>HP</h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="advancedSearchListWrapper grid">
+
+				<div class="advancedSearchCardType grid">
+					<div class="cardTypeBG"></div>
+				</div>
+
+				<div class="advancedSearchSet grid">
+					<div class="setBG"></div>
+				</div>
+
+				<div class="advancedSearchRarity grid">
+					<div class="rarityBG"></div>
+				</div>
+			</div>
+
+			<div class="advancedSearchButtonsWrapper grid ">
+				<div class="advancedSearchReset grid ">
+					<h3>
+						<< RESET </h3>
+				</div>
+				<div class="advancedSearchApply grid ">
+					<h3> APPLY >> </h3>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+	<!-- CART -->
+	<div class="menuCart" id="menuCart">
 		<div class="cartWrapper grid">
 			<div class="cartWrapperContent grid" id="cartWrapperContent">
-				<!-- <div class="emptyCart" id="emptyCart">
-					<h3>Cart is Empty</h3>
-				</div> -->
-
-
-
-				<!--<div class="cartFrame grid">
-					<i class="icon-cross cartRemoveFrame" id="cartRemoveFrame"></i>
-					<div class="cartFrameBG"></div>
-					<div class="cartImgFrame">
-						<div class="cartImg" style="background-image: url(img/test.jpg);"></div>
-					</div>
-					<div class="cartFrameInfo grid ">
-						<div class="cartFrameInfoText grid ">
-							<div class="cartFrameInfoTextName">
-								<h4>Jace, Adepteee of Memory</h4>
-							</div>
-							<div class="cartFrameInfoTextConditions ">
-								<h4>Ravnica</h4>
-								<h4>Rarity</h4>
-								<h4>ENG</h4>
-								<h4>FOIL</h4>
-								<h4>Promo</h4>
-								<h4>N/M</h4>
-							</div>
-						</div>
-						<div class="cartFrameInfoMain grid">
-							<div class="cartMainPrice ">
-								<h4>Price: <span id="cartPrice">10000</span>р</h4>
-							</div>
-							<div class="cartMainQuantity ">
-								<div class="cartMainManagWrapper">
-									<i class="fas fa-plus cartMainPlus"></i>
-									<h4 class="cartMainFrameQuantity">900</h4>
-									<i class="fas fa-minus cartMainMinus"></i>
-								</div>
-							</div>
-							<div class="cartMainTotal ">
-								<h4>Total: <span id="cartTotalPrice" class="cartTotalPrice">10000р</span></h4>
-							</div>
-						</div>
-					</div>
-				</div> -->
-
-
-
-
 			</div>
 
 			<div class="cartFooter grid">
@@ -93,16 +143,18 @@
 
 	</div>
 
+	<!-- INFO -->
 	<div class="infoFrame" id="infoFrame">
 		<i class="icon-cross infoFrameIconClose" id="infoFrameClose"></i>
 		<h3>ТУТ НИКИТА НАПИШЕТ МНОГО ТЕКСТА ПРО СЕБЯ И СВОЁ ПАЙЛИШКО</h3>
 	</div>
 
+	<!-- BG -->
 	<div class="bodyBG" style="background-image: url(img/background2.jpg);">
 		<!-- <img src="img/background2.jpg" alt="backGround"> -->
 	</div>
-	<!-- Header -->
 
+	<!-- Header -->
 	<div class=" grid headerWrapper" id="headerWrap">
 		<div class="headerBG" style="background-image: url(img/headerIMG.jpg);"></div>
 		<div class="headerLogoArea">
@@ -110,26 +162,17 @@
 			</div>
 		</div>
 
-
-
 		<div class="grid searchArea ">
-
 			<div class="mainSearch">
 				<input type="text" size="40" class="textSearch" id="textSearch">
 				<i class="icon-search nikitaSearchIcon" id="textSearchIcon"></i>
 			</div>
 
 			<div class="searchListing grid" id="searchListing">
-				<!-- <div class="searchFrame">
-					<h4 class="searchFrameText">Name</h4>
-				</div> -->
-
 			</div>
 
-
-
-			<div class="advancedSearch ">
-				<h4 class="searchHover">>> ADVANCED SEARCH << </h4>
+			<div class="advancedSearch">
+				<h4 class="searchHover" id="advancedSearch">>> ADVANCED SEARCH << </h4>
 			</div>
 		</div>
 
@@ -148,12 +191,8 @@
 					<h4 id="headerCartMarketContent">0</h4>
 				</div>
 			</div>
-
-
 		</div>
-
 	</div>
-
 
 	<div class="headerLogoPhone" style="background-image: url(img/logotest3.png);">
 	</div>
@@ -240,59 +279,22 @@
 		<h3>BEST SALE</h3>
 	</div>
 	<!-- Slider -->
-	<div class="sliderArrowWrapper grid">
+	<div class="sliderArrowWrapper grid ">
+
+
+		<div class="arrowLeft">
+			<i class="icon-arrow-left iconArrowLeft " id="sliderBtnLeft"></i>
+		</div>
+
 		<div class="sliderBG"></div>
-		<div class="arrowLeft ">
-			<i class="icon-arrow-left iconArrowLeft " id="carouselBtnLeft"></i>
-		</div>
-
-		<div class="sliderWrapper grid ">
-
-
-			<div class="sliderImg sliderImgPlace1">
-				<div class="tagIconWrapper" style="background-image: url(img/test.jpg);">
-					<img src="icons/tagICON.png" alt="" class="tagIcon">
-					<div class="saleText">
-						<h4 class="prevPrice">1000p</h4>
-						<h4 class="presentPrice">900р</h4>
-					</div>
-				</div>
-			</div>
-
-			<div class="sliderImg sliderImgPlace2">
-				<div class="tagIconWrapper " style="background-image: url(img/test.jpg);">
-					<img src="icons/tagICON.png" alt="" class="tagIcon">
-					<div class="saleText ">
-						<h4 class="prevPrice">1000p</h4>
-						<h4 class="presentPrice">900р</h4>
-					</div>
-				</div>
-			</div>
-
-			<div class="sliderImg sliderImgPlace3">
-				<div class="tagIconWrapper " style="background-image: url(img/test.jpg);">
-					<img src="icons/tagICON.png" alt="" class="tagIcon">
-					<div class="saleText ">
-						<h4 class="prevPrice">1000p</h4>
-						<h4 class="presentPrice">900р</h4>
-					</div>
-				</div>
-			</div>
-
-			<div class="sliderImg sliderImgPlace4">
-				<div class="tagIconWrapper " style="background-image: url(img/test.jpg);">
-					<img src="icons/tagICON.png" alt="" class="tagIcon">
-					<div class="saleText ">
-						<h4 class="prevPrice">1000p</h4>
-						<h4 class="presentPrice">900р</h4>
-					</div>
-				</div>
+		<div class="sliderWrapper grid">
+			<div class="sliderHiddenWrapper grid" id="sliderHiddenWrapper">
 			</div>
 		</div>
-
-		<div class="arrowRight ">
-			<i class="icon-arrow-left iconArrowRight " id="carouselBtnRight"></i>
+		<div class="arrowRight">
+			<i class="icon-arrow-left iconArrowRight " id="sliderBtnRight"></i>
 		</div>
+
 	</div>
 	<!-- Collection -->
 	<div class="collectionWrapper">
@@ -344,33 +346,6 @@
 
 	<!-- market -->
 	<div class="marketWrapper grid" id="marketWrapper">
-
-		<!-- <div class="marketFrame grid">
-				<div class="marketFrameBG"></div>
-				<div class="imgMarketFrame " style="background-image: url(img/test.jpg);"></div>
-				<div class="textMarketFrame  grid">
-					<div class="infoMarketFrame ">
-						<h4 class="infoMarketName">Jace, Adept of Memory</h4>
-						<h4>FOIL PROMO</h4>
-						<h4>Ravnica</h4>
-						<h4>ENG</h4>
-						<h4>N/M</h4>
-					</div>
-					<div class="mainMarketFrame grid">
-						<div class="priceMarketFrame">
-							<h4>Quantity: 666</h4>
-							<h4 class="infoMarketPriceText">Price: <span class="infoMarketPrice">2752р</span></h4>
-						</div>
-						<div class="cartMarketFrame ">
-							<div class="markerIconCart"><i class="icon-cart-right "></i></div>
-							<div class="cartMarketContent">
-								<h4 class="cartMarketFrameValue">0</h4>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
-
 	</div>
 
 	<!-- LOAD MORE -->
@@ -381,12 +356,10 @@
 				</div>
 	</div>
 
-
 	<!-- footer -->
 	<div class="footerWrapper grid">
 		<div class="footerBG" style="background-image: url(img/footerIMG.jpg);"></div>
 	</div>
-
 
 	<script src="scripts/globalArrays.js"></script>
 	<script src="scripts/fetchCards.js"></script>
@@ -396,8 +369,8 @@
 	<script src="scripts/sortingCards.js"></script>
 	<script src="scripts/sortingMenu.js"></script>
 	<script src="scripts/textSearch.js"></script>
-
-
+	<script src="scripts/slider.js"></script>
+	<script src="scripts/advancedSearch.js"></script>
 </body>
 
 </html>

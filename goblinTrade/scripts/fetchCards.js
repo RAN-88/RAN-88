@@ -58,3 +58,21 @@ getCardArray.then(
 	}
 )
 
+getCardArray.then(
+	function (result) {
+		let counter;
+		if (window.matchMedia('(max-width: 600px)').matches) {
+			counter = 1;
+		} else if (window.matchMedia('(max-width: 920px)').matches) {
+			counter = 2;
+		} else if (window.matchMedia('(max-width: 1280px)').matches) {
+			counter = 3;
+		} else if (window.matchMedia('(max-width: 1680px)').matches) {
+			counter = 4;
+		} else {
+			counter = 5
+		}
+		drawSlider(result[1], counter);
+	}
+)
+

@@ -2,21 +2,7 @@
 
 @media only screen and (max-width: 1680px) {}
 
-@media only screen and (max-width: 1366px) {
-	.marketFrame{
-		width: 315px;
-		height: 225px;
-		grid-template-columns: 158px 1fr;
-	}
-	.imgMarketFrame{
-		width: 153px;
-		height: 216px;
-	}
-	.cartMarketContent{
-		left: 11px;
-		top: 0px;
-	}
-}
+@media only screen and (max-width: 1366px) {}
 
 @media only screen and (max-width: 1280px) {
 /* concept */
@@ -38,39 +24,6 @@
 .conceptText{
 	font-size: 20px;
 }
-
-
-	.sliderWrapper{
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-	.sliderImgPlace4{
-		display: none;
-	}
-	.iconArrowLeft{
-		font-size: 70px;
-	}
-	.iconArrowRight{
-		font-size: 70px;
-	}
-
-
-
-	.marketWrapper{
-		grid-template-columns: 1fr 1fr;
-	}
-	.marketFrame{
-		width: 350px;
-		height: 250px;
-		grid-template-columns: 176px 1fr;
-	}
-	.imgMarketFrame{
-		width: 170px;
-		height: 240px;
-	}
-	.cartMarketContent{
-		left: 12px;
-		top: 3px;
-	}
 }
 @media only screen and (max-width: 1024px) {}
 
@@ -93,33 +46,12 @@
 	.conceptText{
 		font-size: 17px;
 	}
-
-		/* slider */
-	.sliderWrapper{
-		grid-template-columns: 1fr 1fr;
-	}
-	.sliderImgPlace3{
-		display: none;
-	}
-
-	/* market */
-	.marketFrame{
-		width: 315px;
-		height: 225px;
-		grid-template-columns: 158px 1fr;
-	}
-
-	.imgMarketFrame{
-		width: 153px;
-		height: 216px;
-	}
-	.cartMarketContent{
-		left: 12px;
-		top: -1px;
-	}
 }
 
 @media only screen and (max-width: 800px) {
+	.cart{
+		font-size: 32px;
+	}
 	.headerLogo{
 		width: 144px;
 		height: 49px;
@@ -140,9 +72,7 @@
 .mail{
 	font-size: 32px;
 }
-.cart{
-	font-size: 32px;
-}
+
 .headerCartMarketContent{
 	width: 22px;
 	height: 22px;
@@ -152,11 +82,6 @@
 }
 .conceptWrapper{
 		width: 98%;
-}
-
-.sliderBG{
-	grid-column: 1/4;
-	/* z-index: 0; */
 }
 
 .sortWrapper{
@@ -179,50 +104,12 @@
 .icon-search{
 	font-size: 25px;
 }
-
-/* market */
-.marketWrapper{
-	width: 98%;
-}
 }
 
-@media only screen and (max-width: 650px) {
-			/* market */
-			.marketWrapper{
-				grid-template-columns: 1fr;
-			}
-			.marketFrame{
-				width: 350px;
-				height: 250px;
-				grid-template-columns: 176px 1fr;
-			}
-			.imgMarketFrame{
-				width: 170px;
-				height: 240px;
-			}
-
-			.cartMarketContent{
-				left: 12px;
-				top: 3px;
-			}
-
-}
+@media only screen and (max-width: 650px) {}
 
 
 @media only screen and (max-width: 600px) {
-	.sliderWrapper{
-		grid-template-columns: 1fr;
-	}
-	.sliderImgPlace2{
-		display: none;
-	}
-	.iconArrowLeft{
-		font-size: 60px;
-	}
-	.iconArrowRight{
-			font-size: 60px;
-		}
-
 		.conceptWrapper{
 			height: 140px;
 		}
@@ -262,8 +149,6 @@
 		.sortListing{
 			margin-left: 0px;
 		}
-
-
 	}
 
 @media only screen and (max-width: 533px) {
@@ -333,25 +218,6 @@
 	}
 .sortDirection{
 	font-size: 28px;
-	}
-
-/* market */
-.marketFrame{
-	width: 314px;
-	height: 224px;
-	grid-template-columns: 157px 1fr;
-	}
-
-.imgMarketFrame{
-	width: 152px;
-	height: 215px;
-	}
-.moreText{
-	font-size: 25px;
-	}
-.cartMarketContent{
-	left: 12px;
-	top: -1px;
 	}
 }
 

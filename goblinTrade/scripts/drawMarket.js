@@ -14,7 +14,13 @@ function drawNextFrame() {
 }
 
 function drawMarket(cardsArray) { //перезапись глобального текущего массива+стартовая область
-	globalCurrentArray = cardsArray; // переписали массив для рисования
+	// console.log(globalCardCollection[0]);
+	// globalCurrentArray.length = 0;
+	// for (let i = 0; i < cardsArray.length; i++) {
+	// 	globalCurrentArray.push(cardsArray[i]);
+	// }
+	globalCurrentArray = cardsArray.slice(); // переписали массив для рисования
+
 	drawstep = 18; //сбросили шаг
 	cardsCounter = 0; //сбросили счётчик
 	cardsAmount.innerHTML = `${globalCurrentArray.length}`; //кол-во карт в коллекции

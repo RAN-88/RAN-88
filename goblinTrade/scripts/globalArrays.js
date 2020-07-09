@@ -4,18 +4,16 @@ let globalCurrentArray = [];//текущий массив для рисован�
 let globalSearchArray = [];//текущий массив для поиска - глобально
 
 function makeGlobalArrays(arrays) {
-	globalCardCollection = arrays[0];
-	globalPromoCardCollection = arrays[1];
-	globalCurrentArray = arrays[0];
+	globalCardCollection = arrays[0].slice();
+	globalCurrentArray = arrays[0].slice();
+	globalPromoCardCollection = arrays[1].slice();
 
-	let searchObject = [];
 	for (let i = 0; i < arrays[0].length; i++) {
-		searchObject.push(arrays[0][i][0]);
-		searchObject.push(arrays[0][i][12]);
+		let searchObject = [];
+		searchObject.push(arrays[0].slice()[i][0]);
+		searchObject.push(arrays[0].slice()[i][12]);
 		searchObject.push(0);
 		globalSearchArray.push(searchObject);
-		searchObject = [];
 		globalSearchArray[i][0] = globalSearchArray[i][0].toLowerCase().replace(/[\,\/\+\-\:\;\\\|\_\*\$\!\&\(\)\?\=\>\<\"\`\%\']/g, "");
 	}
-	// console.log(globalSearchArray);
 }

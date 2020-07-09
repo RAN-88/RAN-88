@@ -1,0 +1,173 @@
+.menuCart {
+	font-size: 20px;
+	color:#e9e4d0;
+	position: fixed;
+	top: 70px;
+	margin-left: 100%;
+	/* width: 320px; */
+	width: 35%;
+	min-width: 320px;
+	max-width: 416px;
+	height: calc(100% - 70px);
+	background-color: #140f0b;
+	border-left: 1px solid #e9e4d0;
+	border-top: 1px solid #e9e4d0;
+	border-right: 1px solid #e9e4d0;
+	transition: 0.5s;
+	z-index: 1000;
+	visibility: hidden;
+}
+.menuCartActive {
+	transform: translateX(-100%);
+	visibility: visible;
+}
+
+.cartWrapper{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	grid-template-rows: 1fr 160px;
+	grid-template-columns: 100%;
+	justify-content: center;
+	align-content: center;
+}
+.cartFooter{
+	grid-template-rows: 1fr 1.2fr 1fr;
+	grid-template-columns: 100%;
+	grid-row: 2;
+	grid-column: 1;
+	width: 100%;
+	height: 100%;
+	align-self: center;
+	justify-self: center;
+	border-top: 1px solid #e9e4d0;
+}
+.cartTotal{
+	width: 90%;
+	height: 100%;
+	align-self: center;
+	justify-self: center;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.total{
+	text-decoration: underline;
+}
+.cartPriceTotal{
+	color:#ff5b38;
+}
+.cartMailWrapper{
+	width: 90%;
+	height: 100%;
+	grid-column: 1;
+	grid-row: 2;
+	align-self: center;
+	justify-self: center;
+	grid-template-rows: 0.5fr 1fr;
+	grid-template-columns: 100%;
+}
+.cartEmailLink{
+	width: 100%;
+	height: 100%;
+	grid-row: 1;
+	grid-column: 1;
+	display: flex;
+	align-items:flex-end;
+	justify-content: start;
+	font-size: 15px;
+}
+.cartEmailLink>h4:hover{
+	cursor: pointer;
+	color: #ff5b38;
+}
+.cartMail{
+	grid-row: 2;
+	grid-column: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	margin-top: 5px;
+}
+.cartMailTextWrapper{
+	height: 35px;
+	background-color:#e9e4d0;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.textCartMail{
+	width: 90%;
+	height: 30px;
+	font-size: 25px;
+	background-color:#e9e4d0;
+	border: none;
+	outline:none;
+	font-family: "rockwell", sans-serif;
+	margin: 0px;
+	text-decoration: none;
+	font-weight: 10;
+}
+.cartOrder{
+	align-self: center;
+	justify-self: center;
+	grid-row: 3;
+	grid-column: 1;
+	width: 90%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* padding: 5px; */
+}
+.orderText{
+	/* padding: 5px; */
+	border-radius: 10px;
+	border:#ff5b38 2px solid;
+	font-size: 25px;
+	color:#ff5b38;
+}
+.orderText:hover{
+	cursor: pointer;
+	color:#e9e4d0;
+	border:#e9e4d0 2px solid;
+	filter: drop-shadow(3px -3px 0px rgba(0,0,0,1));
+}
+
+
+
+.cartWrapperContent{
+	grid-row: 1;
+	grid-column: 1;
+	align-self: start;
+	justify-self: center;
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+	overflow-y: auto;
+	grid-template-columns: 90%;
+	align-items: start;
+	justify-content: center;
+}
+.emptyCart{
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+}
+.emptyCart>h3{
+font-size: 20px;
+}
+.emptyCartHidden{
+	display: none;
+}
+
+
+
+
+

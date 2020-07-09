@@ -1,191 +1,229 @@
-//----------------------------------
-// Бесконечная карусель
-//завернуть все картинки в <div> и засунуть в обёртку с ID carouselImgWrapperN
-// где N - номер обёртки начиная с 0 (если обёртка одна carouselImgWrapper0)
-//
-// ID кнопок: carouselBtnLeft - влево, carouselBtnRight - вправо
-//
-//
-//----------------------------------
-//польовательские переменные
-let frameAmount = 4; //кол-во фреймов для перелистывания (!! обяательно указывать)
-let animationTime = 500; //время перелистывания, ms (для блокировки кнопок от проклика)
-//----------------------------------
+document.getElementById("sliderBtnLeft").addEventListener('click', moveSliderLeft);
+document.getElementById("sliderBtnRight").addEventListener('click', moveSliderRight);
 let animationInProgress = false;
-let left = "translate(-100%)";
-let right = "translate(100%)";
-let mid = "translate(0%)";
-let btnLeft = document.getElementById("carouselBtnLeft");
-let btnRight = document.getElementById("carouselBtnRight");
-let leftCounter = [];
-let rightCounter = [];
-//массив коллекций
-function getFrameCollection() {
-	let frameCollection = [];
-	for (let i = 0; i < frameAmount; i++) {
-		let frameCollectionItem = document.querySelectorAll(
-			`#carouselImgWrapper${i}>div`
-		);
-		frameCollection.push(frameCollectionItem);
-	}
-	return frameCollection;
-}
 
-//массив длин коллекций
-function getFrameCarouselLength() {
-	frameArray = getFrameCollection();
-	let frameCarouselLength = [];
-	for (let i = 0; i < frameAmount; i++) {
-		let itemLength = frameArray[i].length;
-		frameCarouselLength.push(itemLength);
-	}
-	return frameCarouselLength;
-}
-//массив счёчиков
-for (let counter = 0; counter < frameAmount; counter++) {
-	leftCounter.push(0);
-	frameArrayItemLength = getFrameCarouselLength();
-	rightCounter.push(frameArrayItemLength[counter]);
-}
+setInterval(moveSliderLeft, 3000);
 
-//исходное положение
-function placeStartPosition() {
-	frameArray = getFrameCollection(); //массив коллекций
-	frameCarouselLength = getFrameCarouselLength(); //массив длин коллекций
-	for (let i = 0; i < frameAmount; i++) {
-		collectionItem = frameArray[i];
-		collectionItemLength = frameCarouselLength[i];
-		collectionItem[collectionItemLength - 1].style.transform = left;
-		collectionItem[0].style.transform = mid;
-		collectionItem[0].style.zIndex = 100;
-		collectionItem[1].style.transform = right;
-	}
-}
+function moveSliderLeft() {
 
-placeStartPosition();
-
-function moveCarouselLeft() {
-	// установка таймаута на кнопку при клике
 	if (animationInProgress) {
 		return false;
 	}
-
-	imgCollectionArray = getFrameCollection(); // вытащили массив коллекций
-	carouselLenghtArray = getFrameCarouselLength(); // вытащили массив длин коллекций
-	for (let i = 0; i < frameAmount; i++) {
-		leftCurrentImg = leftCounter[i]; //получили текущий левый счётчик
-		leftCurrentImg++;
-		imgCollection = imgCollectionArray[i]; //получили текущую коллекцию
-		carouselLenght = carouselLenghtArray[i]; //получили длину текущей коллекции
-		//центральная налево -------------
-		imgCollection[leftCurrentImg - 1].style.zIndex = 0;
-		imgCollection[leftCurrentImg - 1].style.transform = left;
-		//левую в центр----------------
-		// переполнение
-		if (leftCurrentImg == carouselLenght) {
-			imgCollection[0].style.zIndex = 100;
-			imgCollection[0].style.transform = mid;
-		} else {
-			//базово
-			imgCollection[leftCurrentImg].style.zIndex = 100;
-			imgCollection[leftCurrentImg].style.transform = mid;
-		}
-		//прячем левую в центр
-		//начальное положение (переполнение счётчика)
-		if (leftCurrentImg <= 1) {
-			imgCollection[carouselLenght - 1].style.transform = mid;
-			imgCollection[carouselLenght - 1].style.zIndex = 0;
-			//базово
-		} else {
-			imgCollection[leftCurrentImg - 2].style.transform = mid;
-			imgCollection[leftCurrentImg - 2].style.zIndex = 0;
-		}
-		//рисуем правый пустой-----------
-		// надо вытащить 0
-		if (leftCurrentImg == carouselLenght - 1) {
-			imgCollection[0].style.transform = right;
-			//вытаскиваем 1 при переполнении и обнулляем счётчик
-		} else if (leftCurrentImg == carouselLenght) {
-			imgCollection[1].style.transform = right;
-			leftCurrentImg = 0;
-			//базово
-		} else {
-			imgCollection[leftCurrentImg + 1].style.transform = right;
-		}
-		if (leftCurrentImg == 0) {
-			rightCounter[i] = carouselLenght;
-		} else {
-			rightCounter[i] = leftCurrentImg;
-		}
-		leftCounter[i] = leftCurrentImg; //переписали текущий счётчик на изменённый
-	}
-	// установка таймаута на кнопку при клике
+	slideLeft();
 	animationInProgress = true;
 	setTimeout(function () {
 		animationInProgress = false;
-	}, animationTime);
+	}, 1000);
 }
 
-function moveCarouselRight() {
-	// установка таймаута на кнопку при клике
+
+function moveSliderRight() {
 	if (animationInProgress) {
 		return false;
 	}
-	imgCollectionArray = getFrameCollection(); // вытащили массив коллекций
-	carouselLenghtArray = getFrameCarouselLength(); // вытащили массив длин коллекций
-	for (let i = 0; i < frameAmount; i++) {
-		rightCurrentImg = rightCounter[i]; //получили текущий правый счётчик
-		rightCurrentImg--;
-		imgCollection = imgCollectionArray[i]; //получили текущую коллекцию
-		carouselLenght = carouselLenghtArray[i]; //получили длину текущей коллекции
-
-		//центральную направо (больше не центтр)
-		if (rightCurrentImg == carouselLenght - 1) {
-			imgCollection[0].style.zIndex = 0;
-			imgCollection[0].style.transform = right;
-		} else {
-			imgCollection[rightCurrentImg + 1].style.zIndex = 0;
-			imgCollection[rightCurrentImg + 1].style.transform = right;
-		}
-
-		//двигаем крайне левую направо (новый центр)
-		if (rightCurrentImg == carouselLenght - 1) {
-			imgCollection[rightCurrentImg].style.zIndex = 100;
-			imgCollection[rightCurrentImg].style.transform = mid;
-		} else {
-			imgCollection[rightCurrentImg].style.zIndex = 100;
-			imgCollection[rightCurrentImg].style.transform = mid;
-		}
-		//прячем крайнюю правую в центр
-		if (rightCurrentImg == carouselLenght - 1) {
-			imgCollection[1].style.zIndex = 0;
-			imgCollection[1].style.transform = mid;
-		} else if (rightCurrentImg == carouselLenght - 2) {
-			imgCollection[0].style.zIndex = 0;
-			imgCollection[0].style.transform = mid;
-		} else {
-			imgCollection[rightCurrentImg + 2].style.zIndex = 0;
-			imgCollection[rightCurrentImg + 2].style.transform = mid;
-		}
-		if (rightCurrentImg == 0) {
-			imgCollection[carouselLenght - 1].style.transform = left;
-			rightCurrentImg = carouselLenght;
-		} else {
-			imgCollection[rightCurrentImg - 1].style.transform = left;
-		}
-		if (rightCurrentImg == carouselLenght) {
-			leftCounter[i] = 0;
-		} else {
-			leftCounter[i] = rightCurrentImg;
-		}
-		rightCounter[i] = rightCurrentImg; //переписали текущий счётчик на изменённый
-	}
-	// установка таймаута на кнопку при клике
+	slideRight();
 	animationInProgress = true;
 	setTimeout(function () {
 		animationInProgress = false;
-	}, animationTime);
+	}, 1000);
 }
-//кнопки
-btnLeft.onclick = moveCarouselLeft;
-btnRight.onclick = moveCarouselRight;
+
+
+function slideLeft() {
+	let framesArrayLeft = [];
+
+	for (let i = 0; i < document.getElementById("sliderHiddenWrapper").querySelectorAll("div.sliderImg").length; i++) {
+		framesArrayLeft[i] = document.getElementById("sliderHiddenWrapper").querySelectorAll("div.sliderImg")[i];
+		if (framesArrayLeft[i].style.transform == '') {
+			framesArrayLeft[i].style.transform = "translateX(0px)";
+		}
+		framesArrayLeft[i].style.transition = "1s ease";
+		framesArrayLeft[i].style.visibility = "visible";
+	}
+
+	framesArrayLeft.sort(function (a, b) {
+		let Aleft = +a.style.transform.split("(")[1].split("px")[0]
+		let Bleft = +b.style.transform.split("(")[1].split("px")[0]
+		if (Aleft < Bleft) {
+			return -1
+		} else if (Aleft > Bleft) {
+			return 1
+		}
+		else {
+			return 0
+		}
+	});
+
+	for (let q = 1; q < framesArrayLeft.length; q++) {
+		framesArrayLeft[q].style.transform = `translateX(${+framesArrayLeft[q].style.transform.split("(")[1].split("px")[0] - framesArrayLeft[q].offsetWidth - 20}px)`
+	}
+
+
+	if (framesArrayLeft[framesArrayLeft.length - 1].id < globalPromoCardCollection.length - 1) {
+		framesArrayLeft[0].id = +framesArrayLeft[framesArrayLeft.length - 1].id + 1;
+		framesArrayLeft[0].querySelector("div.tagIconWrapper").style.backgroundImage = `url(${globalPromoCardCollection[+framesArrayLeft[0].id][11]})`
+		framesArrayLeft[0].querySelector("h4.prevPrice").innerHTML = `${globalPromoCardCollection[+framesArrayLeft[0].id][1] * (globalPromoCardCollection[+framesArrayLeft[0].id][10] / 100 + 1)} p`
+		framesArrayLeft[0].querySelector("h4.presentPrice").innerHTML = `${globalPromoCardCollection[+framesArrayLeft[0].id][1]}p`
+	} else {
+		framesArrayLeft[0].id = 0;
+		framesArrayLeft[0].querySelector("div.tagIconWrapper").style.backgroundImage = `url(${globalPromoCardCollection[+framesArrayLeft[0].id][11]})`
+		framesArrayLeft[0].querySelector("h4.prevPrice").innerHTML = `${globalPromoCardCollection[+framesArrayLeft[0].id][1] * (globalPromoCardCollection[+framesArrayLeft[0].id][10] / 100 + 1)} p`
+		framesArrayLeft[0].querySelector("h4.presentPrice").innerHTML = `${globalPromoCardCollection[+framesArrayLeft[0].id][1]}p`
+	}
+
+	framesArrayLeft[0].style.transition = "0ms";
+	framesArrayLeft[0].style.visibility = "hidden";
+	framesArrayLeft[0].style.transform = `translateX(${+framesArrayLeft[0].style.transform.split("(")[1].split("px")[0] + (framesArrayLeft[0].offsetWidth + 20) * (framesArrayLeft.length - 1)}px)`
+}
+
+
+
+
+function slideRight() {
+	let framesArrayRigth = [];
+
+	for (let i = 0; i < document.getElementById("sliderHiddenWrapper").querySelectorAll("div.sliderImg").length; i++) {
+		framesArrayRigth[i] = document.getElementById("sliderHiddenWrapper").querySelectorAll("div.sliderImg")[i];
+		if (framesArrayRigth[i].style.transform == '') {
+			framesArrayRigth[i].style.transform = "translateX(0px)";
+		}
+		framesArrayRigth[i].style.transition = "1s ease";
+		framesArrayRigth[i].style.visibility = "visible";
+	}
+
+	framesArrayRigth.sort(function (a, b) {
+		let Aleft = +a.style.transform.split("(")[1].split("px")[0]
+		let Bleft = +b.style.transform.split("(")[1].split("px")[0]
+		if (Aleft < Bleft) {
+			return -1
+		} else if (Aleft > Bleft) {
+			return 1
+		}
+		else {
+			return 0
+		}
+	});
+
+	for (let q = 0; q < framesArrayRigth.length - 1; q++) {
+		framesArrayRigth[q].style.transform = `translateX(${+framesArrayRigth[q].style.transform.split("(")[1].split("px")[0] + framesArrayRigth[q].offsetWidth + 20}px)`
+	}
+
+	if (framesArrayRigth[0].id >= 1) {
+		framesArrayRigth[framesArrayRigth.length - 1].id = +framesArrayRigth[0].id - 1;
+		framesArrayRigth[framesArrayRigth.length - 1].querySelector("div.tagIconWrapper").style.backgroundImage = `url(${globalPromoCardCollection[+framesArrayRigth[framesArrayRigth.length - 1].id][11]})`
+		framesArrayRigth[framesArrayRigth.length - 1].querySelector("h4.prevPrice").innerHTML = `${globalPromoCardCollection[+framesArrayRigth[framesArrayRigth.length - 1].id][1] * (globalPromoCardCollection[+framesArrayRigth[framesArrayRigth.length - 1].id][10] / 100 + 1)} p`
+		framesArrayRigth[framesArrayRigth.length - 1].querySelector("h4.presentPrice").innerHTML = `${globalPromoCardCollection[+framesArrayRigth[framesArrayRigth.length - 1].id][1]}p`
+	} else {
+		framesArrayRigth[framesArrayRigth.length - 1].id = globalPromoCardCollection.length - 1;
+		framesArrayRigth[framesArrayRigth.length - 1].querySelector("div.tagIconWrapper").style.backgroundImage = `url(${globalPromoCardCollection[+framesArrayRigth[framesArrayRigth.length - 1].id][11]})`
+		framesArrayRigth[framesArrayRigth.length - 1].querySelector("h4.prevPrice").innerHTML = `${globalPromoCardCollection[+framesArrayRigth[framesArrayRigth.length - 1].id][1] * (globalPromoCardCollection[+framesArrayRigth[framesArrayRigth.length - 1].id][10] / 100 + 1)} p`
+		framesArrayRigth[framesArrayRigth.length - 1].querySelector("h4.presentPrice").innerHTML = `${globalPromoCardCollection[+framesArrayRigth[framesArrayRigth.length - 1].id][1]}p`
+	}
+	framesArrayRigth[framesArrayRigth.length - 1].style.transition = "0ms";
+	framesArrayRigth[framesArrayRigth.length - 1].style.visibility = "hidden";
+	framesArrayRigth[framesArrayRigth.length - 1].style.transform = `translateX(${+framesArrayRigth[framesArrayRigth.length - 1].style.transform.split("(")[1].split("px")[0] - (framesArrayRigth[framesArrayRigth.length - 1].offsetWidth + 20) * (framesArrayRigth.length - 1)}px)`
+}
+
+
+
+
+
+
+// рисует начальное положение слайдра - промис
+function drawSlider(promoArray, widthCounter) {
+	document.getElementById("sliderHiddenWrapper").innerHTML = '';
+
+
+
+	let promoString = '';//строка слайдера
+	let leftSlide = [];
+	let rightSlide = [];
+
+	leftSlide = promoArray[promoArray.length - 1]; //последний элемент массива
+	promoString += `<div class="sliderImg grid" id = "${promoArray.length - 1}" onclick="drawPromo(event.target.id)">`
+	promoString += `<div class="tagIconWrapper" style = "background-image: url(${leftSlide[11]});">`
+	promoString += `<img src = "icons/tagICON.png" class="tagIcon">`
+	promoString += `<div class="saleText">`
+	promoString += `<h4 class="prevPrice"> ${leftSlide[1] * (leftSlide[10] / 100 + 1)}p</h4>`
+	promoString += `<h4 class="presentPrice"> ${leftSlide[1]}р</h4>`
+	promoString += `</div>`
+	promoString += `</div>`
+	promoString += `</div>`
+
+	document.getElementById("sliderHiddenWrapper").insertAdjacentHTML('beforeend', promoString);
+	promoString = '';
+
+	for (let i = 0; i < widthCounter; i++) {
+		promoString += `<div class="sliderImg grid" id = "${i}" onclick="drawPromo(event.target.id)">`
+		promoString += `<div class="tagIconWrapper" style = "background-image: url(${promoArray[i][11]});">`
+		promoString += `<img src = "icons/tagICON.png" class="tagIcon">`
+		promoString += `<div class="saleText"> `
+		promoString += `<h4 class="prevPrice"> ${promoArray[i][1] * (promoArray[i][10] / 100 + 1)}p</h4>`
+		promoString += `<h4 class="presentPrice"> ${promoArray[i][1]}р</h4>`
+		promoString += `</div>`
+		promoString += `</div>`
+		promoString += `</div>`
+
+		document.getElementById("sliderHiddenWrapper").insertAdjacentHTML('beforeend', promoString);
+		promoString = '';
+	}
+
+	if (widthCounter + 1 >= promoArray.length) {
+		rightSlide = promoArray[0]; //первый элемент массива
+	} else {
+		rightSlide = promoArray[widthCounter];//следующий элемент массива
+	}
+	promoString += `<div class="sliderImg grid" id = "${widthCounter}" onclick="drawPromo(event.target.id)">`
+	promoString += `<div class="tagIconWrapper" style = "background-image: url(${rightSlide[11]});">`
+	promoString += `<img src = "icons/tagICON.png" class="tagIcon">`
+	promoString += `<div class="saleText">`
+	promoString += `<h4 class="prevPrice"> ${rightSlide[1] * (rightSlide[10] / 100 + 1)}p</h4>`
+	promoString += `<h4 class="presentPrice"> ${rightSlide[1]}р</h4>`
+	promoString += `</div>`
+	promoString += `</div>`
+	promoString += `</div>`
+	document.getElementById("sliderHiddenWrapper").insertAdjacentHTML('beforeend', promoString);
+	promoString = '';
+
+	let linkArray = [];
+	for (let k = 0; k < document.getElementById("sliderHiddenWrapper").querySelectorAll("div.sliderImg").length; k++) {
+		linkArray[k] = document.getElementById("sliderHiddenWrapper").querySelectorAll("div.sliderImg")[k];
+	}
+	// console.log(linkArray);
+
+}
+window.onresize = windowWidth;
+function windowWidth() {
+	if (window.matchMedia('(max-width: 600px)').matches) {
+		drawSlider(globalPromoCardCollection, 1)
+	} else if (window.matchMedia('(max-width: 920px)').matches) {
+		drawSlider(globalPromoCardCollection, 2)
+
+	} else if (window.matchMedia('(max-width: 1280px)').matches) {
+		drawSlider(globalPromoCardCollection, 3)
+
+	} else if (window.matchMedia('(max-width: 1680px)').matches) {
+		drawSlider(globalPromoCardCollection, 4)
+
+	} else {
+		drawSlider(globalPromoCardCollection, 5)
+	}
+}
+
+function drawPromo(id) {
+	drawMarket(globalPromoCardCollection);
+	scrollToMarket()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

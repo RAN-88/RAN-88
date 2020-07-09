@@ -40,6 +40,7 @@ function enterCheck(event) {
 
 function choosePosition(ID) {
 	trueID = parseInt(`${ID}`.replace(/\D+/g, ""));
+
 	document.getElementById("textSearch").value = globalCardCollection[trueID][0];
 	drawMarket(search());
 	document.getElementById("searchListing").innerHTML = '';
@@ -63,11 +64,12 @@ function showHelp() {
 	// проверка на пустую строку
 	if (document.getElementById("textSearch").value == '') {
 		document.getElementById("searchListing").innerHTML = '';
+		// console.log(globalCardCollection);
 		drawMarket(globalCardCollection);
 		return;
 	}
 
-	let arrayToShow = search();
+	let arrayToShow = search().slice();
 	let helpString = '';
 
 	document.getElementById("searchListing").innerHTML = '';
