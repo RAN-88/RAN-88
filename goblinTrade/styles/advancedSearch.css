@@ -1,15 +1,16 @@
 .advancedSearchWrapper{
 	position: fixed;
 	width: 100%;
-	height: 350px;
-	top: -300px;
+	height: 430px;
+	top: -430px;
+	/* -390 */
 	background-color: #140f0b;
 	border-left: 1px solid #e9e4d0;
 	border-bottom: 1px solid #e9e4d0;
 	border-right: 1px solid #e9e4d0;
 	z-index: 1000;
 	transition: 0.5s;
-	visibility: hidden;
+	/* visibility: hidden; */
 	grid-template-rows: 100%;
 	grid-template-columns: 100%;
 }
@@ -32,16 +33,18 @@ visibility: visible;
 .advancedSearchMenuWrapper{
 	grid-row: 1;
 	grid-column: 1;
-width: 80%;
-height: 100%;
-align-self: center;
-justify-self: center;
-grid-template-rows: 40px 1.1fr 0.2fr;
-grid-template-columns: 100%;
-grid-row-gap: 10px;
+	width: 80%;
+	height: 100%;
+	align-self: center;
+	justify-self: center;
+	grid-template-rows: 40px 320px 1fr;
+	grid-template-columns: 100%;
+	grid-row-gap: 10px;
+	/* justify-content: center; */
+	/* align-content: space-between; */
 }
 .symbolAdvancedRow{
-	margin-top: 10px;
+	padding-top: 10px;
 	grid-row: 1;
 	grid-column: 1;
 	grid-template-rows: 100%;
@@ -73,6 +76,13 @@ grid-row-gap: 10px;
 	opacity: 0.3;
 }
 .manaSymbol{
+	display: grid;
+	grid-template-rows: 1;
+	grid-template-columns: 1;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-content: center;
 	align-self: center;
 	justify-self: center;
 	grid-row: 1;
@@ -80,39 +90,50 @@ grid-row-gap: 10px;
 	height: 30px;
 	border-radius: 50%;
 }
+.manaSymbol:hover{
+	cursor: pointer;
+	/* filter: brightness(1); */
+	border: solid 2px #ff5b38;
+	/* filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8)); */
+}
+.manaSymbol>i{
+	font-size: 28px;
+	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
+}
 .white{
 	grid-column: 1;
-	background-color: white;
+	color: white;
 	z-index: 10;
+	/* background-color: rgba(233,228,208,0.6); */
 }
 .blue{
 	grid-column: 2;
-	background-color: blue;
+	color: blue;
 	z-index: 10;
 }
 .black{
 	grid-column: 3;
-	background-color: black;
+	color: black;
 	z-index: 10;
 }
 .red{
 	grid-column: 4;
-	background-color: red;
+	color: red;
 	z-index: 10;
 }
 .green{
 	grid-column: 5;
-	background-color: green;
+	color: green;
 	z-index: 10;
 }
 .colorLess{
 	grid-column: 6;
-	background-color: grey;
+	color: grey;
 	z-index: 10;
 }
 .multiColor{
 	grid-column: 7;
-	background-color: gold;
+	color: gold;
 	z-index: 10;
 }
 
@@ -138,23 +159,32 @@ grid-row-gap: 10px;
 	border-radius: 16px;
 	opacity: 0.3;
 }
+
 .manaCost{
 	align-self: center;
 	justify-self: center;
 	grid-row: 1;
-	width: 32px;
-	height: 32px;
+	width: 28px;
+	height: 28px;
 	border-radius: 50%;
 	background-color: #e9e4d0;
 	font-size: 23px;
 	display: flex;
 	align-content: center;
 	justify-content: center;
+	filter: brightness(0.6);
+}
+.manaCost:hover{
+	cursor: pointer;
+	filter: brightness(1);
+	border: solid 2px #ff5b38;
+	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
 }
 .manaCost>h4{
 	align-self: center;
 	justify-self: center;
 }
+
 .zero{
 	grid-column: 1;
 	z-index: 10;
@@ -220,15 +250,23 @@ grid-row-gap: 10px;
 	align-self: center;
 	justify-self: center;
 	grid-row: 1;
-	width: 32px;
-	height: 32px;
+	width: 28px;
+	height: 28px;
 	border-radius: 50%;
 	background-color: #e9e4d0;
 	font-size: 16px;
 	display: flex;
 	align-content: center;
 	justify-content: center;
+	filter: brightness(0.6);
 }
+.played:hover{
+	cursor: pointer;
+	filter: brightness(1);
+	border: solid 2px #ff5b38;
+	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
+}
+
 .played>h4{
 	align-self: center;
 	justify-self: center;
@@ -255,41 +293,236 @@ grid-row-gap: 10px;
 	grid-template-rows: 100%;
 	grid-template-columns: 0.7fr 1.5fr 0.5fr;
 	grid-column-gap: 10px;
+	align-self: center;
+	justify-self: center;
 }
 .advancedSearchCardType{
 	grid-row: 1;
 	grid-column: 1;
-	grid-template-rows: repeat(1fr, 8);
 	width: 100%;
 	height: 100%;
-	overflow-y: auto;
+overflow-x: hidden;
+	overflow-y: scroll;
 }
+.advancedSearchCardType::-webkit-scrollbar {
+	width: 0px;
+display: none;
+}
+.advancedSearchCardType::-webkit-scrollbar-thumb {
+	width: 0px;
+	display: none;
+}
+
+.typeSearchFrame{
+	grid-row: 1;
+	grid-column: 1;
+	grid-template-rows: auto;
+	grid-template-columns: 100%;
+	width: 100%; 
+	height: 100%;
+	padding-left: 5px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	align-content: start;
+	justify-content: start;
+}
+
+.typeSearchFrame::-webkit-scrollbar {
+	width: 0px;
+display: none;
+}
+.typeSearchFrame::-webkit-scrollbar-thumb {
+	width: 0px;
+display: none;
+}
+
+
+
 .cardTypeBG{
 	align-self: center;
 	justify-self: center;
 	width: 100%;
 	height: 100%;
-	grid-row: 1/9;
+	grid-row: 1;
 	grid-column: 1;
 	background-color: #e9e4d0;
 	border-radius: 16px;
 	opacity: 0.3;
 }
 
+.advancedSearchListFrame{
+	/* border: dotted 1px white; */
+	grid-template-rows: 100%;
+	grid-template-columns: 30px calc(100% - 30px);
+	height: 40px;
+	grid-column-gap: 10px;
+	padding-left: 7px;
+}
+
+.roundSearch{
+	background-color: #e9e4d0;
+	border-radius: 50%;
+	width: 28px;
+	height: 28px;
+	grid-row: 1;
+	grid-column: 1;
+	justify-self: center;
+	align-self: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* padding-left: 40; */
+}
+.roundSearchHoverRound{
+	background-color: #ff5b38;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	z-index: 100;
+	filter: drop-shadow(1.5px 1.5px 0px rgba(0,0,0,0.7));
+	visibility: hidden;
+}
+
+
+
+.advancedSearchListFrameText{
+	width: 100%;
+	height: 100%;
+	align-self: center;
+	justify-self: start;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+.advancedSearchListFrameText>h4:hover{
+	cursor: pointer;
+	color: #ff5b38;
+}
+
+
+.advancedSearchListFrameText>h4{
+	color: #e9e4d0;
+	font-size: 20px;
+}
+
+.creatureSearch{
+	grid-row: 1;
+	grid-column: 1;
+}
+.playnwalkerSearch{
+	grid-row: 2;
+	grid-column: 1;
+}
+.sorcerySearch{
+	grid-row: 3;
+	grid-column: 1;
+}
+.instantSearch{
+	grid-row: 4;
+	grid-column: 1;
+}
+.landSearch{
+	grid-row: 5;
+	grid-column: 1;
+}
+.enchantmentSearch{
+	grid-row: 6;
+	grid-column: 1;
+}
+.artifactSearch{
+	grid-row: 7;
+	grid-column: 1;
+}
+.tribalSearch{
+	grid-row: 8;
+	grid-column: 1;
+}
+
+.commonSearch{
+	grid-row: 1;
+	grid-column: 1;
+}
+.uncommonSearch{
+	grid-row: 2;
+	grid-column: 1;
+}
+.rareSearch{
+	grid-row: 3;
+	grid-column: 1;
+}
+.mythicSearch{
+	grid-row: 4;
+	grid-column: 1;
+}
+.spetialSearch{
+	grid-row: 5;
+	grid-column: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .advancedSearchSet{
 	grid-row: 1;
 	grid-column: 2;
-	/* grid-template-rows: repeat(1fr, 8); */
 	width: 100%;
 	height: 100%;
-	overflow-y: auto;
+	grid-template-columns: 100%;
+	grid-template-rows: 100%;
 }
+
+.setSearchFrame{
+	grid-row: 1;
+	grid-column: 1;
+	grid-template-rows: auto;
+	grid-template-columns: 100%;
+	width: 100%; 
+	height: 100%;
+	padding-left: 5px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	align-content: start;
+	justify-content: start;
+}
+
+
+.setSearchFrame::-webkit-scrollbar {
+	width: 0px;
+display: none;
+}
+.setSearchFrame::-webkit-scrollbar-thumb {
+	width: 0px;
+display: none;
+}
+
+.setSearch{
+	/* width: 90%; */
+}
+
 .setBG{
 	align-self: center;
 	justify-self: center;
 	width: 100%;
 	height: 100%;
-	/* grid-row: 1/9; */
+	grid-row: 1;
 	grid-column: 1;
 	background-color: #e9e4d0;
 	border-radius: 16px;
@@ -299,22 +532,63 @@ grid-row-gap: 10px;
 .advancedSearchRarity{
 	grid-row: 1;
 	grid-column: 3;
-	grid-template-rows: repeat(1fr, 5);
 	width: 100%;
 	height: 100%;
-	overflow-y: auto;
+	grid-template-columns: 100%;
+	grid-template-rows: 100%;
 }
+
+
+.raritySearchFrame{
+	grid-row: 1;
+	grid-column: 1;
+	grid-template-rows: auto;
+	grid-template-columns: 100%;
+	width: 100%; 
+	height: 100%;
+	padding-left: 5px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	align-content: start;
+	justify-content: start;
+}
+
+.raritySearchFrame::-webkit-scrollbar {
+	width: 0px;
+display: none;
+}
+.raritySearchFrame::-webkit-scrollbar-thumb {
+	width: 0px;
+display: none;
+}
+
+
 .rarityBG{
 	align-self: center;
 	justify-self: center;
 	width: 100%;
 	height: 100%;
-	grid-row: 1/6;
+	grid-row: 1;
 	grid-column: 1;
 	background-color: #e9e4d0;
 	border-radius: 16px;
 	opacity: 0.3;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .advancedSearchButtonsWrapper{
 	grid-column: 1;
@@ -327,9 +601,7 @@ grid-row-gap: 10px;
 .advancedSearchReset{
 	grid-row: 1;
 	grid-column: 1;
-	/* align-content: center;
-	justify-content: start; */
-	align-content: center;
+	align-content: flex-start;
 	text-align: left;
 	justify-content: start;
 }
@@ -339,12 +611,18 @@ grid-row-gap: 10px;
 	text-transform: uppercase;
 	margin: 0;
 }
+.advancedSearchReset>h3:hover{
+	color: #ff5b38;
+	cursor: pointer;
+}
+
+
 .advancedSearchApply{
 	grid-row: 1;
 	grid-column: 2;
 	/* align-content: center;
 	justify-content: end; */
-	align-content: center;
+	align-content: flex-start;
 	text-align: right;
 	justify-content: end;
 }
@@ -354,3 +632,132 @@ grid-row-gap: 10px;
 	text-transform: uppercase;
 	margin: 0;
 }
+
+.advancedSearchApply>h3:hover{
+	color: #ff5b38;
+	cursor: pointer;
+}
+
+
+/* Media */
+@media only screen and (max-width: 1280px) {
+	.symbolAdvancedRow{
+		grid-template-columns: 1.2fr 1.2fr 0.5fr;
+	}
+	.advancedSearchListWrapper{
+		grid-template-columns: 0.7fr 1.3fr 0.7fr;
+		/* grid-column-gap: 10px; */
+	}
+}
+
+
+@media only screen and (max-width: 1024px) {
+	.advancedSearchMenuWrapper{
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 920px) {
+	.symbolAdvancedRow{
+		grid-template-columns: 1.2fr 1.4fr 0.6fr;
+		grid-column-gap: 10px;
+	}
+}
+
+
+@media only screen and (max-width: 800px) {
+
+	.advancedSearchMenuWrapper{
+		grid-template-rows: 80px calc(100% - 170px) 60px;
+		justify-content: center;
+		align-content: space-between;
+	}
+	.symbolAdvancedRow{
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 7fr 3fr;
+		height: 100%;
+		grid-row-gap: 10px;
+	}
+	.manaSymbolsWrapper{
+		grid-row: 2;
+		grid-column: 1;
+	}
+.manaCostWrapper{
+	grid-row: 1;
+	grid-column: 1/3;
+}
+.playedWrapper{
+	grid-row: 2;
+	grid-column: 2;
+}
+
+	.advancedSearchWrapper{
+		height: calc(100% - 70px);
+		top: -100%;
+	}
+	.advancedSearchActive{
+		top: 70px;
+		}
+
+	.bodyAdvancedStopScroll {
+		overflow-y: hidden;
+	}
+
+	.advancedSearchListWrapper{
+		height: 100%;
+		grid-template-rows: 6fr 4fr;
+		grid-template-columns: 6fr 4fr;
+		grid-gap: 10px;
+	}
+
+	.advancedSearchSet{
+		grid-row: 1/3;
+		grid-column: 1;
+	}
+
+	.advancedSearchCardType{
+		grid-row: 1;
+		grid-column: 2;
+	}
+
+
+	.advancedSearchRarity{
+		grid-row: 2;
+		grid-column: 2;
+	}
+
+	.advancedSearchReset{
+		align-content: center;
+	}
+
+	.advancedSearchApply{
+		align-content: center;
+	}
+
+}
+
+@media only screen and (max-width: 750px) {}
+
+
+
+
+
+@media only screen and (max-width: 416px) {}
+
+@media only screen and (max-width: 400px) {}
+
+@media only screen and (max-width: 360px) {}
+
+@media only screen and (max-width: 320px) {}
+
+@media only screen and (max-height: 812px) and (max-width: 380px){}
+
+@media only screen and (max-height: 740px) and (max-width: 430px){}
+
+@media only screen and (max-height: 680px) and (max-width: 380px){}
+
+@media only screen and (max-height: 570px) and (max-width: 330px){}
+
+
+
+

@@ -104,7 +104,27 @@
 .icon-search{
 	font-size: 25px;
 }
+
+.cartWrapperContent::-webkit-scrollbar {
+width: 0px;
+display: none;
 }
+.cartWrapperContent::-webkit-scrollbar-thumb {
+width: 0px;
+display: none;
+}
+
+.body::-webkit-scrollbar {
+	width: 0px;
+	display: none;
+	}
+.body::-webkit-scrollbar-thumb {
+	width: 0px;
+	display: none;
+	}
+}
+
+
 
 @media only screen and (max-width: 650px) {}
 
@@ -193,6 +213,9 @@
 @media only screen and (max-width: 416px) {
 	.menuCart{
 		width: 100%;
+	}
+	.bodyCartStopScroll {
+		overflow-y: hidden;
 	}
 }
 

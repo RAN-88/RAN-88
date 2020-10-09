@@ -3,7 +3,7 @@ const url = "https://spreadsheets.google.com/feeds/list/1oRfLp0FBeZGyVF5icn9X-Qs
 
 let fetchCards = fetch(url)
 let getJSON = fetchCards.then(
-	function getArray(response) {
+	function getArray(response) { //любое название функции, вернет json по get запросу
 		return response.json()
 	}
 )
@@ -32,7 +32,7 @@ let getCardArray = getJSON.then(
 			cardObject.push(massiveData[i].gsx$carddiscount.$t);//10
 			cardObject.push(massiveData[i].gsx$cardimg.$t);//11
 			cardObject.push(i);//12 //задали ID для каждой карты. ID=строка+mainArr
-			cardObject.push(1);//13 //счётчки для корзины. Начальное состояние 1
+			cardObject.push(1);//13 //счётчик для корзины. Начальное состояние 1
 			cardObject.push(massiveData[i].gsx$cardprice.$t * 1);//14 //сумма попозиции для корзины. Исходно = price
 			// формируем массив промо
 			if (massiveData[i].gsx$carddiscount.$t != 0) {
@@ -72,7 +72,7 @@ getCardArray.then(
 		} else {
 			counter = 5
 		}
-		drawSlider(result[1], counter);
+		drawSlider(result[1], counter); // отдали промо массив и метку размера экрана (т.е. кол-во фрэймов в слайдере)
 	}
 )
 

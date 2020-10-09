@@ -133,8 +133,6 @@ function slideRight() {
 function drawSlider(promoArray, widthCounter) {
 	document.getElementById("sliderHiddenWrapper").innerHTML = '';
 
-
-
 	let promoString = '';//строка слайдера
 	let leftSlide = [];
 	let rightSlide = [];
@@ -210,6 +208,7 @@ function windowWidth() {
 	}
 }
 
+//рисуем только промо карты
 function drawPromo(id) {
 	drawMarket(globalPromoCardCollection);
 	scrollToMarket()

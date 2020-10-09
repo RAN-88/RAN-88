@@ -11,7 +11,8 @@
 	<link rel="stylesheet" href="styles/collection.css" />
 	<link rel="stylesheet" href="styles/fonts.css" />
 	<link rel="stylesheet" href="fonts/FontAwesome/css/all.css" />
-	<link rel="stylesheet" href="fonts/nikita/css/nikita.css" />
+	<link rel="stylesheet" href="fonts/fullIcons/css/nikita.css" />
+	<!-- <link rel="stylesheet" href="fonts/nikita/css/nikita.css" /> -->
 	<!-- <link rel="stylesheet" href="fonts/mtgColours/css/mtgcolours.css" /> -->
 	<link rel="stylesheet" href="styles/advancedSearch.css" />
 	<link rel="stylesheet" href="styles/cart.css" />
@@ -23,19 +24,18 @@
 	<!-- advancedSearch -->
 	<div class="advancedSearchWrapper grid" id="advancedSearchWrapper">
 		<div class="advancedSearchBG" style="background-image: url(img/footerIMG.jpg);"></div>
-		<div class="advancedSearchMenuWrapper grid">
-			<div class="symbolAdvancedRow grid">
+		<div class="advancedSearchMenuWrapper grid ">
+			<div class="symbolAdvancedRow grid ">
 
-				<!-- <i class="icon-colour-w"></i> -->
 				<div class="manaSymbolsWrapper grid">
 					<div class="manaSymbolsBG"></div>
-					<div class="white manaSymbol"></div>
-					<div class="blue manaSymbol"></div>
-					<div class="black manaSymbol"></div>
-					<div class="red manaSymbol"></div>
-					<div class="green manaSymbol"></div>
-					<div class="colorLess manaSymbol"></div>
-					<div class="multiColor manaSymbol"></div>
+					<div class="white manaSymbol"><i class="iconMTG-colour-w"></i></div>
+					<div class="blue manaSymbol"><i class="iconMTG-colour-u"></i></div>
+					<div class="black manaSymbol"><i class="iconMTG-colour-b"></i></div>
+					<div class="red manaSymbol"><i class="iconMTG-colour-r"></i></div>
+					<div class="green manaSymbol"><i class="iconMTG-colour-g"></i></div>
+					<div class="colorLess manaSymbol"><i class="iconMTG-colour-no"></i></div>
+					<div class="multiColor manaSymbol"><i class="iconMTG-colour-m"></i></div>
 				</div>
 
 
@@ -82,23 +82,276 @@
 				</div>
 			</div>
 
-			<div class="advancedSearchListWrapper grid">
 
-				<div class="advancedSearchCardType grid">
+			<!-- TYPE -->
+			<div class="advancedSearchListWrapper grid ">
+
+
+				<div class="advancedSearchCardType grid ">
 					<div class="cardTypeBG"></div>
+
+					<div class="typeSearchFrame grid">
+
+						<div class="creatureSearch advancedSearchListFrame grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Creature</h4>
+							</div>
+						</div>
+
+						<div class="playnwalkerSearch advancedSearchListFrame grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText">
+								<h4>Planeswalker</h4>
+							</div>
+						</div>
+
+						<div class="sorcerySearch advancedSearchListFrame  grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText">
+								<h4>Sorcery</h4>
+							</div>
+						</div>
+
+						<div class="instantSearch advancedSearchListFrame  grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText">
+								<h4>Instant</h4>
+							</div>
+						</div>
+
+						<div class="landSearch advancedSearchListFrame  grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText">
+								<h4>Land</h4>
+							</div>
+						</div>
+
+						<div class="enchantmentSearch advancedSearchListFrame  grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText">
+								<h4>Enchantment</h4>
+							</div>
+						</div>
+
+						<div class="artifactSearch advancedSearchListFrame  grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText">
+								<h4>Artifact</h4>
+							</div>
+						</div>
+
+						<div class="tribalSearch advancedSearchListFrame  grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText">
+								<h4>Tribal</h4>
+							</div>
+						</div>
+					</div>
 				</div>
 
-				<div class="advancedSearchSet grid">
+
+				<!-- SET -->
+				<div class="advancedSearchSet grid ">
 					<div class="setBG"></div>
+
+					<div class="setSearchFrame grid">
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+						<div class="setSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Ikoria, Laier of Behemoth</h4>
+							</div>
+						</div>
+
+					</div>
+
 				</div>
 
-				<div class="advancedSearchRarity grid">
+
+				<!-- Rarity -->
+				<div class="advancedSearchRarity grid ">
 					<div class="rarityBG"></div>
+
+					<div class="raritySearchFrame grid">
+
+						<div class="commonSearch advancedSearchListFrame grid ">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Common</h4>
+							</div>
+						</div>
+
+						<div class="uncommonSearch advancedSearchListFrame grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText ">
+								<h4>Uncommon</h4>
+							</div>
+						</div>
+
+						<div class="rareSearch advancedSearchListFrame grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText">
+								<h4>Rare</h4>
+							</div>
+						</div>
+
+						<div class="mythicSearch advancedSearchListFrame grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText">
+								<h4>Mythic</h4>
+							</div>
+						</div>
+
+						<div class="spetialSearch advancedSearchListFrame grid">
+							<div class="roundSearch">
+								<div class="roundSearchHoverRound"></div>
+							</div>
+							<div class="advancedSearchListFrameText">
+								<h4>Spetial</h4>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 
 			<div class="advancedSearchButtonsWrapper grid ">
-				<div class="advancedSearchReset grid ">
+				<div class="advancedSearchReset grid">
 					<h3>
 						<< RESET </h3>
 				</div>

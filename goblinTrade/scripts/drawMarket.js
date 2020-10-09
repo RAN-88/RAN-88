@@ -13,13 +13,9 @@ function drawNextFrame() {
 	drawFrame(globalCurrentArray);
 }
 
-function drawMarket(cardsArray) { //перезапись глобального текущего массива+стартовая область
-	// console.log(globalCardCollection[0]);
-	// globalCurrentArray.length = 0;
-	// for (let i = 0; i < cardsArray.length; i++) {
-	// 	globalCurrentArray.push(cardsArray[i]);
-	// }
-	globalCurrentArray = cardsArray.slice(); // переписали массив для рисования
+function drawMarket(cardsArray) { //копирование глобального текущего массива+стартовая область
+	globalCurrentArray = cardsArray.slice(); // скопировали массив для рисования (почему-то в глобальный массив)
+	// вот тут дохрена вопросов!!!!!!!!!!!!!!!!
 
 	drawstep = 18; //сбросили шаг
 	cardsCounter = 0; //сбросили счётчик
