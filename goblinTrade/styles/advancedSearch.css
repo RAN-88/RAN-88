@@ -60,7 +60,7 @@ visibility: visible;
 	grid-column: 1;
 	grid-template-rows: 100%;
 	grid-template-columns: repeat(7, 1fr);
-	grid-column-gap: 5px;
+	grid-column-gap: 2px;
 	width: 100%;
 	height: 100%;
 }
@@ -142,7 +142,7 @@ visibility: visible;
 	grid-column: 2;
 	grid-template-rows: 100%;
 	grid-template-columns: repeat(8, 1fr);
-	grid-column-gap: 5px;
+	grid-column-gap: 2px;
 	width: 100%;
 	height: 100%;
 	align-content: center;
@@ -229,7 +229,7 @@ visibility: visible;
 	grid-column: 3;
 	grid-template-rows: 100%;
 	grid-template-columns: repeat(3, 1fr);
-	grid-column-gap: 5px;
+	grid-column-gap: 2px;
 	width: 100%;
 	height: 100%;
 	align-content: center;
@@ -297,12 +297,15 @@ visibility: visible;
 	justify-self: center;
 }
 .advancedSearchCardType{
+	grid-template-rows: 40px 1fr;
+	grid-template-columns: 100%;
 	grid-row: 1;
 	grid-column: 1;
 	width: 100%;
 	height: 100%;
-overflow-x: hidden;
+	overflow-x: hidden;
 	overflow-y: scroll;
+	transition: 0.5s;
 }
 .advancedSearchCardType::-webkit-scrollbar {
 	width: 0px;
@@ -314,7 +317,7 @@ display: none;
 }
 
 .typeSearchFrame{
-	grid-row: 1;
+	grid-row: 2;
 	grid-column: 1;
 	grid-template-rows: auto;
 	grid-template-columns: 100%;
@@ -336,15 +339,34 @@ display: none;
 display: none;
 }
 
+.typeSearchFrameName{
+	grid-row: 1;
+	grid-column: 1;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
 
+.typeSearchFrameName>h4{
+	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
+	align-self: center;
+	font-size: 28px;
+	color: #e9e4d0;
+	z-index: 1000;
+}
+
+.typeSearchFrameName>h4:hover{
+	color: #ff5b38;
+	cursor: pointer;
+}
 
 .cardTypeBG{
+	grid-row: 1/3;
+	grid-column: 1;
 	align-self: center;
 	justify-self: center;
 	width: 100%;
 	height: 100%;
-	grid-row: 1;
-	grid-column: 1;
 	background-color: #e9e4d0;
 	border-radius: 16px;
 	opacity: 0.3;
@@ -461,36 +483,47 @@ display: none;
 	grid-column: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .advancedSearchSet{
 	grid-row: 1;
 	grid-column: 2;
 	width: 100%;
 	height: 100%;
 	grid-template-columns: 100%;
-	grid-template-rows: 100%;
+	grid-template-rows: 40px 1fr;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	transition: 0.5s;
+}
+.advancedSearchSet::-webkit-scrollbar {
+	width: 0px;
+display: none;
+}
+.advancedSearchSet::-webkit-scrollbar-thumb {
+	width: 0px;
+display: none;
+}
+.advancedSearchSetName{
+	grid-row: 1;
+	grid-column: 1;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+.advancedSearchSetName>h4{
+	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
+	align-self: center;
+	font-size: 28px;
+	color: #e9e4d0;
+	z-index: 1000;
+}
+
+.advancedSearchSetName>h4:hover{
+	color: #ff5b38;
+	cursor: pointer;
 }
 
 .setSearchFrame{
-	grid-row: 1;
+	grid-row: 2;
 	grid-column: 1;
 	grid-template-rows: auto;
 	grid-template-columns: 100%;
@@ -522,7 +555,7 @@ display: none;
 	justify-self: center;
 	width: 100%;
 	height: 100%;
-	grid-row: 1;
+	grid-row: 1/3;
 	grid-column: 1;
 	background-color: #e9e4d0;
 	border-radius: 16px;
@@ -535,12 +568,23 @@ display: none;
 	width: 100%;
 	height: 100%;
 	grid-template-columns: 100%;
-	grid-template-rows: 100%;
+	grid-template-rows: 40px 1fr;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	transition: 0.5s;
 }
 
+.advancedSearchRarity::-webkit-scrollbar {
+	width: 0px;
+display: none;
+}
+.advancedSearchRarity::-webkit-scrollbar-thumb {
+	width: 0px;
+display: none;
+}
 
 .raritySearchFrame{
-	grid-row: 1;
+	grid-row: 2;
 	grid-column: 1;
 	grid-template-rows: auto;
 	grid-template-columns: 100%;
@@ -563,12 +607,32 @@ display: none;
 }
 
 
+.raritySearchFrameName{
+	grid-row: 1;
+	grid-column: 1;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+.raritySearchFrameName>h4{
+	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
+	align-self: center;
+	font-size: 28px;
+	color: #e9e4d0;
+	z-index: 1000;
+}
+
+.raritySearchFrameName>h4:hover{
+	color: #ff5b38;
+	cursor: pointer;
+}
+
 .rarityBG{
 	align-self: center;
 	justify-self: center;
 	width: 100%;
 	height: 100%;
-	grid-row: 1;
+	grid-row: 1/3;
 	grid-column: 1;
 	background-color: #e9e4d0;
 	border-radius: 16px;
@@ -719,8 +783,6 @@ display: none;
 		grid-row: 1;
 		grid-column: 2;
 	}
-
-
 	.advancedSearchRarity{
 		grid-row: 2;
 		grid-column: 2;
@@ -736,13 +798,120 @@ display: none;
 
 }
 
-@media only screen and (max-width: 750px) {}
+@media only screen and (max-width: 600px) {
+
+.advancedSearchListWrapperTypeOn{
+	grid-template-rows: calc(100% - 100px) 40px 40px;
+	grid-template-columns: 100%;
+	height: 100%;
+	grid-row-gap: 10px;
+}
+
+.advancedSearchListWrapperSetOn{
+	grid-template-rows: 40px calc(100% - 100px) 40px;
+	grid-template-columns: 100%;
+	height: 100%;
+	grid-row-gap: 10px;
+}
+
+.advancedSearchListWrapperRarityOn{
+	grid-template-rows: 40px 40px calc(100% - 100px);
+	grid-template-columns: 100%;
+	height: 100%;
+	grid-row-gap: 10px;
+}
+
+.advancedSearchCardTypeOn{
+	grid-template-rows: 40px calc(100% - 40px);
+	height: 100%;
+	align-self: flex-start;
+}
+
+.advancedSearchCardTypeOff{
+	grid-template-rows: 40px 0;
+	height: 100%;
+	align-self: flex-start;
+}
+
+.advancedSearchSetOn{
+	grid-template-rows: 40px calc(100% - 40px);
+	height: 100%;
+	align-self: flex-start;
+}
+
+	.advancedSearchSetOff{
+		grid-template-rows: 40px 0px;
+		height: 100%;
+		align-self: flex-start;
+	}
+
+	.advancedSearchRarityOn{
+		grid-template-rows: 40px calc(100% - 40px);
+		height: 100%;
+		align-self: flex-start;
+	}
+
+	.advancedSearchRarityOff{
+		grid-template-rows: 40px 0px;
+		height: 100%;
+		align-self: flex-start;
+	}
+
+	.advancedSearchCardType{
+		grid-row: 1;
+		grid-column: 1;
+		align-self: start;
+	}
+	.advancedSearchSet{
+		grid-row: 2;
+		grid-column: 1;
+		align-self: start;
+	}
+	.advancedSearchRarity{
+		grid-row: 3;
+		grid-column: 1;
+		align-self: start;
+	}
+
+}
 
 
 
 
 
-@media only screen and (max-width: 416px) {}
+
+
+@media only screen and (max-width: 416px) {
+	.advancedSearchMenuWrapper{
+		width: 98%;
+	}
+	.advancedSearchReset>h3{
+		font-size: 30px;
+	}
+	.advancedSearchApply>h3{
+		font-size: 30px;
+	}
+	.manaSymbol{
+		width: 25px;
+		height: 25px;
+	}
+	.manaSymbol>i{
+		font-size: 24px;
+	}
+	.manaCost{
+		width: 25px;
+		height: 25px;
+		font-size: 23px;
+	}
+	.played{
+		width: 25px;
+		height: 25px;
+		font-size: 13px;
+	}
+	.symbolAdvancedRow{
+		grid-column-gap: 5px;
+	}
+}
 
 @media only screen and (max-width: 400px) {}
 

@@ -5,6 +5,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="styles/normalize.css" />
+	<link rel="stylesheet" href="styles/header.css" />
 	<link rel="stylesheet" href="styles/style.css" />
 	<link rel="stylesheet" href="styles/slider.css" />
 	<link rel="stylesheet" href="styles/market.css" />
@@ -25,9 +26,9 @@
 	<div class="advancedSearchWrapper grid" id="advancedSearchWrapper">
 		<div class="advancedSearchBG" style="background-image: url(img/footerIMG.jpg);"></div>
 		<div class="advancedSearchMenuWrapper grid ">
-			<div class="symbolAdvancedRow grid ">
+			<div class="symbolAdvancedRow grid">
 
-				<div class="manaSymbolsWrapper grid">
+				<div class="manaSymbolsWrapper grid ">
 					<div class="manaSymbolsBG"></div>
 					<div class="white manaSymbol"><i class="iconMTG-colour-w"></i></div>
 					<div class="blue manaSymbol"><i class="iconMTG-colour-u"></i></div>
@@ -83,15 +84,19 @@
 			</div>
 
 
-			<!-- TYPE -->
-			<div class="advancedSearchListWrapper grid ">
 
+			<div class="advancedSearchListWrapper grid advancedSearchListWrapperTypeOn " id="advancedSearchListWrapper">
+				<!-- TYPE -->
 
-				<div class="advancedSearchCardType grid ">
+				<div class="advancedSearchCardType grid advancedSearchCardTypeOn" id="advancedSearchCardType">
+
 					<div class="cardTypeBG"></div>
+					<div class="typeSearchFrameName">
+						<!-- <h4> >> Type << </h4> -->
+						<h4>Type</h4>
+					</div>
 
 					<div class="typeSearchFrame grid">
-
 						<div class="creatureSearch advancedSearchListFrame grid">
 							<div class="roundSearch">
 								<div class="roundSearchHoverRound"></div>
@@ -155,7 +160,7 @@
 							</div>
 						</div>
 
-						<div class="tribalSearch advancedSearchListFrame  grid">
+						<div class="tribalSearch advancedSearchListFrame grid">
 							<div class="roundSearch">
 								<div class="roundSearchHoverRound"></div>
 							</div>
@@ -168,8 +173,12 @@
 
 
 				<!-- SET -->
-				<div class="advancedSearchSet grid ">
+				<div class="advancedSearchSet grid advancedSearchSetOff" id="advancedSearchSet">
 					<div class="setBG"></div>
+					<div class="advancedSearchSetName">
+						<!-- <h4> >> Set << </h4> -->
+						<h4>Set</h4>
+					</div>
 
 					<div class="setSearchFrame grid">
 
@@ -296,8 +305,12 @@
 
 
 				<!-- Rarity -->
-				<div class="advancedSearchRarity grid ">
+				<div class="advancedSearchRarity grid advancedSearchRarityOff" id="advancedSearchRarity">
 					<div class="rarityBG"></div>
+					<div class="raritySearchFrameName">
+						<!-- <h4> >> Rarity << </h4> -->
+						<h4>Rarity</h4>
+					</div>
 
 					<div class="raritySearchFrame grid">
 
@@ -410,15 +423,15 @@
 	<!-- Header -->
 	<div class=" grid headerWrapper" id="headerWrap">
 		<div class="headerBG" style="background-image: url(img/headerIMG.jpg);"></div>
-		<div class="headerLogoArea">
+		<div class="headerLogoArea ">
 			<div class="headerLogo" style="background-image: url(img/logotest3.png);">
 			</div>
 		</div>
 
 		<div class="grid searchArea ">
 			<div class="mainSearch">
-				<input type="text" size="40" class="textSearch" id="textSearch">
-				<i class="icon-search nikitaSearchIcon" id="textSearchIcon"></i>
+				<input type="text" size="40" class="textSearch " id="textSearch">
+				<i class="icon-search nikitaSearchIcon " id="textSearchIcon"></i>
 			</div>
 
 			<div class="searchListing grid" id="searchListing">

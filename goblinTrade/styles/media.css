@@ -52,57 +52,14 @@
 	.cart{
 		font-size: 32px;
 	}
-	.headerLogo{
-		width: 144px;
-		height: 49px;
-	}
-	.headerWrapper{
-		grid-template-columns: 0.2fr 1.2fr 0.1fr 0.1fr 0.1fr;
-		grid-gap: 0px;
-	}
-	.searchArea{
-		width: 98%;
-	}
-	.mainSearch{
-		width: 98%;
-	}
-.information{
-	font-size: 32px;
-}
-.mail{
-	font-size: 32px;
-}
 
-.headerCartMarketContent{
-	width: 22px;
-	height: 22px;
-	font-size: 12px;
-	left: 1px;
-	top: -18px;
-}
+
 .conceptWrapper{
 		width: 98%;
 }
 
 .sortWrapper{
 	width: 98%;
-}
-
-.textSearch{
-	height: 35px;
-	font-size: 30px;
-}
-
-.searchListing{
-	transform: translateY(46px);
-	width: 90%;
-}
-
-.searchArea{
-	grid-template-rows: 46px 46px;
-}
-.icon-search{
-	font-size: 25px;
 }
 
 .cartWrapperContent::-webkit-scrollbar {
@@ -172,9 +129,6 @@ display: none;
 	}
 
 @media only screen and (max-width: 533px) {
-	.searchListing{
-		width: 90%;
-	}
 
 	.saleWrapper{
 		font-size: 45px;
@@ -183,29 +137,10 @@ display: none;
 .collectionWrapper{
 	font-size: 45px;
 }
-.advancedSearch{
-	font-size: 16px;
-}
-
-/* header */
-.headerLogo{
-	display: none;
-}
-.searchArea{
-	grid-column: 1/3;
-	margin-left: 5px;
-}
-.headerWrapper{
-	grid-template-columns: 0.1fr 0.6fr 0.2fr 0.2fr 0.2fr;
-}
 
 	/* concept */
 	.conceptWrapper{
 		display: none;
-	}
-	.headerLogoPhone{
-		height: 69px;
-		margin-top: 120px;
 	}
 }
 
@@ -219,20 +154,11 @@ display: none;
 	}
 }
 
-@media only screen and (max-width: 400px) {
-	.advancedSearch{
-		font-size: 14px;
-	}
-}
+@media only screen and (max-width: 400px) {}
 
 
 
 @media only screen and (max-width: 360px) {
-
-	.advancedSearch{
-		font-size: 12px;
-	}
-
 	.saleWrapper{
 		font-size: 40px;
 	}
@@ -247,22 +173,12 @@ display: none;
 @media only screen and (max-width: 320px) {}
 
 @media only screen and (max-height: 812px) and (max-width: 380px){
-	.headerLogoPhone{
-		margin-top: 94px;
-		width: 200px;
-		height: 69px;
-	}
 	.saleWrapper{
 		margin-top: 25px;
 	}
 }
 
 @media only screen and (max-height: 740px) and (max-width: 430px){
-	.headerLogoPhone{
-		margin-top: 154px;
-		width: 300px;
-		height: 104px;
-	}
 	.saleWrapper{
 		margin-top: 85px;
 	}
@@ -271,11 +187,6 @@ display: none;
 
 
 @media only screen and (max-height: 680px) and (max-width: 380px){
-	.headerLogoPhone{
-		margin-top: 124px;
-		width: 240px;
-		height: 83px;
-	}
 	.saleWrapper{
 		margin-top: 55px;
 	}
@@ -283,11 +194,6 @@ display: none;
 
 
 @media only screen and (max-height: 570px) and (max-width: 330px){
-	.headerLogoPhone{
-		margin-top: 94px;
-		width: 200px;
-		height: 69px;
-	}
 	.saleWrapper{
 		margin-top: 25px;
 	}
