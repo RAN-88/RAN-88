@@ -34,6 +34,7 @@ function enterCheck(event) {
 		document.getElementById("searchListing").innerHTML = '';
 		if (document.getElementById("textSearch").value != '') {
 			scrollToMarket();
+			advReset();
 		}
 	}
 }
@@ -46,6 +47,7 @@ function choosePosition(ID) {
 	document.getElementById("searchListing").innerHTML = '';
 	if (document.getElementById("textSearch").value != '') {
 		scrollToMarket();
+		advReset();
 	}
 }
 
@@ -55,6 +57,7 @@ function drawOnIconClick() {
 	document.getElementById("searchListing").innerHTML = '';
 	if (document.getElementById("textSearch").value != '') {
 		scrollToMarket();
+		advReset();
 	}
 }
 

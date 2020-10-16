@@ -27,13 +27,16 @@ let getCardArray = getJSON.then(
 			cardObject.push(massiveData[i].gsx$cardfoil.$t);//5
 			cardObject.push(massiveData[i].gsx$cardpromo.$t);//6
 			cardObject.push(massiveData[i].gsx$cardset.$t);//7
-			cardObject.push(massiveData[i].gsx$cardnumber.$t);//8
+			cardObject.push(massiveData[i].gsx$rusname.$t);//8
 			cardObject.push(massiveData[i].gsx$cardquantity.$t);//9
 			cardObject.push(massiveData[i].gsx$carddiscount.$t);//10
 			cardObject.push(massiveData[i].gsx$cardimg.$t);//11
 			cardObject.push(i);//12 //задали ID для каждой карты. ID=строка+mainArr
 			cardObject.push(1);//13 //счётчик для корзины. Начальное состояние 1
 			cardObject.push(massiveData[i].gsx$cardprice.$t * 1);//14 //сумма попозиции для корзины. Исходно = price
+			cardObject.push(massiveData[i].gsx$cardtype.$t);//15
+			cardObject.push(massiveData[i].gsx$cardcolor.$t);//16
+			cardObject.push(massiveData[i].gsx$cardcmc.$t);//17
 			// формируем массив промо
 			if (massiveData[i].gsx$carddiscount.$t != 0) {
 				promoCardCollection.push(cardObject);
@@ -76,3 +79,8 @@ getCardArray.then(
 	}
 )
 
+getCardArray.then(
+	function (result) {
+		drawAdvanced(result[0]);
+	}
+)

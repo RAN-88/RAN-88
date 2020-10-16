@@ -25,45 +25,45 @@
 	<!-- advancedSearch -->
 	<div class="advancedSearchWrapper grid" id="advancedSearchWrapper">
 		<div class="advancedSearchBG" style="background-image: url(img/footerIMG.jpg);"></div>
-		<div class="advancedSearchMenuWrapper grid ">
+		<div class="advancedSearchMenuWrapper grid">
 			<div class="symbolAdvancedRow grid">
 
 				<div class="manaSymbolsWrapper grid ">
 					<div class="manaSymbolsBG"></div>
-					<div class="white manaSymbol"><i class="iconMTG-colour-w"></i></div>
-					<div class="blue manaSymbol"><i class="iconMTG-colour-u"></i></div>
-					<div class="black manaSymbol"><i class="iconMTG-colour-b"></i></div>
-					<div class="red manaSymbol"><i class="iconMTG-colour-r"></i></div>
-					<div class="green manaSymbol"><i class="iconMTG-colour-g"></i></div>
-					<div class="colorLess manaSymbol"><i class="iconMTG-colour-no"></i></div>
-					<div class="multiColor manaSymbol"><i class="iconMTG-colour-m"></i></div>
+					<div class="white manaSymbol" onclick="advancedClick(`colorw`)" id="colorw"><i class="iconMTG-colour-w"></i></div>
+					<div class="blue manaSymbol" onclick="advancedClick(`coloru`)" id="coloru"><i class="iconMTG-colour-u"></i></div>
+					<div class="black manaSymbol" onclick="advancedClick(`colorb`)" id="colorb"><i class="iconMTG-colour-b"></i></div>
+					<div class="red manaSymbol" onclick="advancedClick(`colorr`)" id="colorr"><i class="iconMTG-colour-r"></i></div>
+					<div class="green manaSymbol" onclick="advancedClick(`colorg`)" id="colorg"><i class="iconMTG-colour-g" ></i></div>
+					<div class="colorLess manaSymbol" onclick="advancedClick(`color<>`)" id="color<>"><i class="iconMTG-colour-no"></i></div>
+					<div class="multiColor manaSymbol" onclick="advancedClick(`colormulticolor`)" id="colormulticolor"><i class="iconMTG-colour-m"></i></div>
 				</div>
 
 
 				<div class="manaCostWrapper grid">
 					<div class="manaCostBG"></div>
-					<div class="zero manaCost">
+					<div class="zero manaCost" onclick="advancedClick(`cmc0`)" id="cmc0">
 						<h4>0</h4>
 					</div>
-					<div class="one manaCost">
+					<div class="one manaCost" onclick="advancedClick(`cmc1`)" id="cmc1">
 						<h4>1</h4>
 					</div>
-					<div class="two manaCost">
+					<div class="two manaCost" onclick="advancedClick(`cmc2`)" id="cmc2">
 						<h4>2</h4>
 					</div>
-					<div class="three manaCost">
+					<div class="three manaCost" onclick="advancedClick(`cmc3`)" id="cmc3">
 						<h4>3</h4>
 					</div>
-					<div class="four manaCost">
+					<div class="four manaCost" onclick="advancedClick(`cmc4`)" id="cmc4">
 						<h4>4</h4>
 					</div>
-					<div class="five manaCost">
+					<div class="five manaCost" onclick="advancedClick(`cmc5`)" id="cmc5">
 						<h4>5</h4>
 					</div>
-					<div class="six manaCost">
+					<div class="six manaCost" onclick="advancedClick(`cmc6`)" id="cmc6">
 						<h4>6</h4>
 					</div>
-					<div class="seven manaCost">
+					<div class="seven manaCost" onclick="advancedClick(`cmc7`)" id="cmc7">
 						<h4>7</h4>
 						<h4 class="h4Plus">+</h4>
 					</div>
@@ -71,13 +71,13 @@
 
 				<div class="playedWrapper grid">
 					<div class="playedBG"></div>
-					<div class="nm played">
+					<div class="nm played" onclick="advancedClick(`conditionnearmint`)" id="conditionnearmint">
 						<h4>NM</h4>
 					</div>
-					<div class="pl played">
+					<div class="pl played" onclick="advancedClick(`conditionplayed`)" id="conditionplayed">
 						<h4>PL</h4>
 					</div>
-					<div class="hp played">
+					<div class="hp played" onclick="advancedClick(`conditionheavilyplayed`)" id="conditionheavilyplayed">
 						<h4>HP</h4>
 					</div>
 				</div>
@@ -98,73 +98,73 @@
 
 					<div class="typeSearchFrame grid">
 						<div class="creatureSearch advancedSearchListFrame grid">
-							<div class="roundSearch">
+							<div class="roundSearch" id="typecreature">
 								<div class="roundSearchHoverRound"></div>
 							</div>
-							<div class="advancedSearchListFrameText ">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`typecreature`)">
 								<h4>Creature</h4>
 							</div>
 						</div>
 
 						<div class="playnwalkerSearch advancedSearchListFrame grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+							<div class="roundSearch" id="typeplaneswalker">
+								<!-- <div class="roundSearchHoverRound"></div> -->
 							</div>
-							<div class="advancedSearchListFrameText">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`typeplaneswalker`)">
 								<h4>Planeswalker</h4>
 							</div>
 						</div>
 
-						<div class="sorcerySearch advancedSearchListFrame  grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+						<div class="sorcerySearch advancedSearchListFrame grid">
+							<div class="roundSearch" id="typesorcery">
+								<!-- <div class="roundSearchHoverRound"></div> -->
 							</div>
-							<div class="advancedSearchListFrameText">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`typesorcery`)">
 								<h4>Sorcery</h4>
 							</div>
 						</div>
 
 						<div class="instantSearch advancedSearchListFrame  grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+							<div class="roundSearch" id="typeinstant">
+								<!-- <div class="roundSearchHoverRound"></div> -->
 							</div>
-							<div class="advancedSearchListFrameText">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`typeinstant`)">
 								<h4>Instant</h4>
 							</div>
 						</div>
 
-						<div class="landSearch advancedSearchListFrame  grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+						<div class="landSearch advancedSearchListFrame grid">
+							<div class="roundSearch" id="typeland">
+								<!-- <div class="roundSearchHoverRound"></div> -->
 							</div>
-							<div class="advancedSearchListFrameText">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`typeland`)">
 								<h4>Land</h4>
 							</div>
 						</div>
 
-						<div class="enchantmentSearch advancedSearchListFrame  grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+						<div class="enchantmentSearch advancedSearchListFrame grid">
+							<div class="roundSearch" id="typeenchantment">
+								<!-- <div class="roundSearchHoverRound"></div> -->
 							</div>
-							<div class="advancedSearchListFrameText">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`typeenchantment`)">
 								<h4>Enchantment</h4>
 							</div>
 						</div>
 
-						<div class="artifactSearch advancedSearchListFrame  grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+						<div class="artifactSearch advancedSearchListFrame grid">
+							<div class="roundSearch" id="typeartifact">
+								<!-- <div class="roundSearchHoverRound"></div> -->
 							</div>
-							<div class="advancedSearchListFrameText">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`typeartifact`)">
 								<h4>Artifact</h4>
 							</div>
 						</div>
 
 						<div class="tribalSearch advancedSearchListFrame grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+							<div class="roundSearch" id="typetribal">
+								<!-- <div class="roundSearchHoverRound"></div> -->
 							</div>
-							<div class="advancedSearchListFrameText">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`typetribal`)">
 								<h4>Tribal</h4>
 							</div>
 						</div>
@@ -180,125 +180,7 @@
 						<h4>Set</h4>
 					</div>
 
-					<div class="setSearchFrame grid">
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
-						<div class="setSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
-							</div>
-							<div class="advancedSearchListFrameText ">
-								<h4>Ikoria, Laier of Behemoth</h4>
-							</div>
-						</div>
-
+					<div class="setSearchFrame grid" id="setSearchFrame">
 					</div>
 
 				</div>
@@ -314,47 +196,45 @@
 
 					<div class="raritySearchFrame grid">
 
-						<div class="commonSearch advancedSearchListFrame grid ">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+						<div class="commonSearch advancedSearchListFrame grid">
+							<div class="roundSearch" id="raritycommon">
+								<!-- <div class="roundSearchHoverRound"></div> -->
 							</div>
-							<div class="advancedSearchListFrameText ">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`raritycommon`)">
 								<h4>Common</h4>
 							</div>
 						</div>
 
 						<div class="uncommonSearch advancedSearchListFrame grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+							<div class="roundSearch" id="rarityuncommon">
+								<!-- <div class="roundSearchHoverRound"></div> -->
 							</div>
-							<div class="advancedSearchListFrameText ">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`rarityuncommon`)">
 								<h4>Uncommon</h4>
 							</div>
 						</div>
 
 						<div class="rareSearch advancedSearchListFrame grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+							<div class="roundSearch" id="rarityrare">
+								<!-- <div class="roundSearchHoverRound"></div> -->
 							</div>
-							<div class="advancedSearchListFrameText">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`rarityrare`)">
 								<h4>Rare</h4>
 							</div>
 						</div>
 
 						<div class="mythicSearch advancedSearchListFrame grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+							<div class="roundSearch" id="raritymythicrare">
 							</div>
-							<div class="advancedSearchListFrameText">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`raritymythicrare`)">
 								<h4>Mythic</h4>
 							</div>
 						</div>
 
 						<div class="spetialSearch advancedSearchListFrame grid">
-							<div class="roundSearch">
-								<div class="roundSearchHoverRound"></div>
+							<div class="roundSearch" id="rarityspetial">
 							</div>
-							<div class="advancedSearchListFrameText">
+							<div class="advancedSearchListFrameText" onclick="advancedClick(`rarityspetial`)">
 								<h4>Spetial</h4>
 							</div>
 						</div>
@@ -363,13 +243,12 @@
 				</div>
 			</div>
 
-			<div class="advancedSearchButtonsWrapper grid ">
-				<div class="advancedSearchReset grid">
-					<h3>
-						<< RESET </h3>
+			<div class="advancedSearchButtonsWrapper grid">
+				<div class="advancedSearchReset grid" >
+					<h3 id="advReset"> << RESET </h3>
 				</div>
-				<div class="advancedSearchApply grid ">
-					<h3> APPLY >> </h3>
+				<div class="advancedSearchApply grid">
+					<h3 id="advApply"> APPLY >> </h3>
 				</div>
 			</div>
 

@@ -93,7 +93,7 @@ visibility: visible;
 .manaSymbol:hover{
 	cursor: pointer;
 	/* filter: brightness(1); */
-	border: solid 2px #ff5b38;
+	/* border: solid 2px #ff5b38; */
 	/* filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8)); */
 }
 .manaSymbol>i{
@@ -176,8 +176,8 @@ visibility: visible;
 }
 .manaCost:hover{
 	cursor: pointer;
-	filter: brightness(1);
-	border: solid 2px #ff5b38;
+	filter: brightness(0.8);
+	/* border: solid 2px #ff5b38; */
 	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
 }
 .manaCost>h4{
@@ -262,8 +262,8 @@ visibility: visible;
 }
 .played:hover{
 	cursor: pointer;
-	filter: brightness(1);
-	border: solid 2px #ff5b38;
+	filter: brightness(0.8);
+	/* border: solid 2px #ff5b38; */
 	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
 }
 
@@ -395,7 +395,7 @@ display: none;
 	justify-content: center;
 	/* padding-left: 40; */
 }
-.roundSearchHoverRound{
+/* .roundSearchHoverRound{
 	background-color: #ff5b38;
 	border-radius: 50%;
 	width: 20px;
@@ -403,7 +403,7 @@ display: none;
 	z-index: 100;
 	filter: drop-shadow(1.5px 1.5px 0px rgba(0,0,0,0.7));
 	visibility: hidden;
-}
+} */
 
 
 
@@ -639,26 +639,11 @@ display: none;
 	opacity: 0.3;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .advancedSearchButtonsWrapper{
 	grid-column: 1;
 	grid-row: 3;
 	width: 100%;
-	height: 100%;
+	height: 90%;
 	grid-template-columns: repeat(1fr,2);
 	grid-template-rows: 100%;
 }
@@ -701,6 +686,16 @@ display: none;
 	color: #ff5b38;
 	cursor: pointer;
 }
+
+/* onClick */
+.advancedClicked{
+	filter: brightness(1);
+	border: solid 2px #ff5b38;
+	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
+}
+
+
+
 
 
 /* Media */
@@ -799,7 +794,10 @@ display: none;
 }
 
 @media only screen and (max-width: 600px) {
-
+	.advancedSearchWrapper{
+		border: 0px;
+	}
+	
 .advancedSearchListWrapperTypeOn{
 	grid-template-rows: calc(100% - 100px) 40px 40px;
 	grid-template-columns: 100%;
