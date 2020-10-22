@@ -4,6 +4,7 @@ let cartCounter;//счётчик корзины глобальноs
 function moveBar() {
 	document.getElementById("menuCart").classList.toggle("menuCartActive");
 	document.body.classList.toggle("bodyCartStopScroll");
+	returnAdvancedSearch();
 }
 function returnBar() {
 	document.getElementById("menuCart").classList.remove("menuCartActive");

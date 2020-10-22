@@ -6,6 +6,7 @@ document.getElementById("advApply").addEventListener("click", advApply);
 function moveAdvancedSearch() {
 	document.getElementById("advancedSearchWrapper").classList.toggle("advancedSearchActive");
 	document.body.classList.toggle("bodyAdvancedStopScroll");
+	returnBar();
 }
 function returnAdvancedSearch() {
 	document.getElementById("advancedSearchWrapper").classList.remove("advancedSearchActive");
@@ -48,11 +49,38 @@ function clearAdvansedSearchClasses(){
 	document.getElementById("advancedSearchRarity").classList.remove("advancedSearchRarityOn","advancedSearchRarityOff");
 }
 
+window.onload = advancedSearchListFrameHover();
+
+function advancedSearchListFrameHover(){
+for (let q = 0; q < document.body.querySelectorAll(".advancedSearchListFrame").length; q++){
+	document.body.querySelectorAll(".advancedSearchListFrame")[q].onmouseenter = function(e){
+		e.target.querySelector("div.roundSearch").classList.toggle("roundSearchHover");
+		e.target.querySelector("div.advancedSearchListFrameText").querySelector("h4").classList.toggle("advancedSearchListFrameTextMouseOn");
+	}
+	document.body.querySelectorAll(".advancedSearchListFrame")[q].onmouseleave = function(e){
+		e.target.querySelector("div.roundSearch").classList.remove("roundSearchHover");
+		e.target.querySelector("div.advancedSearchListFrameText").querySelector("h4").classList.remove("advancedSearchListFrameTextMouseOn");
+	}
+}
+}
+
+function setadvancedSearchListFrameMouseOn(frame){
+	frame.target.querySelector("div.roundSearch").classList.toggle("roundSearchHover");
+	frame.target.querySelector("div.advancedSearchListFrameText").querySelector("h4").classList.toggle("advancedSearchListFrameTextMouseOn");
+}
+
+function setadvancedSearchListFrameMouseOut(frame){
+	frame.target.querySelector("div.roundSearch").classList.remove("roundSearchHover");
+	frame.target.querySelector("div.advancedSearchListFrameText").querySelector("h4").classList.remove("advancedSearchListFrameTextMouseOn");
+}
+
 
 
 function advancedClick(advacedID){
-	if (document.getElementById(`${advacedID}`).classList.contains("advancedClicked")) {
+	if (document.getElementById(`${advacedID}`).classList.contains("advancedClicked") || document.getElementById(`${advacedID}`).classList.contains("advancedClickedTypeSetRarity")) {
 		document.getElementById(`${advacedID}`).classList.remove("advancedClicked");
+		document.getElementById(`${advacedID}`).classList.remove("advancedClickedTypeSetRarity");
+		document.getElementById(`${advacedID}`).parentElement.querySelector("div.advancedSearchListFrameText").querySelector("h4").classList.remove("advancedSearchListFrameTextOn");
 		if (advacedID.includes("color")){
 			removeColor(advacedID);
 		}
@@ -73,23 +101,31 @@ function advancedClick(advacedID){
 		}
 	}
 else{
-	document.getElementById(`${advacedID}`).classList.toggle("advancedClicked");
 	if (advacedID.includes("color")){
+		document.getElementById(`${advacedID}`).classList.toggle("advancedClicked");
 		setColor(advacedID);
 	}
 	else if (advacedID.includes("cmc")){
+		document.getElementById(`${advacedID}`).classList.toggle("advancedClicked");
 		setCMC(advacedID);
 	}
 	else if (advacedID.includes("condition")){
+		document.getElementById(`${advacedID}`).classList.toggle("advancedClicked");
 		setCondition(advacedID);
 	}
 	else if (advacedID.includes("type")){
-		setType(advacedID);
+		document.getElementById(`${advacedID}`).classList.toggle("advancedClickedTypeSetRarity");
+		document.getElementById(`${advacedID}`).parentElement.querySelector("div.advancedSearchListFrameText").querySelector("h4").classList.toggle("advancedSearchListFrameTextOn");
+			setType(advacedID);
 	}
 	else if (advacedID.includes("set")){
+		document.getElementById(`${advacedID}`).classList.toggle("advancedClickedTypeSetRarity");
+		document.getElementById(`${advacedID}`).parentElement.querySelector("div.advancedSearchListFrameText").querySelector("h4").classList.toggle("advancedSearchListFrameTextOn");
 		setSet(advacedID);
 	}
 	else if (advacedID.includes("rarity")){
+		document.getElementById(`${advacedID}`).classList.toggle("advancedClickedTypeSetRarity");
+		document.getElementById(`${advacedID}`).parentElement.querySelector("div.advancedSearchListFrameText").querySelector("h4").classList.toggle("advancedSearchListFrameTextOn");
 		setRarity(advacedID);
 	}
 	}
@@ -202,6 +238,12 @@ function advApply(){
 
 // сброс всего при клике Reset
 function advReset(){
+
+	for (let f = 0; f < document.body.querySelectorAll(".advancedSearchListFrame").length; f++){
+		document.body.querySelectorAll(".advancedSearchListFrame")[f].querySelector(".advancedSearchListFrameText").querySelector("h4").classList.remove("advancedSearchListFrameTextOn");
+	}
+
+	
 	document.getElementById("colorw").classList.remove("advancedClicked");
 	document.getElementById("coloru").classList.remove("advancedClicked");
 	document.getElementById("colorb").classList.remove("advancedClicked");
@@ -220,22 +262,22 @@ function advReset(){
 	document.getElementById("conditionnearmint").classList.remove("advancedClicked");
 	document.getElementById("conditionplayed").classList.remove("advancedClicked");
 	document.getElementById("conditionheavilyplayed").classList.remove("advancedClicked");
-	document.getElementById("typecreature").classList.remove("advancedClicked");
-	document.getElementById("typeplaneswalker").classList.remove("advancedClicked");
-	document.getElementById("typesorcery").classList.remove("advancedClicked");
-	document.getElementById("typeinstant").classList.remove("advancedClicked");
-	document.getElementById("typeland").classList.remove("advancedClicked");
-	document.getElementById("typeenchantment").classList.remove("advancedClicked");
-	document.getElementById("typeartifact").classList.remove("advancedClicked");
-	document.getElementById("typetribal").classList.remove("advancedClicked");
-	document.getElementById("raritycommon").classList.remove("advancedClicked");
-	document.getElementById("rarityuncommon").classList.remove("advancedClicked");
-	document.getElementById("rarityrare").classList.remove("advancedClicked");
-	document.getElementById("raritymythicrare").classList.remove("advancedClicked");
-	document.getElementById("rarityspetial").classList.remove("advancedClicked");
+	document.getElementById("typecreature").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("typeplaneswalker").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("typesorcery").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("typeinstant").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("typeland").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("typeenchantment").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("typeartifact").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("typetribal").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("raritycommon").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("rarityuncommon").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("rarityrare").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("raritymythicrare").classList.remove("advancedClickedTypeSetRarity");
+	document.getElementById("rarityspetial").classList.remove("advancedClickedTypeSetRarity");
 
 for (let t = 0; t < document.getElementById("advancedSearchSet").querySelectorAll("div.roundSearch").length; t++){
-		document.getElementById("advancedSearchSet").querySelectorAll("div.roundSearch")[t].classList.remove("advancedClicked");
+		document.getElementById("advancedSearchSet").querySelectorAll("div.roundSearch")[t].classList.remove("advancedClickedTypeSetRarity");
 }
 globalAdvancedSearchCMC.length=0;
 globalAdvancedSearchColor.length=0;
@@ -399,13 +441,6 @@ function checkAdvRarity(typeCheckedArr){
 
 
 
-
-
-
-
-
-
-
 function drawAdvanced(advArray){
 let advUnicArray = [];
 let advSearchListFrame = '';
@@ -417,10 +452,10 @@ let advSearchListFrame = '';
 	}
 	
 for(let q=0; q < advUnicArray.length; q++){
-	advSearchListFrame += 	`<div class="setSearch advancedSearchListFrame grid ">`;
-	advSearchListFrame += 	`<div class="roundSearch" id="set${advUnicArray[q].toLowerCase().replace(/[" "\,\/\+\-\:\;\\\|\_\*\$\!\&\(\)\?\=\>\<\"\`\%\']/g, "")}"></div>`;
+	advSearchListFrame += 	`<div class="setSearch advancedSearchListFrame grid" onmouseenter ="setadvancedSearchListFrameMouseOn(event)" onmouseleave ="setadvancedSearchListFrameMouseOut(event)">`;
+	advSearchListFrame += 	`<div class="roundSearch" onclick="advancedClick('set${advUnicArray[q].toLowerCase().replace(/[" "\,\/\+\-\:\;\\\|\_\*\$\!\&\(\)\?\=\>\<\"\`\%\']/g, "")}')" id="set${advUnicArray[q].toLowerCase().replace(/[" "\,\/\+\-\:\;\\\|\_\*\$\!\&\(\)\?\=\>\<\"\`\%\']/g, "")}"></div>`;
 	advSearchListFrame += 	`<div class="advancedSearchListFrameText" onclick="advancedClick('set${advUnicArray[q].toLowerCase().replace(/[" "\,\/\+\-\:\;\\\|\_\*\$\!\&\(\)\?\=\>\<\"\`\%\']/g, "")}')">`;
-	advSearchListFrame += 	`<h4>${advUnicArray[q]}</h4>`;
+	advSearchListFrame += 	`<h4 class="advancedSearchListFrameTextOff">${advUnicArray[q]}</h4>`;
 	advSearchListFrame += 	`</div>`;
 	advSearchListFrame += 	`</div>`;
 

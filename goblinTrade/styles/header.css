@@ -12,6 +12,7 @@
 	color: #e9e4d0;
 	border-bottom: 1px solid #e9e4d0;
 	z-index: 2000;
+	padding: 2px;
 }
 
 .headerBG{
@@ -334,13 +335,15 @@
 }
 .searchArea{
 	width: 98%;
-	grid-column: 1;
+	grid-column: 1/4;
 }
 .information{
 	grid-column: 2;
+	display: none;
 }
 .mail{
 	grid-column: 3;
+	display: none;
 }
 .cart{
 	grid-column:4;
@@ -368,9 +371,6 @@
 	}
 	.cart{
 		font-size: 28px;
-	}
-	.advancedSearch{
-		font-size: 14px;
 	}
 }
 

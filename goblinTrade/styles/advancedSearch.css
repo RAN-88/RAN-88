@@ -13,6 +13,7 @@
 	/* visibility: hidden; */
 	grid-template-rows: 100%;
 	grid-template-columns: 100%;
+	padding: 2px;
 }
 .advancedSearchBG{
 	width: 100%;
@@ -355,11 +356,6 @@ display: none;
 	z-index: 1000;
 }
 
-.typeSearchFrameName>h4:hover{
-	color: #ff5b38;
-	cursor: pointer;
-}
-
 .cardTypeBG{
 	grid-row: 1/3;
 	grid-column: 1;
@@ -379,7 +375,13 @@ display: none;
 	height: 40px;
 	grid-column-gap: 10px;
 	padding-left: 7px;
+	z-index: 2000;
 }
+
+.advancedSearchListFrame:hover{
+	cursor: pointer;
+}
+
 
 .roundSearch{
 	background-color: #e9e4d0;
@@ -393,19 +395,13 @@ display: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 1000;
 	/* padding-left: 40; */
 }
-/* .roundSearchHoverRound{
-	background-color: #ff5b38;
-	border-radius: 50%;
-	width: 20px;
-	height: 20px;
-	z-index: 100;
-	filter: drop-shadow(1.5px 1.5px 0px rgba(0,0,0,0.7));
-	visibility: hidden;
-} */
 
-
+.roundSearchHover{
+	border: #ff5b38 solid 2px;
+}
 
 .advancedSearchListFrameText{
 	width: 100%;
@@ -418,15 +414,17 @@ display: none;
 	justify-content: start;
 }
 
-.advancedSearchListFrameText>h4:hover{
-	cursor: pointer;
+.advancedSearchListFrameTextOff{
+	color: #e9e4d0;
+	font-size: 20px;
+}
+
+.advancedSearchListFrameTextOn{
 	color: #ff5b38;
 }
 
-
-.advancedSearchListFrameText>h4{
-	color: #e9e4d0;
-	font-size: 20px;
+.advancedSearchListFrameTextMouseOn{
+	color: #ff5b38;
 }
 
 .creatureSearch{
@@ -515,11 +513,6 @@ display: none;
 	font-size: 28px;
 	color: #e9e4d0;
 	z-index: 1000;
-}
-
-.advancedSearchSetName>h4:hover{
-	color: #ff5b38;
-	cursor: pointer;
 }
 
 .setSearchFrame{
@@ -622,10 +615,7 @@ display: none;
 	z-index: 1000;
 }
 
-.raritySearchFrameName>h4:hover{
-	color: #ff5b38;
-	cursor: pointer;
-}
+
 
 .rarityBG{
 	align-self: center;
@@ -690,10 +680,17 @@ display: none;
 /* onClick */
 .advancedClicked{
 	filter: brightness(1);
+	/* background-color: #ff5b38; */
 	border: solid 2px #ff5b38;
 	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
 }
 
+.advancedClickedTypeSetRarity{
+	/* filter: brightness(1); */
+	background-color: #ff5b38;
+	/* border: solid 2px #ff5b38; */
+	filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
+}
 
 
 
@@ -725,7 +722,11 @@ display: none;
 
 
 @media only screen and (max-width: 800px) {
-
+	.advancedSearchWrapper{
+		border-left: 0px;
+		border-bottom: 0px;
+		border-right: 0px;
+	}
 	.advancedSearchMenuWrapper{
 		grid-template-rows: 80px calc(100% - 170px) 60px;
 		justify-content: center;
@@ -794,6 +795,11 @@ display: none;
 }
 
 @media only screen and (max-width: 600px) {
+	.roundSearch{
+		width: 24px;
+		height: 24px;
+	}
+
 	.advancedSearchWrapper{
 		border: 0px;
 	}

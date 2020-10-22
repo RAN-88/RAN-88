@@ -16,6 +16,7 @@
 	transition: 0.5s;
 	z-index: 1000;
 	visibility: hidden;
+	padding: 2px;
 }
 .menuCartActive {
 	transform: translateX(-100%);
