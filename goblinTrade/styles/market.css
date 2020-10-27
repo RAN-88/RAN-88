@@ -99,7 +99,6 @@
 .infoMarketPriceText{
 	font-size: 20px;
 	color: #e9e4d0;
-	/* filter: drop-shadow(2px -2px 0px rgba(0,0,0,0.8)); */
 }
 .infoMarketPrice{
 	font-weight: 600;

@@ -13,10 +13,9 @@
 	<link rel="stylesheet" href="styles/fonts.css" />
 	<link rel="stylesheet" href="fonts/FontAwesome/css/all.css" />
 	<link rel="stylesheet" href="fonts/fullIcons/css/nikita.css" />
-	<!-- <link rel="stylesheet" href="fonts/nikita/css/nikita.css" /> -->
-	<!-- <link rel="stylesheet" href="fonts/mtgColours/css/mtgcolours.css" /> -->
 	<link rel="stylesheet" href="styles/advancedSearch.css" />
 	<link rel="stylesheet" href="styles/cart.css" />
+	<link rel="stylesheet" href="styles/info.css" />
 	<link rel="stylesheet" href="styles/media.css" />
 	<title>TradeBinder</title>
 </head>
@@ -24,7 +23,6 @@
 <body>
 	<!-- BG -->
 	<div class="bodyBG" style="background-image: url(img/background2.jpg);" id="bodyBG">
-		<!-- <img src="img/background2.jpg" alt="backGround"> -->
 	</div>
 
 	<!-- advancedSearch -->
@@ -97,12 +95,9 @@
 
 					<div class="cardTypeBG"></div>
 					<div class="typeSearchFrameName">
-						<!-- <h4> >> Type << </h4> -->
 						<h4>Type</h4>
 					</div>
 
-
-					<!-- onmousemove="enliteSearchListFrame(`typecreature`)" -->
 					<div class="typeSearchFrame grid">
 						<div class="creatureSearch advancedSearchListFrame grid ">
 							<div class="roundSearch " id="typecreature" onclick="advancedClick(`typecreature`)">
@@ -175,7 +170,6 @@
 				<div class="advancedSearchSet grid advancedSearchSetOff" id="advancedSearchSet">
 					<div class="setBG"></div>
 					<div class="advancedSearchSetName">
-						<!-- <h4> >> Set << </h4> -->
 						<h4 class="advancedSearchListFrameTextOff">Set</h4>
 					</div>
 
@@ -189,7 +183,6 @@
 				<div class="advancedSearchRarity grid advancedSearchRarityOff" id="advancedSearchRarity">
 					<div class="rarityBG"></div>
 					<div class="raritySearchFrameName">
-						<!-- <h4> >> Rarity << </h4> -->
 						<h4 class="advancedSearchListFrameTextOff">Rarity</h4>
 					</div>
 
@@ -255,6 +248,8 @@
 	<!-- CART -->
 	<div class="menuCart" id="menuCart">
 		<div class="cartWrapper grid">
+			<!-- нужен фон специально для cart !!!!!!! -->
+					<div class="cartBG" style="background-image: url(img/CartBGimg.jpg);"></div>
 			<div class="cartWrapperContent grid" id="cartWrapperContent">
 			</div>
 
@@ -285,9 +280,103 @@
 	</div>
 
 	<!-- INFO -->
-	<div class="infoFrame" id="infoFrame">
+	<div class="infoFrame grid" id="infoFrame">
 		<i class="icon-cross infoFrameIconClose" id="infoFrameClose"></i>
-		<h3>ТУТ НИКИТА НАПИШЕТ МНОГО ТЕКСТА ПРО СЕБЯ И СВОЁ ПАЙЛИШКО</h3>
+		<div class="scrollBarWrapper grid">
+			<div class="infoHeader">
+				<h3>Hello, Friend!</h3>
+			</div>
+
+<div class="infoWrapper grid" id="infoWrapperToScroll">
+
+			<div class="infoPartsBG infoIntroBG"></div>
+			<div class="infoIntro" id="infoIntro">
+				<h4>Тут Никита очень красиво напишет насколько он охуенен, почему его сайт самый лучший на свете, почему его цены -
+					 пример для подражания, почему он заботится о своих клиентах и вообще секрет своего успеха
+					 Тут Никита очень красиво напишет насколько он охуенен, почему его сайт самый лучший на свете, почему его цены -
+					 пример для подражания, почему он заботится о своих клиентах и вообще секрет своего успеха
+					 Тут Никита очень красиво напишет насколько он охуенен, почему его сайт самый лучший на свете, почему его цены -
+					 пример для подражания, почему он заботится о своих клиентах и вообще секрет своего успеха
+				</h4>
+			</div>
+
+			<div class="infoPartsBG infoOrderBG"></div>
+			<div class="infoFrameIcon infoOrderPlace grid" id="orderToScroll">
+					<i class="icon-order infoInnerIcon"></i>
+					<h4>order</h4>
+			</div>
+			<div class="infoText infoOrderTextPlace">
+				<h4>Тут Никита подробно, для самых тупеньких напишет как добавлять карточки в корзинку, куда нажимать, почему всё безопасно и т.д..
+					Тут Никита подробно, для самых тупеньких напишет как добавлять карточки в корзинку, куда нажимать, почему всё безопасно и т.д..
+					Тут Никита подробно, для самых тупеньких напишет как добавлять карточки в корзинку, куда нажимать, почему всё безопасно и т.д..
+					Тут Никита подробно, для самых тупеньких напишет как добавлять карточки в корзинку, куда нажимать, почему всё безопасно и т.д..
+				</h4>
+			</div>
+
+			<div class="infoPartsBG infoCheckBG"></div>
+		<div class="infoFrameIcon infoCheckPlace grid">
+			<i class="icon-check infoInnerIcon"></i>
+			<h4 id="checkToScroll">check</h4>
+		</div>
+		<div class="infoText infoCheckTextPlace">
+			<h4>Тут Никита подробно, для самых тупеньких напишет как быстро и чётко он будет отвечать на безценные письма дорогих заказчиков, 
+				как мило и ласково он будет общаться, как будут гореть чересла заказчиков от словесной неги изливаемой Никитой на страницы электронного письма.
+				Тут Никита подробно, для самых тупеньких напишет как быстро и чётко он будет отвечать на безценные письма дорогих заказчиков, 
+				как мило и ласково он будет общаться, как будут гореть чересла заказчиков от словесной неги изливаемой Никитой на страницы электронного письма.
+			</h4>
+		</div>
+
+		<div class="infoPartsBG infoPayBG"></div>
+		<div class="infoFrameIcon infoPayPlace grid">
+			<i class="icon-money infoInnerIcon"></i>
+			<h4 id="payToScroll">pay</h4>
+		</div>
+		<div class="infoText infoPayTextPlace">
+			<h4>Тут Никита напишет гору информации о том куда можно будет оплачивать бабосики, денюжки и даже ДЕНЬЖИЩИ, расскажет, что никого никогда не кинет и всех любит
+				расскажет про предоплату и пост оплату и многое, многое другое!
+				Тут Никита напишет гору информации о том куда можно будет оплачивать бабосики, денюжки и даже ДЕНЬЖИЩИ, расскажет, что никого никогда не кинет и всех любит
+				расскажет про предоплату и пост оплату и многое, многое другое!
+				Тут Никита напишет гору информации о том куда можно будет оплачивать бабосики, денюжки и даже ДЕНЬЖИЩИ, расскажет, что никого никогда не кинет и всех любит
+				расскажет про предоплату и пост оплату и многое, многое другое!
+			</h4>
+		</div>
+
+		<div class="infoPartsBG infoWaitBG"></div>
+		<div class="infoFrameIcon infoWaitPlace grid">
+			<i class="icon-wait infoInnerIcon"></i>
+			<h4 id="waitToScroll">wait</h4>
+		</div>
+		<div class="infoText infoWaitTextPlace">
+			<h4>Тут Никита напишет много дойстойного про почту России, про их доставку и шампы, про ответственность и тракинговые номера, про гениальную
+				упаковку и даже не забудет упомянуть пони экспресс!!! Тут Никита напишет много дойстойного про почту России, про их доставку и шампы, про ответственность и тракинговые номера, про гениальную
+				упаковку и даже не забудет упомянуть пони экспресс!!! Тут Никита напишет много дойстойного про почту России, про их доставку и шампы, про ответственность и тракинговые номера, про гениальную
+				упаковку и даже не забудет упомянуть пони экспресс!!!
+			</h4>
+		</div>
+
+		<div class="infoPartsBG infoEnjoyBG"></div>
+		<div class="infoFrameIcon infoEnjoyPlace grid">
+			<i class="icon-enjoy infoInnerIcon"></i>
+			<h4 id="enjoyToScroll">enjoy</h4>
+		</div>
+		<div class="infoText infoEnjoyTextPlace">
+			<h4>Тут Никита напишет про истинное наслаждение от обладания карточками его поставки, о том сколь они редки и удивительны, о том какие скидосы он делает постоянным клиентам,
+				о том как он хочет продать им ещё больше лютого неиграбельного пайла и нажиться на бедных наркоманах...Тут Никита напишет про истинное наслаждение от обладания карточками его поставки, о том сколь они редки и удивительны, о том какие скидосы он делает постоянным клиентам,
+				о том как он хочет продать им ещё больше лютого неиграбельного пайла и нажиться на бедных наркоманах...Тут Никита напишет про истинное наслаждение от обладания карточками его поставки, о том сколь они редки и удивительны, о том какие скидосы он делает постоянным клиентам,
+				о том как он хочет продать им ещё больше лютого неиграбельного пайла и нажиться на бедных наркоманах...
+			</h4>
+		</div>
+
+		<div class="infoPartsBG infoDisclaimerBG"></div>
+		<div class="infoDisclaimer">
+			<h4>Тут Никита напишет аж на 2х языках, почему визарда не должны произвести с ним анальную кару, почему он продаёт их карточки на вторичном рынке и ничего ему за это не будет,
+				почему он не будет отстёгивать им процент и вообще "я не я корова не моя". Тут Никита напишет аж на 2х языках, почему визарда не должны произвести с ним анальную кару, почему он продаёт их карточки на вторичном рынке и ничего ему за это не будет,
+				почему он не будет отстёгивать им процент и вообще "я не я корова не моя". Тут Никита напишет аж на 2х языках, почему визарда не должны произвести с ним анальную кару, почему он продаёт их карточки на вторичном рынке и ничего ему за это не будет,
+				почему он не будет отстёгивать им процент и вообще "я не я корова не моя".
+			</h4>
+		</div>
+		</div>
+	</div>
 	</div>
 
 	<!-- Header -->
@@ -334,10 +423,10 @@
 	</div>
 
 	<!-- Conception -->
-	<div class="conceptWrapper grid">
+	<div class="conceptWrapper grid" id="conceptWrapper">
 		<div class="conceptBG"></div>
 
-		<div class="concept conceptPlace1 grid">
+		<div class="concept conceptPlace1 grid" onclick="orderClicked()">
 			<div class="conceptImg">
 				<div class="conceptRound">
 					<i class="icon-order iconConception"></i>
@@ -351,7 +440,7 @@
 			<i class="icon-arrow-right conceptIconArrow"></i>
 		</div>
 
-		<div class="concept conceptPlace3 grid ">
+		<div class="concept conceptPlace3 grid" onclick="checkClicked()">
 			<div class="conceptImg ">
 				<div class="conceptRound">
 					<i class="icon-check iconConception"></i>
@@ -365,7 +454,7 @@
 			<i class="icon-arrow-right conceptIconArrow"></i>
 		</div>
 
-		<div class="concept conceptPlace5 grid ">
+		<div class="concept conceptPlace5 grid" onclick="payClicked()">
 			<div class="conceptImg">
 				<div class="conceptRound">
 					<i class="icon-money iconConception"></i>
@@ -379,7 +468,7 @@
 			<i class="icon-arrow-right conceptIconArrow"></i>
 		</div>
 
-		<div class="concept conceptPlace7 grid ">
+		<div class="concept conceptPlace7 grid" onclick="waitClicked()">
 			<div class="conceptImg ">
 				<div class="conceptRound">
 					<i class="icon-wait iconConception"></i>
@@ -393,7 +482,7 @@
 			<i class="icon-arrow-right conceptIconArrow"></i>
 		</div>
 
-		<div class="concept conceptPlace9 grid ">
+		<div class="concept conceptPlace9 grid" onclick="enjoyClicked()">
 			<div class="conceptImg">
 				<div class="conceptRound">
 					<i class="icon-enjoy iconConception"></i>
@@ -405,8 +494,8 @@
 		</div>
 
 		<div class="conceptComment">
-			<div class="hoverConceptComment">
-				<h4>more information</h4>
+			<div class="hoverConceptComment" >
+				<h4 id="hoverConceptComment">more information</h4>
 			</div>
 		</div>
 	</div>
@@ -497,7 +586,6 @@
 		<div class="footerBG" style="background-image: url(img/footerIMG.jpg);"></div>
 	</div>
 
-<!-- </div> -->
 
 	<script src="scripts/globalArrays.js"></script>
 	<script src="scripts/fetchCards.js"></script>

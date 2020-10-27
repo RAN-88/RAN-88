@@ -30,32 +30,7 @@ body::-webkit-scrollbar-thumb {
 } */
 
 
-.infoFrame{
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	visibility: hidden;
-	background-color: #e9e4d0;
-	color: #140f0b;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 1000;
-	border-radius: 20px;
-}
 
-.infoFrameIconClose{
-	font-size: 20px;
-	position: absolute;
-	top: 5px;
-	left: 5px;
-}
-.infoFrameIconClose:hover{
-	cursor: pointer;
-	color: #ff5b38;
-}
 .bodyBG {
 	filter: brightness(0.4);
 	width: 100%;
