@@ -2,7 +2,7 @@ document.getElementById("sliderBtnLeft").addEventListener('click', moveSliderLef
 document.getElementById("sliderBtnRight").addEventListener('click', moveSliderRight);
 let animationInProgress = false;
 
-setInterval(moveSliderLeft, 3000);
+setInterval(moveSliderLeft, 5000);
 
 function moveSliderLeft() {
 
@@ -187,11 +187,21 @@ function drawSlider(promoArray, widthCounter) {
 	for (let k = 0; k < document.getElementById("sliderHiddenWrapper").querySelectorAll("div.sliderImg").length; k++) {
 		linkArray[k] = document.getElementById("sliderHiddenWrapper").querySelectorAll("div.sliderImg")[k];
 	}
-	// console.log(linkArray);
-
 }
-window.onresize = windowWidth;
-function windowWidth() {
+
+let startPageHight = window.innerHeight;
+let startPageWidth = window.innerWidth;
+
+window.onresize = function(){
+	if (startPageHight != window.innerHeight && startPageWidth == window.innerWidth){
+		startPageHight = window.innerHeight;
+		startPageWidth = window.innerWidth;
+		document.getElementById("bodyBG").style.height = `${window.innerHeight + 60}px`
+		return
+	} else {
+		startPageHight = window.innerHeight;
+		startPageWidth = window.innerWidth;
+	document.getElementById("bodyBG").style.height = `${window.innerHeight + 60}px`
 	if (window.matchMedia('(max-width: 600px)').matches) {
 		drawSlider(globalPromoCardCollection, 1)
 	} else if (window.matchMedia('(max-width: 920px)').matches) {
@@ -206,7 +216,28 @@ function windowWidth() {
 	} else {
 		drawSlider(globalPromoCardCollection, 5)
 	}
+
 }
+}
+
+
+// window.onresize = windowWidth;
+// function windowWidth() {
+// 	if (window.matchMedia('(max-width: 600px)').matches) {
+// 		drawSlider(globalPromoCardCollection, 1)
+// 	} else if (window.matchMedia('(max-width: 920px)').matches) {
+// 		drawSlider(globalPromoCardCollection, 2)
+
+// 	} else if (window.matchMedia('(max-width: 1280px)').matches) {
+// 		drawSlider(globalPromoCardCollection, 3)
+
+// 	} else if (window.matchMedia('(max-width: 1680px)').matches) {
+// 		drawSlider(globalPromoCardCollection, 4)
+
+// 	} else {
+// 		drawSlider(globalPromoCardCollection, 5)
+// 	}
+// }
 
 //рисуем только промо карты
 function drawPromo(id) {

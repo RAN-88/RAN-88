@@ -5,12 +5,7 @@ document.getElementById("btnSortingDown").addEventListener("click", sortDown);
 let sortedArray = [];
 
 function sortUp() {
-	// console.log("от меньшего к большему");
 	sortedArray = globalCurrentArray.slice();
-	// for (let i = 0; i < globalCurrentArray.length; i++) {
-	// 	sortedArray.push(globalCurrentArray[i])
-	// }
-	// console.log(sortedArray);
 	sortingTypeHTML = document.getElementById("sortingType").innerHTML;
 
 	if (sortingTypeHTML == "Price") {
@@ -49,10 +44,9 @@ function sortUp() {
 				sortedArray[i].push(5);
 			}
 		}
-		// console.log(sortedArray);
 		sortedArray.sort(function (a, b) {
 			// sortedArray.length - 1
-			return (a[12] - b[12])
+			return (a[18] - b[18])
 		});
 		for (i = 0; i < sortedArray.length; i++) {
 			sortedArray[i].pop();
@@ -106,7 +100,7 @@ function sortDown() {
 		// console.log(sortedArray);
 		sortedArray.sort(function (a, b) {
 			// sortedArray.length - 1
-			return (b[12] - a[12])
+			return (b[18] - a[18])
 		});
 
 		for (i = 0; i < sortedArray.length; i++) {
