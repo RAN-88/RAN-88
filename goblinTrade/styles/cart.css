@@ -13,7 +13,7 @@
 	border-top: 1px solid #e9e4d0;
 	border-right: 1px solid #e9e4d0;
 	transition: 0.5s;
-	z-index: 1000;
+	z-index: 1500;
 	visibility: hidden;
 	padding: 2px;
 }
@@ -40,7 +40,7 @@
 	align-self: center;
 	justify-self: center;
 	filter: brightness(0.6);
-	z-index: -1;
+	/* z-index: -1; */
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -59,6 +59,7 @@
 	align-self: center;
 	justify-self: center;
 	border-top: 1px solid #e9e4d0;
+	z-index:	10;
 }
 .cartTotal{
 	width: 90%;
@@ -185,3 +186,47 @@ font-size: 20px;
 	display: none;
 }
 
+/* media */
+@media only screen and (max-width: 1920px) {}
+@media only screen and (max-width: 1680px) {}
+@media only screen and (max-width: 1366px) {}
+@media only screen and (max-width: 1280px) {}
+@media only screen and (max-width: 1024px) {}
+@media only screen and (max-width: 920px) {}
+
+@media only screen and (max-width: 800px) {
+	.cart{
+		font-size: 32px;
+	}
+
+.cartWrapperContent::-webkit-scrollbar {
+width: 0px;
+display: none;
+}
+.cartWrapperContent::-webkit-scrollbar-thumb {
+width: 0px;
+display: none;
+}
+}
+
+@media only screen and (max-width: 650px) {}
+@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 533px) {}
+@media only screen and (max-width: 416px) {
+	.menuCart{
+		width: 100%;
+		border-left: 0px;
+		border-right: 0px;
+	}
+	.bodyCartStopScroll {
+		overflow-y: hidden;
+	}
+}
+
+@media only screen and (max-width: 400px) {}
+@media only screen and (max-width: 360px) {}
+@media only screen and (max-width: 320px) {}
+@media only screen and (max-height: 812px) and (max-width: 380px){}
+@media only screen and (max-height: 740px) and (max-width: 430px){}
+@media only screen and (max-height: 680px) and (max-width: 380px){}
+@media only screen and (max-height: 570px) and (max-width: 330px){}

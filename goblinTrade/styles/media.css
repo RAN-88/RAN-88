@@ -49,10 +49,6 @@
 }
 
 @media only screen and (max-width: 800px) {
-	.cart{
-		font-size: 32px;
-	}
-
 
 .conceptWrapper{
 		width: 98%;
@@ -60,15 +56,6 @@
 
 .sortWrapper{
 	width: 98%;
-}
-
-.cartWrapperContent::-webkit-scrollbar {
-width: 0px;
-display: none;
-}
-.cartWrapperContent::-webkit-scrollbar-thumb {
-width: 0px;
-display: none;
 }
 
 .body::-webkit-scrollbar {
@@ -145,14 +132,7 @@ display: none;
 }
 
 
-@media only screen and (max-width: 416px) {
-	.menuCart{
-		width: 100%;
-	}
-	.bodyCartStopScroll {
-		overflow-y: hidden;
-	}
-}
+@media only screen and (max-width: 416px) {}
 
 @media only screen and (max-width: 400px) {}
 
