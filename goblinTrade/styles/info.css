@@ -49,7 +49,7 @@
 	height: 100%;
 	grid-column: 1;
 	grid-row: 2;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-columns: 80px 1fr;
 	grid-gap: 10px;
 	/* border: solid 1px black; */
@@ -223,8 +223,8 @@
 	font-size: 20px;
 	color:#32231a;
 	align-self: center;
-padding: 5px;
-z-index: 100;
+	padding: 5px;
+	z-index: 100;
 }
 
 .infoDisclaimerBG{
@@ -232,6 +232,37 @@ z-index: 100;
 	grid-column: 1/3;
 }
 
+.infoMailQuestion{
+	width: 100%;
+	height: 100%;
+	grid-row: 8;
+	grid-column: 1/3;
+	align-self: center;
+	justify-self: center;
+	display: flex;
+	justify-content: start;
+}
+
+.infoMailQuestion>h4{
+	font-size: 20px;
+	color:#32231a;
+	align-self: center;
+	padding: 5px;
+	z-index: 100;
+}
+
+.infoMailTo{
+	text-decoration: underline;
+}
+.infoMailTo:hover{
+	cursor: pointer;
+	color: #ff5b38;
+}
+
+.infoMailQuestionBG{
+	grid-row: 8;
+	grid-column: 1/3;
+}
 
 .showInfo{
 	visibility: visible;
@@ -295,6 +326,9 @@ z-index: 100;
 	.infoDisclaimer>h4{
 		font-size: 18px;
 	}
+	.infoMailQuestion>h4{
+		font-size: 18px;
+	}
 	.infoText>h4{
 		font-size: 18px;
 		padding-top: 0px;
@@ -311,7 +345,7 @@ z-index: 100;
 	}
 
 	.infoWrapper{
-		grid-template-rows: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 1fr;
+		grid-template-rows: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 1fr 1fr;
 		grid-template-columns: 100%;
 		grid-gap: 8px;
 	}
@@ -385,6 +419,10 @@ z-index: 100;
 		grid-row: 12;
 		grid-column: 1;
 	}
+	.infoMailQuestion{
+		grid-row: 13;
+		grid-column: 1;
+	}
 
 	.infoIntroBG{
 		grid-row: 1;
@@ -421,6 +459,11 @@ z-index: 100;
 		grid-column: 1;
 	}
 
+	.infoMailQuestionBG{
+		grid-row: 13;
+		grid-column: 1;
+	}
+
 }
 
 @media only screen and (max-width: 416px) {
@@ -439,6 +482,9 @@ z-index: 100;
 		font-size: 15px;
 	}
 	.infoDisclaimer>h4{
+		font-size: 15px;
+	}
+	.infoMailQuestion>h4{
 		font-size: 15px;
 	}
 	.infoText>h4{

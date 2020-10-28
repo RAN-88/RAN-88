@@ -654,25 +654,5 @@ h3{
 
 
 
-/* footer */
-.footerWrapper{
-	border-top: 1px solid #e9e4d0;
-	width: 100%;
-	height: 40vh;
-	/* background-color: #140f0b; */
-	margin-top: 150px;
-	grid-template-rows: 100%;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 2fr;
-}
-.footerBG{
-	width: 100%;
-	height: 100%;
-	grid-column: 1/3;
-	grid-row: 1;
-	align-self: center;
-	justify-self: center;
-	filter: brightness(0.6);
-	/* z-index: -1; */
-}
+
 

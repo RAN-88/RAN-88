@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="styles/advancedSearch.css" />
 	<link rel="stylesheet" href="styles/cart.css" />
 	<link rel="stylesheet" href="styles/info.css" />
+	<link rel="stylesheet" href="styles/footer.css" />
+	<link rel="stylesheet" href="styles/buttonUp.css" />
 	<link rel="stylesheet" href="styles/media.css" />
 	<title>TradeBinder</title>
 </head>
@@ -24,6 +26,8 @@
 	<!-- BG -->
 	<div class="bodyBG" style="background-image: url(img/background2.jpg);" id="bodyBG">
 	</div>
+		<i class="far fa-arrow-alt-circle-up buttonUpIcon" id="buttonUpIcon"></i>
+
 
 	<!-- advancedSearch -->
 	<div class="advancedSearchWrapper grid" id="advancedSearchWrapper">
@@ -248,7 +252,6 @@
 	<!-- CART -->
 	<div class="menuCart" id="menuCart">
 		<div class="cartWrapper grid">
-			<!-- нужен фон специально для cart !!!!!!! -->
 					<div class="cartBG" style="background-image: url(img/CartBGimg.jpg);"></div>
 			<div class="cartWrapperContent grid" id="cartWrapperContent">
 			</div>
@@ -262,7 +265,7 @@
 
 				<div class="cartMailWrapper grid ">
 					<div class="cartEmailLink" id="cartEmailLink">
-						<h4 class="toCheck" style="text-decoration: underline;">Enter your E-mail here*</h4>
+						<h4 class="toCheck" style="text-decoration: underline;" onclick="checkClicked()">Enter your E-mail here*</h4>
 					</div>
 					<div class="cartMail">
 						<div class="cartMailTextWrapper">
@@ -301,11 +304,11 @@
 			</div>
 
 			<div class="infoPartsBG infoOrderBG"></div>
-			<div class="infoFrameIcon infoOrderPlace grid" id="orderToScroll">
+			<div class="infoFrameIcon infoOrderPlace grid" >
 					<i class="icon-order infoInnerIcon"></i>
 					<h4>order</h4>
 			</div>
-			<div class="infoText infoOrderTextPlace">
+			<div class="infoText infoOrderTextPlace" id="orderToScroll">
 				<h4>Тут Никита подробно, для самых тупеньких напишет как добавлять карточки в корзинку, куда нажимать, почему всё безопасно и т.д..
 					Тут Никита подробно, для самых тупеньких напишет как добавлять карточки в корзинку, куда нажимать, почему всё безопасно и т.д..
 					Тут Никита подробно, для самых тупеньких напишет как добавлять карточки в корзинку, куда нажимать, почему всё безопасно и т.д..
@@ -316,9 +319,9 @@
 			<div class="infoPartsBG infoCheckBG"></div>
 		<div class="infoFrameIcon infoCheckPlace grid">
 			<i class="icon-check infoInnerIcon"></i>
-			<h4 id="checkToScroll">check</h4>
+			<h4 >check</h4>
 		</div>
-		<div class="infoText infoCheckTextPlace">
+		<div class="infoText infoCheckTextPlace" id="checkToScroll">
 			<h4>Тут Никита подробно, для самых тупеньких напишет как быстро и чётко он будет отвечать на безценные письма дорогих заказчиков, 
 				как мило и ласково он будет общаться, как будут гореть чересла заказчиков от словесной неги изливаемой Никитой на страницы электронного письма.
 				Тут Никита подробно, для самых тупеньких напишет как быстро и чётко он будет отвечать на безценные письма дорогих заказчиков, 
@@ -329,9 +332,9 @@
 		<div class="infoPartsBG infoPayBG"></div>
 		<div class="infoFrameIcon infoPayPlace grid">
 			<i class="icon-money infoInnerIcon"></i>
-			<h4 id="payToScroll">pay</h4>
+			<h4 >pay</h4>
 		</div>
-		<div class="infoText infoPayTextPlace">
+		<div class="infoText infoPayTextPlace" id="payToScroll">
 			<h4>Тут Никита напишет гору информации о том куда можно будет оплачивать бабосики, денюжки и даже ДЕНЬЖИЩИ, расскажет, что никого никогда не кинет и всех любит
 				расскажет про предоплату и пост оплату и многое, многое другое!
 				Тут Никита напишет гору информации о том куда можно будет оплачивать бабосики, денюжки и даже ДЕНЬЖИЩИ, расскажет, что никого никогда не кинет и всех любит
@@ -344,9 +347,9 @@
 		<div class="infoPartsBG infoWaitBG"></div>
 		<div class="infoFrameIcon infoWaitPlace grid">
 			<i class="icon-wait infoInnerIcon"></i>
-			<h4 id="waitToScroll">wait</h4>
+			<h4 >wait</h4>
 		</div>
-		<div class="infoText infoWaitTextPlace">
+		<div class="infoText infoWaitTextPlace" id="waitToScroll">
 			<h4>Тут Никита напишет много дойстойного про почту России, про их доставку и шампы, про ответственность и тракинговые номера, про гениальную
 				упаковку и даже не забудет упомянуть пони экспресс!!! Тут Никита напишет много дойстойного про почту России, про их доставку и шампы, про ответственность и тракинговые номера, про гениальную
 				упаковку и даже не забудет упомянуть пони экспресс!!! Тут Никита напишет много дойстойного про почту России, про их доставку и шампы, про ответственность и тракинговые номера, про гениальную
@@ -357,9 +360,9 @@
 		<div class="infoPartsBG infoEnjoyBG"></div>
 		<div class="infoFrameIcon infoEnjoyPlace grid">
 			<i class="icon-enjoy infoInnerIcon"></i>
-			<h4 id="enjoyToScroll">enjoy</h4>
+			<h4 >enjoy</h4>
 		</div>
-		<div class="infoText infoEnjoyTextPlace">
+		<div class="infoText infoEnjoyTextPlace" id="enjoyToScroll">
 			<h4>Тут Никита напишет про истинное наслаждение от обладания карточками его поставки, о том сколь они редки и удивительны, о том какие скидосы он делает постоянным клиентам,
 				о том как он хочет продать им ещё больше лютого неиграбельного пайла и нажиться на бедных наркоманах...Тут Никита напишет про истинное наслаждение от обладания карточками его поставки, о том сколь они редки и удивительны, о том какие скидосы он делает постоянным клиентам,
 				о том как он хочет продать им ещё больше лютого неиграбельного пайла и нажиться на бедных наркоманах...Тут Никита напишет про истинное наслаждение от обладания карточками его поставки, о том сколь они редки и удивительны, о том какие скидосы он делает постоянным клиентам,
@@ -375,6 +378,13 @@
 				почему он не будет отстёгивать им процент и вообще "я не я корова не моя".
 			</h4>
 		</div>
+
+		<div class="infoPartsBG infoMailQuestionBG"></div>
+		<div class="infoMailQuestion">
+			<h4>Остались вопросы? Напишите нам: <span class="infoMailTo" id="infoMailTo">nikita@ocharovashka.com</span>
+			</h4>
+		</div>
+
 		</div>
 	</div>
 	</div>
@@ -405,7 +415,7 @@
 			<i class="icon-info-question" id="headerInfoBtn"></i>
 		</div>
 
-		<div class="mail ">
+		<div class="mail">
 			<i class="icon-mail "></i>
 		</div>
 
@@ -582,8 +592,38 @@
 	</div>
 
 	<!-- footer -->
-	<div class="footerWrapper grid">
+	<div class="footerWrapper grid" id="footerWrapper">
 		<div class="footerBG" style="background-image: url(img/footerIMG.jpg);"></div>
+				
+			<div class="footerLogoArea">
+				<div class="footerLogo" style="background-image: url(img/logotest3.png);" id="footerLogo"></div>
+			</div>
+
+			<div class="footerOathArea ">
+				<h4>Клянёмся не бриться, не пить, не курить и остаться дикарями...УРА!
+					Отвечаем за 24 часа, все карточки стандарта имеем, скидосы делаем, алкоголь одобряем
+				</h4>
+			</div>
+
+		<div class="footerRightColumn grid ">
+			<div class="footerMailArea " id="footerMailInfo">
+				<i class="icon-mail footerIconMail"></i>
+				<h4 class="footerTextMail">nikita@ocharovashka.com</h4>
+			</div>
+			
+			<div class="footerInfoArea" id="footerInfoArea">
+				<i class="icon-info-question footerIconInfo"></i>
+				<h4 class="footerTextInfo">More information</h4>
+			</div>
+		</div>
+
+		<div class="footerDisclamer ">
+			<h4>Wizards of the Coast, Magic: The Gathering, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. This website is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.</h4>
+		</div>
+
+		<div class="footerDesigned ">
+			<h4>designed by RAN & Fox</h4>
+		</div>
 	</div>
 
 
@@ -597,6 +637,8 @@
 	<script src="scripts/textSearch.js"></script>
 	<script src="scripts/slider.js"></script>
 	<script src="scripts/advancedSearch.js"></script>
+	<script src="scripts/footer.js"></script>
+	<script src="scripts/buttonUp.js"></script>
 </body>
 
 </html>

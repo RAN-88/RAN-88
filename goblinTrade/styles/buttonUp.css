@@ -1,0 +1,80 @@
+.buttonUpIcon{
+	font-size: 80px;
+	/* color: #ff5b38;
+	opacity: 0.3; */
+
+	color:rgba(255, 91, 56, 0.3);
+	align-self: center;
+	position: fixed;
+	left: 10px;
+	/* top: 60vh; */
+	bottom: 10px;
+	z-index: 1500;
+	visibility: hidden;
+	transition: ease-in-out;
+	transition-property: color 2s, transform 2s;
+	-webkit-transition: color 2s, -webkit-transform 2s;
+	animation: buttonUpAnimation 6s infinite;
+
+}
+
+@keyframes buttonUpAnimation {
+	60% { color: rgba(255, 91, 56, 0.3);
+				transform: rotateX(0deg) rotateZ(0deg);
+	}
+	80% { color: rgba(255, 91, 56, 1);
+		transform: rotateX(20deg) rotateZ(20deg);
+	}
+	100% { color: rgba(255, 91, 56, 0.3);
+		transform: rotateX(0deg) rotateZ(0deg);
+	}
+}
+
+
+.buttonUpIcon:hover {
+	/* -webkit-animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  animation-play-state:paused; */
+	color: rgba(255, 91, 56, 1);
+	cursor: pointer;
+	opacity: 1;
+}
+.buttonUpShow{
+visibility: visible;
+}
+
+@media only screen and (max-width: 1280px) {}
+
+@media only screen and (max-width: 1024px) {
+	.buttonUpIcon{
+		font-size: 70px;
+	}
+}
+
+@media only screen and (max-width: 920px) {}
+
+@media only screen and (max-width: 800px) {}
+
+@media only screen and (max-width: 641px) {
+	.buttonUpIcon{
+		font-size: 60px;
+	}
+}
+
+@media only screen and (max-width: 416px) {
+	.buttonUpIcon{
+		font-size: 50px;
+	}
+}
+
+@media only screen and (max-width: 360px) {}
+
+@media only screen and (max-width: 320px) {}
+
+@media only screen and (max-height: 812px) and (max-width: 380px){}
+
+@media only screen and (max-height: 740px) and (max-width: 430px){}
+
+@media only screen and (max-height: 680px) and (max-width: 380px){}
+
+@media only screen and (max-height: 570px) and (max-width: 330px){}
