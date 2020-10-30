@@ -19,6 +19,9 @@
 	<link rel="stylesheet" href="styles/footer.css" />
 	<link rel="stylesheet" href="styles/buttonUp.css" />
 	<link rel="stylesheet" href="styles/media.css" />
+	<link rel="stylesheet" href="styles/mailForm.css" />
+	<link rel="stylesheet" href="styles/orded.css" />
+	<link rel="stylesheet" href="styles/conception.css" />
 	<title>TradeBinder</title>
 </head>
 
@@ -28,6 +31,40 @@
 	</div>
 		<i class="far fa-arrow-alt-circle-up buttonUpIcon" id="buttonUpIcon"></i>
 
+<!-- orded -->
+<div class="blockContentOnLoad" id="blockContentOnLoad"></div>
+
+<div class="ordedWrapper grid" id="ordedWrapper">
+	<div class="ordedText">
+		<h4><p id="orderingLoading"></p></h4>
+		<h4><p id="orderingConnettingText"></p></h4>
+	</div>
+	<div class="ordedOKbutton">
+		<h3 id = "ordedOKbutton"></h3>
+	</div>
+</div>
+
+
+		<!-- mailForm -->
+		<div class="mailFormWrapper grid" id="mailFormWrapper">
+			<i class="icon-cross mailFormIconClose" id="mailFormIconClose"></i>
+			<h4 class="mailFormTextAbsent" id="mailFormTextAbsent">Write something to send</h4>
+				<div class="mailInputWrapper">
+					<textarea name="mailFormText" id="mailFormText" class="mailFormText" maxlength="500"></textarea>
+				</div>
+				<div class="mailClientEmailWrapper grid">
+					<h4 id="wrongMailFormClientEmail">Enter your E-mail here:</h4>
+					<input type="text" maxlength="40" class="mailFormClientEmail" id="mailFormClientEmail">
+				</div>
+				<div class="mailButtonWrapper grid">
+					<div class="mailFormClearButton" id="mailFormClearButton">
+						<h3>Clear</h3>
+					</div>
+					<div class="mailFormSendButton" id="mailFormSendButton">
+						<h3>Send</h3>
+					</div>
+				</div>
+		</div>
 
 	<!-- advancedSearch -->
 	<div class="advancedSearchWrapper grid" id="advancedSearchWrapper">
@@ -237,7 +274,7 @@
 			</div>
 
 			<div class="advancedSearchButtonsWrapper grid">
-				<div class="advancedSearchReset grid" >
+				<div class="advancedSearchReset grid">
 					<h3 id="advReset"> << RESET </h3>
 				</div>
 				<div class="advancedSearchApply grid">
@@ -252,7 +289,7 @@
 	<!-- CART -->
 	<div class="menuCart" id="menuCart">
 		<div class="cartWrapper grid">
-					<div class="cartBG" style="background-image: url(img/CartBGimg.jpg);"></div>
+					<div class="cartBG" style="background-image: url(img/CartBGimg.jpg);" id="cartBG"></div>
 			<div class="cartWrapperContent grid" id="cartWrapperContent">
 			</div>
 
@@ -265,7 +302,7 @@
 
 				<div class="cartMailWrapper grid ">
 					<div class="cartEmailLink" id="cartEmailLink">
-						<h4 class="toCheck" style="text-decoration: underline;" onclick="checkClicked()">Enter your E-mail here*</h4>
+						<h4 class="toCheck" onclick="checkClicked()" id="toCheck">Enter your E-mail here*</h4>
 					</div>
 					<div class="cartMail">
 						<div class="cartMailTextWrapper">
@@ -416,7 +453,7 @@
 		</div>
 
 		<div class="mail">
-			<i class="icon-mail "></i>
+			<i class="icon-mail" id="headerMail"></i>
 		</div>
 
 		<div class="cart ">
@@ -451,7 +488,7 @@
 		</div>
 
 		<div class="concept conceptPlace3 grid" onclick="checkClicked()">
-			<div class="conceptImg ">
+			<div class="conceptImg">
 				<div class="conceptRound">
 					<i class="icon-check iconConception"></i>
 				</div>
@@ -639,6 +676,7 @@
 	<script src="scripts/advancedSearch.js"></script>
 	<script src="scripts/footer.js"></script>
 	<script src="scripts/buttonUp.js"></script>
+	<script src="scripts/mailForm.js"></script>
 </body>
 
 </html>

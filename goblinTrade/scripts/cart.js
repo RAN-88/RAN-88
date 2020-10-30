@@ -14,8 +14,8 @@ document.getElementById("headerCartBtn").addEventListener("click", moveBar);
 
 document.body.addEventListener("click", closeCart);
 function closeCart(e) {
-
 	if (e.target.id != "headerCartBtn" &&
+		e.target.id != "cartBG" &&
 		e.target.id != "cartItemsQuantity" &&
 		e.target.id != "cartPriceTotal" &&
 		e.target.classList[0] != "cartWrapper" &&
@@ -55,7 +55,8 @@ function closeCart(e) {
 		e.target.classList[0] != "cartMainTotal" &&
 		e.target.classList[0] != "fas" &&
 		e.target.classList[0] != "cartTotalPrice" &&
-		e.target.classList[0] != "toCheck"
+		e.target.classList[0] != "toCheck" &&
+		document.getElementById("ordedWrapper").contains(e.target) == false
 	) {
 		returnBar()
 	}
@@ -287,3 +288,111 @@ function removeFromCartArray(rowToRemove) {
 	}
 	loadToStorage();
 }
+
+
+
+document.getElementById("orderText").addEventListener("click", sendOrder);
+document.getElementById("textCartMail").addEventListener("input", changeEmailColor);
+
+function changeEmailColor(){
+	document.getElementById("textCartMail").style.color = "#32231a";
+}
+
+function sendOrder(){
+
+	let clientMailAdress = document.getElementById("textCartMail").value
+	let clientMailFlag = checkClientMailCorrect(clientMailAdress);
+
+	// if everything OK - send to server
+	if(clientMailFlag && cartArray.length != 0){
+		sendOrderToServer(cartArray ,clientMailAdress);
+		document.getElementById("textCartMail").style.color = "#32231a";
+		showOrdered();
+	} 
+
+	// if Email wrong
+	if (!clientMailFlag){
+		document.getElementById("textCartMail").style.color = "#ff5b38";
+	} else if (clientMailFlag) {
+		document.getElementById("textCartMail").style.color = "#32231a";
+	}
+
+		// if cart = 0
+		if (cartArray.length == 0){
+			if (cartWrapper.innerHTML == ''){
+				let cartAbsent = '';
+				cartAbsent += `<h4 class="cartAbsent" id="cartAbsent"> Add something to order </h4>`
+				cartWrapper.insertAdjacentHTML('beforeend', cartAbsent);//рисуем 1 фрейм
+				cartAbsent = '';
+			}
+		}
+}
+
+
+function showOrdered(){
+	removeAllClicksOnLoad();
+	document.getElementById("ordedWrapper").classList.toggle("ordedWrapperActive");
+	document.getElementById("orderingLoading").innerHTML = ``;
+	document.getElementById("orderingConnettingText").innerHTML = ``;
+	document.getElementById("ordedOKbutton").innerHTML = ``;
+	let loadingCounter = 0;
+	let loadingInterval = setInterval (function(){
+		loadingCounter = loadingCounter + Math.floor(Math.random() * Math.floor(20));
+		if (loadingCounter <= 100){
+			document.getElementById("orderingLoading").innerHTML = `Loading your order: ${loadingCounter}%`;
+		} else if(loadingCounter > 100){
+			loadingCounter = 0;
+			window.clearInterval(loadingInterval);
+			document.getElementById("orderingLoading").innerHTML = `Thanks for your ordering!`;
+			document.getElementById("orderingConnettingText").innerHTML = `We will connect you soon`;
+			document.getElementById("ordedOKbutton").innerHTML = `OK`;
+			returnAllClicksOnLoad();
+		}
+	},300)
+}
+
+document.getElementById("ordedOKbutton").addEventListener("click", hideOrdered);
+
+function hideOrdered(){
+	document.getElementById("ordedWrapper").classList.remove("ordedWrapperActive");
+}
+
+document.body.addEventListener("click", hideOrderedOnMissClick);
+
+function hideOrderedOnMissClick(e) {
+if (document.getElementById("ordedWrapper").contains(e.target) == false &&
+e.target.id != "orderText"
+){
+	hideOrdered()
+}
+}
+
+function removeAllClicksOnLoad(){
+	document.getElementById("blockContentOnLoad").classList.add("contentBlockedOnLoad");
+	document.body.removeEventListener("click", closeCart);
+	document.body.removeEventListener('click', hideOrderedOnMissClick);
+	document.body.removeEventListener("click", closeInfoOnMissClick);
+	document.body.removeEventListener("click", closeMail);
+	document.body.removeEventListener("click", closeSortingMenuOnClick);
+	document.body.removeEventListener("click", hideHelp);
+}
+
+
+function returnAllClicksOnLoad(){
+		document.body.addEventListener("click", closeCart);
+		document.body.addEventListener('click', hideOrderedOnMissClick);
+		document.body.addEventListener("click", closeInfoOnMissClick);
+		document.body.addEventListener("click", closeMail);
+		document.body.addEventListener("click", closeSortingMenuOnClick);
+		document.body.addEventListener("click", hideHelp);
+		document.getElementById("blockContentOnLoad").classList.remove("contentBlockedOnLoad");
+}
+
+
+// -------------------
+
+function sendOrderToServer(clientOrder, clientMailAdress){
+	console.log(clientOrder);
+	console.log(clientMailAdress);
+}
+

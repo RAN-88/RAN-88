@@ -96,6 +96,10 @@
 	justify-content: start;
 	font-size: 15px;
 }
+.toCheck{
+	color:#e9e4d0;
+	text-decoration: underline;
+}
 .cartEmailLink>h4:hover{
 	cursor: pointer;
 	color: #ff5b38;
@@ -129,6 +133,7 @@
 	margin: 0px;
 	text-decoration: none;
 	font-weight: 10;
+	color: #32231a;
 }
 .cartOrder{
 	align-self: center;
@@ -184,6 +189,19 @@ font-size: 20px;
 }
 .emptyCartHidden{
 	display: none;
+}
+
+.cartAbsent{
+	padding-top: 10px;
+	text-align: center;
+	align-self: center;
+	justify-self: center;
+	grid-row: 1;
+	grid-column: 1;
+	font-size: 30px;
+	font-weight: 10;
+	color:#ff5b38;
+	z-index: 2000;
 }
 
 /* media */

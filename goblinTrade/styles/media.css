@@ -4,56 +4,12 @@
 
 @media only screen and (max-width: 1366px) {}
 
-@media only screen and (max-width: 1280px) {
-/* concept */
-.conceptWrapper{
-	grid-column-gap: 0px;
-	height: 160px;
-}
-.iconConception{
-	font-size: 50px;
-}
-.conceptRound{
-	width: 80px;
-	height: 80px;
-}
-.conceptIconArrow{
-	font-size: 50px;
-	transform: translateY(-20%);
-}
-.conceptText{
-	font-size: 20px;
-}
-}
+@media only screen and (max-width: 1280px) {}
 @media only screen and (max-width: 1024px) {}
 
-@media only screen and (max-width: 920px) {
-	/* concept */
-	.conceptWrapper{
-		height: 140px;
-	}
-	.iconConception{
-		font-size: 40px;
-	}
-	.conceptRound{
-		width: 70px;
-		height: 70px;
-	}
-	.conceptIconArrow{
-		font-size: 40px;
-		transform: translateY(-20%);
-	}
-	.conceptText{
-		font-size: 17px;
-	}
-}
+@media only screen and (max-width: 920px) {}
 
 @media only screen and (max-width: 800px) {
-
-.conceptWrapper{
-		width: 98%;
-}
-
 .sortWrapper{
 	width: 98%;
 }
@@ -74,25 +30,6 @@
 
 
 @media only screen and (max-width: 600px) {
-		.conceptWrapper{
-			height: 140px;
-		}
-		.iconConception{
-			font-size: 30px;
-		}
-		.conceptRound{
-			width: 60px;
-			height: 60px;
-		}
-		.conceptIconArrow{
-			font-size: 30px;
-			transform: translateY(-20%);
-		}
-		.conceptText{
-			font-size: 15px;
-			}
-
-
 		.totalCardsWrapper{
 			display: none;
 		}
@@ -116,7 +53,6 @@
 	}
 
 @media only screen and (max-width: 533px) {
-
 	.saleWrapper{
 		font-size: 45px;
 		margin-top: 40px;
@@ -125,10 +61,6 @@
 	font-size: 45px;
 }
 
-	/* concept */
-	.conceptWrapper{
-		display: none;
-	}
 }
 
 

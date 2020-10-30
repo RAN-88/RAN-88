@@ -127,7 +127,7 @@ function search() {
 	for (let q = 0; q < searchedString.length; q++) {
 		mask1 = searchedString.substring(0, q) + '.' + searchedString.substring(q + 1);//опечатка в одной букве
 		mask2 = searchedString.substring(0, q) + '.' + searchedString.substring(q);//лишняя буква
-		mask3 = searchedString.substring(0, q - 1) + searchedString.substring(q);//не работает пропуск буквы
+		mask3 = searchedString.substring(0, q - 1) + searchedString.substring(q);//пропуск буквы
 		mask4 = searchedString.substring(0, q - 1) + searchedString.substring(q, q + 1) + searchedString.substring(q - 1, q) + searchedString.substring(q + 1);//лишняя буква
 		// let regexp1 = new RegExp(`${mask1}`, "g");
 		// let regexp2 = new RegExp(`${mask2}`, "g");

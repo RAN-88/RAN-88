@@ -49,8 +49,8 @@ function clearAdvansedSearchClasses(){
 	document.getElementById("advancedSearchRarity").classList.remove("advancedSearchRarityOn","advancedSearchRarityOff");
 }
 
-window.onload = advancedSearchListFrameHover();
-
+// window.onload = advancedSearchListFrameHover();
+advancedSearchListFrameHover();
 function advancedSearchListFrameHover(){
 for (let q = 0; q < document.body.querySelectorAll(".advancedSearchListFrame").length; q++){
 	document.body.querySelectorAll(".advancedSearchListFrame")[q].onmouseenter = function(e){

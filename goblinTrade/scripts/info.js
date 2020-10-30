@@ -12,7 +12,6 @@ function hideInfo() {
 document.getElementById("hoverConceptComment").addEventListener("click", showInfo);
 document.getElementById("headerInfoBtn").addEventListener("click", showInfo);
 document.getElementById("infoFrameClose").addEventListener("click", hideInfo);
-
 document.body.addEventListener("click", closeInfoOnMissClick);
 
 function closeInfoOnMissClick(e) {
