@@ -210,7 +210,7 @@
 
 @media only screen and (max-height: 680px) and (max-width: 380px) and (orientation: landscape){}
 
-@media only screen and (max-height: 567px) and (min-width: 430px) and (orientation: landscape){
+@media only screen and (max-height: 470px) and (orientation: landscape){
 .mailFormWrapper{
 	top: 71px;
 	left: 0px;
@@ -257,3 +257,16 @@
 }
 }
 
+@media only screen and (max-height: 470px) and (max-width: 420px) and (orientation: landscape){
+	.mailFormClearButton>h3{
+		font-size: 20px;
+	}
+
+	.mailFormSendButton>h3{
+		font-size: 20px;
+	}
+
+	.mailClientEmailWrapper>h4{
+		font-size: 16px;
+	}
+	}
