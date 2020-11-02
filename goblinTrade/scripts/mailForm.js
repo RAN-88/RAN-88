@@ -41,6 +41,7 @@ function sendMail() {
 	if (checkClientMailCorrect(clientMailAdress) && clientMailText != ''){
 		document.getElementById("wrongMailFormClientEmail").innerHTML = "Enter your E-mail here:";
 		document.getElementById("wrongMailFormClientEmail").style.color = "#32231a";
+		document.getElementById("wrongMailFormClientEmail").style.filter = "drop-shadow(0px 0px 0px rgba(0,0,0,0.7))";
 		sendMailToServer(clientMailText, clientMailAdress);
 		showMailSend();
 	} 
@@ -48,9 +49,11 @@ function sendMail() {
 if (checkClientMailCorrect(clientMailAdress) == false) {
 		document.getElementById("wrongMailFormClientEmail").innerHTML = "Wrong E-mail";
 		document.getElementById("wrongMailFormClientEmail").style.color = "#ff5b38";
+		document.getElementById("wrongMailFormClientEmail").style.filter = "drop-shadow(1px 1px 0px rgba(0,0,0,0.7))";
 } else {
 	document.getElementById("wrongMailFormClientEmail").innerHTML = "Enter your E-mail here:";
 	document.getElementById("wrongMailFormClientEmail").style.color = "#32231a";
+	document.getElementById("wrongMailFormClientEmail").style.filter = "drop-shadow(0px 0px 0px rgba(0,0,0,0.7))";
 }
 
 if (clientMailText == ''){
@@ -72,14 +75,15 @@ function showMailSend(){
 		if (loadingCounter <= 100){
 			document.getElementById("mailFormTextAbsent").classList.add("mailFormTextAbsentOn");
 			document.getElementById("mailFormTextAbsent").innerHTML = `Sending your Mail: ${loadingCounter}%`;
-			console.log(document.getElementById("mailFormTextAbsent").innerHTML);
+			// console.log(document.getElementById("mailFormTextAbsent").innerHTML);
 		} else if(loadingCounter > 100){
 			document.getElementById("mailFormTextAbsent").classList.add("mailFormTextAbsentOn");
 			loadingCounter = 0;
 			window.clearInterval(loadingMailInterval);
 			document.getElementById("mailFormTextAbsent").innerHTML = `Thanks for your Mail!`;
-			console.log(document.getElementById("mailFormTextAbsent").innerHTML);
+			// console.log(document.getElementById("mailFormTextAbsent").innerHTML);
 			returnAllClicksOnLoad();
+			clearMailText();
 		}
 	},300)
 }

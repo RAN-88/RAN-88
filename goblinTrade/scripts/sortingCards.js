@@ -110,10 +110,13 @@ function sortDown() {
 	globalCurrentArray = sortedArray.slice();
 	drawMarket(sortedArray);
 	// console.log(globalCurrentArray);
-
 };
 
-
+function sortDiscardAllFillters() {
+	advReset();
+	document.getElementById("textSearch").value = '';
+	drawOnIconClick();
+}
 
 
 

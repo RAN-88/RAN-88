@@ -22,10 +22,23 @@
 	<link rel="stylesheet" href="styles/mailForm.css" />
 	<link rel="stylesheet" href="styles/orded.css" />
 	<link rel="stylesheet" href="styles/conception.css" />
+	<link rel="stylesheet" href="styles/preloader.css" />
+	<link rel="stylesheet" href="styles/sortingMenu.css" />
 	<title>TradeBinder</title>
 </head>
 
 <body>
+<!-- preloader -->
+<div class="preloaderWrapper grid" id = "preloaderWrapper">
+		<div class="preloaderLogo" style="background-image: url(img/logotest3.png);"></div>
+		<h4 class="loading">We are loading, hold on...</h4>
+		 <div class="preloaderImg" style="background-image: url(img/MTGPreloader2.gif);"></div>
+		<h4 class = "preloaderDesigned">designed by RAN <span class="RanFox">&</span> Fox</h4>
+</div>
+
+
+
+
 	<!-- BG -->
 	<div class="bodyBG" style="background-image: url(img/background2.jpg);" id="bodyBG">
 	</div>
@@ -574,8 +587,13 @@
 	</div>
 
 	<!--Sorting -->
-	<div class="sortWrapper grid ">
+	<div class="sortWrapper grid">
 		<div class="sortBG"></div>
+
+		<div class="sortDiscardAll" id = "sortDiscardAll" onclick="sortDiscardAllFillters()">
+			<i class="icon-cross sortingIconCross"></i>
+			<h4>Discard All Fillters</h4>
+		</div>
 
 		<div class="totalCardsWrapper ">
 			<h4 class="totalText">Total Items Found:</h4>
@@ -659,7 +677,7 @@
 		</div>
 
 		<div class="footerDesigned ">
-			<h4>designed by RAN & Fox</h4>
+			<h4>designed by RAN <span class="RanFox">&</span> Fox</h4>
 		</div>
 	</div>
 
@@ -677,6 +695,7 @@
 	<script src="scripts/footer.js"></script>
 	<script src="scripts/buttonUp.js"></script>
 	<script src="scripts/mailForm.js"></script>
+	<script src="scripts/preloader.js"></script>
 </body>
 
 </html>

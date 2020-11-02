@@ -1,0 +1,236 @@
+/* Sorting */
+.sortWrapper{
+	justify-content: center;
+	align-content: center;
+	height: 42px;
+	width: 80%;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	grid-template-rows: 100% 20px;
+	grid-template-columns: 0.6fr 0.8fr 0.3fr;
+}
+.sortBG{
+	background-color: #e9e4d0;
+	opacity: 0.3;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	grid-row: 1;
+	grid-column: 1/4;
+	z-index: 0;
+}
+.sortDiscardAll{
+	grid-row: 2;
+	grid-column: 1/4;
+	align-self: center;
+	justify-content: start;
+	margin-left: 10px;
+	font-size: 18px;
+	color: #e9e4d0;
+	width: 200px;
+	display: flex;
+	justify-content: flex-start;
+}
+.sortDiscardAll:hover{
+	cursor: pointer;
+	color: #ff5b38;
+}
+.sortDiscardAll>h4{
+	align-self: center;
+}
+.sortingIconCross{
+	font-size: 16px;
+	align-self: center;
+}
+/* .sortDiscardAllOn{
+	visibility: visible;
+} */
+
+.totalCardsWrapper{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: start;
+	margin-left: 10px;
+	align-items: center;
+	grid-row: 1;
+	grid-column: 1;
+	z-index: 10;
+}
+.totalText{
+	color: #e9e4d0;
+	font-size: 18px;
+}
+.cardsAmount{
+	color: #e9e4d0;
+	font-size: 20px;
+	margin-left: 10px;
+}
+.sorting{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	grid-row: 1;
+	grid-column: 2;
+}
+.sortText{
+	width: 100%;
+	height: 100%;
+	grid-template-rows: 100%;
+	grid-template-columns: 1fr 0.7fr;
+	grid-row: 1;
+	grid-column: 2;
+	color: #e9e4d0;
+	font-size: 18px;
+	grid-column-gap: 20px;
+	z-index: 50;
+	}
+	.sortTextBy{
+		align-self: center;
+		justify-self: end;
+	}
+	.sortTextPlace1{
+		grid-row: 1;
+		grid-column: 1;
+	}
+	.sortTextPlace2{
+		grid-row: 1;
+		grid-column: 2;
+		transform: translateX(-25px);
+	}
+	.sortingTypeFrame{
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.sortingTypeFrame:hover{
+		cursor: pointer;
+		background-color: #ff5b38;
+	}
+
+
+.sortingTypeFrameText{
+	color: #140f0b;
+}
+.sortingTypeArrow{
+	padding-left: 3px;
+	
+}
+.sortingTypeArrowMirror{
+	transform: scale(1, -1) translateY(-2px);
+	}
+.sortingTypeWrapper{
+	align-self: center;
+	justify-self: start;
+	margin-left: 20px;
+}
+.sortingType:hover{
+	cursor: pointer;
+	color: #ff5b38;
+	filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.7));
+}
+.sortListing{
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 100%;
+	width: 130px;
+	height: 130px;
+	align-content: center;
+	justify-items: center;
+	margin-top: 42px;
+	align-self: start;
+	z-index: 50;
+	grid-gap: 5px;
+	background-color: #e9e4d0;
+	justify-self: start;
+	margin-left: 20px;
+	/* border-radius: 20px; */
+	visibility: hidden;
+	/* display: none; */
+}
+.sortListingVisibility{
+	visibility: visible;
+}
+
+.sortDirection{
+	grid-row: 1;
+	grid-column: 3;
+	font-size: 30px;
+	color: #e9e4d0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+	z-index: 20;
+}
+.icon-sort-up:hover{
+	cursor: pointer;
+	color: #ff5b38;
+	filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.7));
+}
+.icon-sort-down:hover{
+	cursor: pointer;
+	color: #ff5b38;
+	filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.7));
+}
+
+
+
+@media only screen and (max-width: 1920px) {}
+@media only screen and (max-width: 1680px) {}
+@media only screen and (max-width: 1366px) {}
+@media only screen and (max-width: 1280px) {}
+@media only screen and (max-width: 1024px) {}
+@media only screen and (max-width: 920px) {}
+
+@media only screen and (max-width: 800px) {
+.sortWrapper{
+	width: 98%;
+}
+}
+
+
+
+@media only screen and (max-width: 650px) {}
+
+
+@media only screen and (max-width: 600px) {
+		.totalCardsWrapper{
+			display: none;
+		}
+		.sortBG{
+			grid-column: 1/4;
+		}
+		.sortText{
+			grid-column: 1/3;
+			grid-template-columns: 100px 1fr;
+		}
+		.sortTextBy{
+			justify-self: start;
+			margin-left: 10px;
+		}
+		.sortingTypeWrapper{
+			margin-left: 0px;
+		}
+		.sortListing{
+			margin-left: 0px;
+		}
+	}
+
+@media only screen and (max-width: 533px) {}
+@media only screen and (max-width: 416px) {}
+@media only screen and (max-width: 400px) {}
+
+@media only screen and (max-width: 360px) {
+.sortDirection{
+	font-size: 28px;
+	}
+}
+
+@media only screen and (max-width: 320px) {}
+@media only screen and (max-height: 812px) and (max-width: 380px){}
+@media only screen and (max-height: 740px) and (max-width: 430px){}
+@media only screen and (max-height: 680px) and (max-width: 380px){}
+@media only screen and (max-height: 570px) and (max-width: 330px){}

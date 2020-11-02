@@ -347,9 +347,26 @@ function showOrdered(){
 			document.getElementById("orderingConnettingText").innerHTML = `We will connect you soon`;
 			document.getElementById("ordedOKbutton").innerHTML = `OK`;
 			returnAllClicksOnLoad();
+			clearCart();
 		}
 	},300)
 }
+
+function clearCart(){
+	cartArray = [];
+	cartWrapper.innerHTML = '';
+	loadToStorage();
+	countHeaderCart();
+	// document.querySelectorAll(".cartMarketFrameValue")
+	// class="cartMarketFrameValue"
+	for (let i =0; i < document.querySelectorAll("h4.cartMarketFrameValue").length; i++){
+		document.querySelectorAll("h4.cartMarketFrameValue")[i].innerHTML = 0;
+		totalMoney();
+	}
+}
+
+
+
 
 document.getElementById("ordedOKbutton").addEventListener("click", hideOrdered);
 
