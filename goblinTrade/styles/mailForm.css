@@ -192,6 +192,9 @@
 		height: calc(100% - 70px);
 		border-radius: 0px;
 	}
+	.bodyMailStopScroll {
+		overflow-y: hidden;
+	}
 }
 
 @media only screen and (max-width: 400px) {}
@@ -207,7 +210,7 @@
 
 @media only screen and (max-height: 680px) and (max-width: 380px) and (orientation: landscape){}
 
-@media only screen and (max-height: 430px) and (min-height: 319px) and (max-width: 830px) and (min-width: 567px) and (orientation: landscape){
+@media only screen and (max-height: 430px) and (min-height: 200px) and (max-width: 830px) and (min-width: 319px) and (orientation: landscape){
 .mailFormWrapper{
 	top: 71px;
 	left: 0px;

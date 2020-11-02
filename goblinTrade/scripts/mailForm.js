@@ -8,11 +8,13 @@ function showMailForm(){
 	returnBar();
 	returnAdvancedSearch();
 	hideInfo();
+	document.body.classList.toggle("bodyMailStopScroll");
 }
 
 function hideMailForm(){
 	document.getElementById("mailFormWrapper").classList.remove("showMailForm");
 	document.getElementById("mailFormTextAbsent").classList.remove("mailFormTextAbsentOn");
+	document.body.classList.remove("bodyMailStopScroll");
 }
 
 document.body.addEventListener("click", closeMail);
